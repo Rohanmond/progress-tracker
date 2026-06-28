@@ -7,6 +7,7 @@ Frontend Switch OS is a preparation tracker for a senior frontend engineer targe
 The product combines:
 
 - A 12-week interview preparation roadmap.
+- A weekly commitment plan that starts with easier items and moves into medium/hard work per topic.
 - DSA problem tracking, seeded from Namaste DSA.
 - Separate NamasteDev lesson links and LeetCode problem links where a mapping exists.
 - LeetCode-backed solved verification for linked problems.
@@ -27,13 +28,14 @@ Known constraints:
 
 ## Product Philosophy
 
-The app should minimize friction. It should help the user restart quickly after missed days, track DSA coverage, and make progress visible.
+The app should minimize friction and prevent open-ended question-bank browsing. It should help the user restart quickly after missed days, track DSA coverage, and make progress visible.
 
 Avoid adding heavy workflows that require too much manual entry. Prefer:
 
 - One-click status changes.
 - Simple daily logs.
 - Clear revision queues.
+- Weekly commitment cards with topic, effort target, and Easy/Medium/Hard progression.
 - Dashboard metrics that answer "am I moving?" quickly.
 
 ## Current State

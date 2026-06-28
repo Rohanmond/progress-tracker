@@ -40,6 +40,44 @@ Response:
 }
 ```
 
+## Weekly Plan
+
+### `GET /api/weekly-plan`
+
+Returns the commitment-first 12-week plan. Each week contains topic metadata, commitment text, staged Easy/Medium/Hard targets, progress counts, and linked question rows for that week.
+
+Response:
+
+```json
+{
+  "weeks": [
+    {
+      "week": 1,
+      "theme": "Arrays foundation",
+      "commitment": "15 DSA touches...",
+      "frontend": "Revise JS execution model...",
+      "total": 9,
+      "solved": 0,
+      "revise": 0,
+      "levels": [
+        {
+          "name": "Easy",
+          "target": "Second pass on basic array mutations and scanning."
+        }
+      ],
+      "questions": [
+        {
+          "id": "namaste-reverse-string",
+          "title": "Reverse String",
+          "plan_stage": "Easy",
+          "status": "Todo"
+        }
+      ]
+    }
+  ]
+}
+```
+
 ## Questions
 
 ### `GET /api/questions`
@@ -49,7 +87,7 @@ Query parameters:
 - `search`: optional text search.
 - `pattern`: default `All`.
 - `status`: default `All`; accepted values are `All`, `Todo`, `Solved`, `Revise`.
-- `limit`: default `120`, max `500`.
+- `limit`: default `500`, max `500`.
 
 Response:
 

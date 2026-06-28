@@ -63,6 +63,13 @@ npm run dev:api
 2. Render it in `client/src/App.jsx`.
 3. Document it in `ai/api-contract.md`.
 
+### Changing the weekly plan
+
+1. Update `weeklyPlan` and `roadmap` in `server/src/index.js`.
+2. Confirm `/api/weekly-plan` still groups real seeded sections.
+3. Update `ai/prd.md`, `ai/api-contract.md`, and `ai/architecture.md`.
+4. Keep the weekly plan commitment-first; do not make the question bank the primary flow.
+
 ### Adding auth
 
 This is a major architecture change. Update:

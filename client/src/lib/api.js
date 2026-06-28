@@ -20,6 +20,7 @@ async function request(path, options = {}) {
 export const api = {
   metrics: () => request("/metrics"),
   roadmap: () => request("/roadmap"),
+  weeklyPlan: () => request("/weekly-plan"),
   questions: (params) => request(`/questions?${new URLSearchParams(params)}`),
   updateQuestion: (id, payload) =>
     request(`/questions/${id}/status`, {

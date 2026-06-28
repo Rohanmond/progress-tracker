@@ -2,6 +2,8 @@
 
 Full-stack prep tracker for a senior frontend job switch plan.
 
+The primary workflow is the Weekly Plan: each week has a firm commitment, topic focus, and Easy/Medium/Hard progression. The DSA Bank is the complete reference set.
+
 ## Stack
 
 - React + Vite frontend in `client/`

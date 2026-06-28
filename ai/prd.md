@@ -15,7 +15,8 @@ The user has access to strong preparation resources but loses track over time. D
 ## Goals
 
 - Make DSA progress visible and easy to update.
-- Provide a structured 12-week preparation roadmap.
+- Provide a structured 12-week preparation plan with firm weekly commitments.
+- Prevent question-bank overwhelm by making the weekly plan the primary workflow.
 - Capture daily study effort with minimal friction.
 - Highlight revision items so weak problems are not forgotten.
 - Support analytics through Superset for deeper progress review.
@@ -30,15 +31,18 @@ The user has access to strong preparation resources but loses track over time. D
 
 ## Primary User Stories
 
-1. As a candidate, I can view all Namaste DSA problems in one searchable list.
-2. As a candidate, I can open both the NamasteDev lesson and the LeetCode problem when both links exist.
-3. As a candidate, I can mark a problem as `Solved` only when LeetCode verification confirms an accepted submission.
-4. As a candidate, I can mark a problem as `Revise` or `Todo` manually.
-5. As a candidate, I can filter problems by pattern and status.
-6. As a candidate, I can log what I studied today and how many minutes I spent.
-7. As a candidate, I can see dashboard metrics for solved count, revision count, study minutes, and mocks.
-8. As a candidate, I can review a 12-week preparation roadmap.
-9. As a candidate, I can connect Superset to analyze progress by pattern and day.
+1. As a candidate, I can start from a weekly plan instead of a raw question bank.
+2. As a candidate, I can see each week's topic, commitment, frontend focus, and Easy/Medium/Hard progression.
+3. As a candidate, I can act on weekly questions directly from the plan.
+4. As a candidate, I can view all Namaste DSA problems in one searchable list when I need reference mode.
+5. As a candidate, I can open both the NamasteDev lesson and the LeetCode problem when both links exist.
+6. As a candidate, I can mark a problem as `Solved` only when LeetCode verification confirms an accepted submission.
+7. As a candidate, I can mark a problem as `Revise` or `Todo` manually.
+8. As a candidate, I can filter problems by pattern and status.
+9. As a candidate, I can log what I studied today and how many minutes I spent.
+10. As a candidate, I can see dashboard metrics for solved count, revision count, study minutes, and mocks.
+11. As a candidate, I can review a 12-week preparation roadmap.
+12. As a candidate, I can connect Superset to analyze progress by pattern and day.
 
 ## Success Metrics
 
@@ -50,9 +54,18 @@ The user has access to strong preparation resources but loses track over time. D
 
 ## Functional Requirements
 
+### Weekly Plan
+
+- The Weekly Plan is the default first screen.
+- Each week has a topic theme, DSA commitment, frontend commitment, and Easy/Medium/Hard progression.
+- Weekly questions come from the seeded Namaste DSA sections.
+- Questions should be staged to avoid jumping directly into hard problems.
+- The full DSA Bank remains available as a reference and search surface.
+
 ### DSA Bank
 
 - Show seeded Namaste DSA items.
+- Load the full question set by default.
 - Show title, section, pattern, difficulty, duration, NamasteDev link, and LeetCode link where available.
 - Filter by search text, pattern, and status.
 - Update `Revise` and `Todo` through one-click actions.

@@ -1,8 +1,9 @@
 import { useEffect, useMemo, useState } from "react";
-import { BarChart3, BookOpen, CalendarDays, CheckCircle2, Database, ExternalLink, RefreshCcw, Search } from "lucide-react";
+import { BarChart3, BookOpen, CalendarDays, CheckCircle2, ClipboardList, Database, ExternalLink, RefreshCcw, Search } from "lucide-react";
 import { api } from "./lib/api.js";
 
 const tabs = [
+  { id: "plan", label: "Weekly Plan", icon: ClipboardList },
   { id: "dashboard", label: "Dashboard", icon: BarChart3 },
   { id: "questions", label: "DSA Bank", icon: Database },
   { id: "logs", label: "Daily Log", icon: CalendarDays },
@@ -12,12 +13,13 @@ const tabs = [
 const today = () => new Date().toISOString().slice(0, 10);
 
 export default function App() {
-  const [activeTab, setActiveTab] = useState("dashboard");
+  const [activeTab, setActiveTab] = useState("plan");
   const [metrics, setMetrics] = useState(null);
   const [roadmap, setRoadmap] = useState([]);
+  const [weeklyPlan, setWeeklyPlan] = useState([]);
   const [logs, setLogs] = useState([]);
   const [questions, setQuestions] = useState([]);
-  const [filters, setFilters] = useState({ search: "", pattern: "All", status: "All", limit: "120" });
+  const [filters, setFilters] = useState({ search: "", pattern: "All", status: "All", limit: "500" });
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,14 +27,16 @@ export default function App() {
     setIsLoading(true);
     setError("");
     try {
-      const [metricsResult, roadmapResult, logsResult, questionsResult] = await Promise.all([
+      const [metricsResult, roadmapResult, weeklyPlanResult, logsResult, questionsResult] = await Promise.all([
         api.metrics(),
         api.roadmap(),
+        api.weeklyPlan(),
         api.logs(),
         api.questions(filters)
       ]);
       setMetrics(metricsResult);
       setRoadmap(roadmapResult.roadmap);
+      setWeeklyPlan(weeklyPlanResult.weeks);
       setLogs(logsResult.logs);
       setQuestions(questionsResult.questions);
     } catch (requestError) {
@@ -56,7 +60,11 @@ export default function App() {
     setError("");
     try {
       await api.updateQuestion(id, { status });
-      await Promise.all([loadQuestions(), api.metrics().then(setMetrics)]);
+      await Promise.all([
+        loadQuestions(),
+        api.metrics().then(setMetrics),
+        api.weeklyPlan().then((result) => setWeeklyPlan(result.weeks))
+      ]);
     } catch (requestError) {
       setError(requestError.message);
     }
@@ -134,6 +142,7 @@ export default function App() {
         {error ? <div className="banner">API connection issue: {error}</div> : null}
         {isLoading ? <div className="banner neutral">Loading tracker data...</div> : null}
 
+        {activeTab === "plan" ? <WeeklyPlan weeks={weeklyPlan} onUpdate={updateQuestion} /> : null}
         {activeTab === "dashboard" ? <Dashboard metrics={metrics} logs={logs} questions={questions} /> : null}
         {activeTab === "questions" ? (
           <QuestionBank
@@ -216,6 +225,12 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
   return (
     <div className="view-stack">
       <section className="panel">
+        <div className="panel-heading">
+          <div>
+            <h3>Full Question Bank</h3>
+            <p className="quiet compact">Showing {questions.length} questions. Use this as reference; follow Weekly Plan for commitment.</p>
+          </div>
+        </div>
         <div className="toolbar">
           <label>
             Search
@@ -275,6 +290,78 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
               <button onClick={() => onUpdate(question.id, "Solved")} type="button">Solved</button>
               <button className="warning" onClick={() => onUpdate(question.id, "Revise")} type="button">Revise</button>
               <button className="muted" onClick={() => onUpdate(question.id, "Todo")} type="button">Todo</button>
+            </div>
+          </article>
+        ))}
+      </section>
+    </div>
+  );
+}
+
+function WeeklyPlan({ weeks, onUpdate }) {
+  const [selectedWeek, setSelectedWeek] = useState(1);
+  const currentWeek = weeks.find((week) => week.week === selectedWeek) || weeks[0];
+  const grouped = useMemo(() => {
+    if (!currentWeek) return {};
+    return currentWeek.questions.reduce((groups, question) => {
+      const key = question.plan_stage || question.difficulty || "Medium";
+      return { ...groups, [key]: [...(groups[key] || []), question] };
+    }, {});
+  }, [currentWeek]);
+
+  if (!currentWeek) {
+    return <div className="banner neutral">Loading weekly plan...</div>;
+  }
+
+  const progressPercent = currentWeek.total ? Math.round((currentWeek.solved / currentWeek.total) * 100) : 0;
+
+  return (
+    <div className="view-stack">
+      <section className="week-selector">
+        {weeks.map((week) => (
+          <button
+            className={week.week === selectedWeek ? "active" : ""}
+            key={week.week}
+            onClick={() => setSelectedWeek(week.week)}
+            type="button"
+          >
+            W{week.week}
+          </button>
+        ))}
+      </section>
+
+      <section className="panel commitment-panel">
+        <div>
+          <p className="label">Week {currentWeek.week}</p>
+          <h3>{currentWeek.theme}</h3>
+          <p>{currentWeek.commitment}</p>
+          <p className="quiet">Frontend: {currentWeek.frontend}</p>
+        </div>
+        <div className="commitment-score">
+          <strong>{currentWeek.solved}/{currentWeek.total}</strong>
+          <span>{progressPercent}% solved · {currentWeek.revise} revise</span>
+        </div>
+      </section>
+
+      <section className="level-grid">
+        {currentWeek.levels.map((level) => (
+          <article className="panel" key={level.name}>
+            <p className="label">{level.name}</p>
+            <h3>{level.target}</h3>
+            <div className="mini-question-list">
+              {(grouped[level.name] || []).map((question) => (
+                <div className="mini-question" key={question.id}>
+                  <div>
+                    <strong>{question.title}</strong>
+                    <span>{question.pattern} · {question.difficulty}</span>
+                  </div>
+                  <div className="mini-actions">
+                    <span className={`pill ${question.status.toLowerCase()}`}>{question.status}</span>
+                    <button onClick={() => onUpdate(question.id, "Solved")} type="button">Solved</button>
+                    <button className="warning" onClick={() => onUpdate(question.id, "Revise")} type="button">Revise</button>
+                  </div>
+                </div>
+              ))}
             </div>
           </article>
         ))}

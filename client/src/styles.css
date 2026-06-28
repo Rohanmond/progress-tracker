@@ -168,6 +168,10 @@ a {
   color: var(--accent-dark);
 }
 
+.compact {
+  margin: 4px 0 0;
+}
+
 .view-stack {
   display: grid;
   gap: 18px;
@@ -219,8 +223,113 @@ a {
 }
 
 .panel-heading h3,
-.roadmap h3 {
+.roadmap h3,
+.commitment-panel h3,
+.level-grid h3 {
   margin: 0;
+}
+
+.week-selector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.week-selector button {
+  background: #20352f;
+  min-height: 36px;
+  padding: 0 12px;
+}
+
+.week-selector button.active {
+  background: var(--accent);
+}
+
+.commitment-panel {
+  align-items: center;
+  display: grid;
+  gap: 18px;
+  grid-template-columns: minmax(0, 1fr) auto;
+}
+
+.commitment-panel p {
+  color: var(--muted);
+  line-height: 1.55;
+  margin: 8px 0 0;
+}
+
+.commitment-score {
+  background: #e6f4f1;
+  border-radius: 8px;
+  color: var(--accent-dark);
+  display: grid;
+  gap: 4px;
+  min-width: 160px;
+  padding: 16px;
+  text-align: right;
+}
+
+.commitment-score strong {
+  font-size: 30px;
+  line-height: 1;
+}
+
+.commitment-score span {
+  font-size: 13px;
+  font-weight: 850;
+}
+
+.level-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.level-grid .panel {
+  align-content: start;
+  display: grid;
+  gap: 12px;
+}
+
+.level-grid h3 {
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.mini-question-list {
+  display: grid;
+  gap: 10px;
+}
+
+.mini-question {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  padding: 12px;
+}
+
+.mini-question strong,
+.mini-question span {
+  display: block;
+}
+
+.mini-question span {
+  color: var(--muted);
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.mini-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.mini-actions button {
+  min-height: 32px;
+  padding: 0 10px;
 }
 
 .split {
@@ -394,7 +503,9 @@ textarea {
   .split,
   .toolbar,
   .log-form,
-  .roadmap {
+  .roadmap,
+  .level-grid,
+  .commitment-panel {
     grid-template-columns: 1fr;
   }
 
@@ -410,6 +521,7 @@ textarea {
   }
 
   .topbar,
+  .commitment-panel,
   .question-card {
     align-items: stretch;
     display: flex;

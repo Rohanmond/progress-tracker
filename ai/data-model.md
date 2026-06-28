@@ -88,3 +88,17 @@ Use for:
 
 - Study minutes over time.
 - Focus distribution.
+
+## Weekly Planning
+
+Weekly planning is currently a backend-defined product layer in `server/src/index.js`, not a database table.
+
+Each week maps to one or more Namaste DSA `section` values and returns:
+
+- Weekly commitment.
+- Frontend focus.
+- Easy/Medium/Hard progression notes.
+- Question rows from the mapped sections.
+- Progress counts from `question_progress`.
+
+If weekly planning becomes user-editable, promote it into database tables.

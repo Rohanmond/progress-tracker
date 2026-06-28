@@ -67,13 +67,14 @@ Important files:
 ## Data Flow
 
 1. `npm run seed` creates tables and inserts Namaste DSA questions.
-2. React requests `/api/questions`.
-3. Express joins `questions` with `question_progress`.
-4. User opens NamasteDev or LeetCode links from the question card.
-5. User marks a question `Revise` or `Todo`; Express upserts directly into `question_progress`.
-6. User marks a question `Solved`; Express first verifies accepted LeetCode submissions for `LEETCODE_USERNAME` and the question `leetcode_slug`.
-7. Dashboard calls `/api/metrics` to show updated totals.
-8. Superset reads analytics views from the same Postgres database.
+2. React requests `/api/weekly-plan` for the default commitment-first experience.
+3. Express joins `questions` with `question_progress` and groups questions into weekly sections.
+4. React requests `/api/questions` for full-bank reference mode, defaulting to the full seeded dataset.
+5. User opens NamasteDev or LeetCode links from plan or bank cards.
+6. User marks a question `Revise` or `Todo`; Express upserts directly into `question_progress`.
+7. User marks a question `Solved`; Express first verifies accepted LeetCode submissions for `LEETCODE_USERNAME` and the question `leetcode_slug`.
+8. Dashboard calls `/api/metrics` to show updated totals.
+9. Superset reads analytics views from the same Postgres database.
 
 ## Deployment Shape
 
