@@ -1,0 +1,16 @@
+{
+  "name": "frontend-switch-os",
+  "version": "2.0.0",
+  "private": true,
+  "description": "Full-stack senior frontend interview preparation tracker.",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "npm run dev --workspace client",
+    "dev:api": "npm run dev --workspace server",
+    "check": "npm run check --workspace client && npm run check --workspace server",
+    "seed": "npm run seed --workspace server"
+  }
+}
