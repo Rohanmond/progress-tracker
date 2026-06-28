@@ -49,6 +49,18 @@ Columns:
 - `notes`: free text.
 - `created_at`: timestamp.
 
+### `milestone_progress`
+
+One row per weekly interview-plan milestone that the user has touched.
+
+Columns:
+
+- `milestone_id`: stable text key generated from week, day, track, and sort order.
+- `status`: `Todo`, `Done`, or `Revise`.
+- `notes`: optional notes.
+- `completed_at`: timestamp set while the milestone is `Done`.
+- `updated_at`: timestamp of latest status update.
+
 ## Seed Data
 
 Path: `server/data/namaste-dsa-questions.json`
@@ -58,6 +70,12 @@ Current count: 243 items.
 The seed script is idempotent. Running `npm run seed` upserts questions, creates tables, and recreates analytics views.
 
 Run `npm run enrich:leetcode` after editing the Namaste seed if new titles need LeetCode mappings. The current curated mapping links 175 items.
+
+The frontend Core 100 is not a separate table. It is a backend curation layer in `server/src/index.js` that references stable `questions.id` values and adds computed API fields:
+
+- `is_core_100`
+- `dsa_priority`: `Core 100`, `Supplemental`, or `Course-only`.
+- `dsa_plan`: `Frontend Core 100` for curated items, otherwise the priority label.
 
 ## Superset Views
 
@@ -93,12 +111,15 @@ Use for:
 
 Weekly planning is currently a backend-defined product layer in `server/src/index.js`, not a database table.
 
-Each week maps to one or more Namaste DSA `section` values and returns:
+Each week maps to curated Core 100 question IDs and returns:
 
 - Weekly commitment.
 - Frontend focus.
 - Easy/Medium/Hard progression notes.
-- Question rows from the mapped sections.
+- Day-by-day milestones for `DSA`, `JavaScript`, `React LLD`, `Frontend HLD`, and `Patterns`.
+- Source labels and concrete resource links for Namaste DSA, LeetCode, GreatFrontend, devtools.tech, and Patterns.dev.
+- Question rows from the mapped Core 100 IDs.
 - Progress counts from `question_progress`.
+- Milestone progress counts from `milestone_progress`.
 
-If weekly planning becomes user-editable, promote it into database tables.
+If weekly planning itself becomes user-editable, promote the milestone seed layer into database tables.

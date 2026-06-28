@@ -2,7 +2,7 @@
 
 Full-stack prep tracker for a senior frontend job switch plan.
 
-The primary workflow is the Weekly Plan: each week has a firm commitment, topic focus, and Easy/Medium/Hard progression. The DSA Bank is the complete reference set.
+The primary workflow is the Weekly Plan: each week has firm day-by-day commitments across a frontend-focused Core 100 DSA list, JavaScript coding, React LLD, frontend HLD, and Patterns.dev review. The DSA Bank keeps the full 243-item Namaste reference set.
 
 ## Stack
 
@@ -11,6 +11,7 @@ The primary workflow is the Weekly Plan: each week has a firm commitment, topic 
 - PostgreSQL schema and analytics views in `db/`
 - Namaste DSA seed data in `server/data/`
 - Optional LeetCode solved verification through `LEETCODE_USERNAME`
+- Weekly milestone progress for the 16-week interview plan
 
 ## AI Context
 

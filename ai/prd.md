@@ -6,7 +6,7 @@ Frontend Switch OS
 
 ## Objective
 
-Help a senior frontend engineer stay on track for a job switch within three months by combining DSA tracking, frontend interview preparation, daily study logs, and analytics.
+Help a senior frontend engineer stay on track for a job switch within four months by combining DSA tracking, frontend interview preparation, daily study logs, and analytics.
 
 ## Problem
 
@@ -15,8 +15,9 @@ The user has access to strong preparation resources but loses track over time. D
 ## Goals
 
 - Make DSA progress visible and easy to update.
-- Provide a structured 12-week preparation plan with firm weekly commitments.
-- Prevent question-bank overwhelm by making the weekly plan the primary workflow.
+- Provide a structured 16-week preparation plan with firm weekly and daily commitments.
+- Prevent question-bank overwhelm by making a frontend-focused Core 100 the primary weekly DSA workflow.
+- Track frontend interview milestones alongside DSA so GreatFrontend, devtools.tech, and Patterns.dev work does not drift.
 - Capture daily study effort with minimal friction.
 - Highlight revision items so weak problems are not forgotten.
 - Support analytics through Superset for deeper progress review.
@@ -32,8 +33,8 @@ The user has access to strong preparation resources but loses track over time. D
 ## Primary User Stories
 
 1. As a candidate, I can start from a weekly plan instead of a raw question bank.
-2. As a candidate, I can see each week's topic, commitment, frontend focus, and Easy/Medium/Hard progression.
-3. As a candidate, I can act on weekly questions directly from the plan.
+2. As a candidate, I can see each week's topic, commitment, frontend focus, daily milestones, and Easy/Medium/Hard progression.
+3. As a candidate, I can act on weekly Core 100 questions directly from the plan.
 4. As a candidate, I can view all Namaste DSA problems in one searchable list when I need reference mode.
 5. As a candidate, I can open both the NamasteDev lesson and the LeetCode problem when both links exist.
 6. As a candidate, I can mark a problem as `Solved` only when LeetCode verification confirms an accepted submission.
@@ -41,8 +42,10 @@ The user has access to strong preparation resources but loses track over time. D
 8. As a candidate, I can filter problems by pattern and status.
 9. As a candidate, I can log what I studied today and how many minutes I spent.
 10. As a candidate, I can see dashboard metrics for solved count, revision count, study minutes, and mocks.
-11. As a candidate, I can review a 12-week preparation roadmap.
+11. As a candidate, I can review a 16-week preparation roadmap.
 12. As a candidate, I can connect Superset to analyze progress by pattern and day.
+13. As a candidate, I can mark weekly JavaScript, React LLD, frontend HLD, and Patterns.dev milestones as `Done`, `Revise`, or `Todo`.
+14. As a candidate, I can filter the DSA Bank by `Core 100`, `Supplemental`, or `Course-only`.
 
 ## Success Metrics
 
@@ -58,7 +61,11 @@ The user has access to strong preparation resources but loses track over time. D
 
 - The Weekly Plan is the default first screen.
 - Each week has a topic theme, DSA commitment, frontend commitment, and Easy/Medium/Hard progression.
-- Weekly questions come from the seeded Namaste DSA sections.
+- Weekly DSA questions come from a curated frontend Core 100 inspired by GreatFrontend Blind 75, NeetCode 150, and the local Namaste/LeetCode mappings.
+- Each week has day-by-day milestones for `DSA`, `JavaScript`, `React LLD`, `Frontend HLD`, and `Patterns`.
+- Milestones are approximately two-hour study blocks and include source labels plus concrete links for Namaste DSA, LeetCode, GreatFrontend, devtools.tech, and Patterns.dev.
+- Milestone progress uses `Todo`, `Done`, and `Revise`; this is separate from LeetCode-verified DSA question `Solved`.
+- Weeks 14-16 are repair/mock/final-review weeks and may have no new DSA questions.
 - Questions should be staged to avoid jumping directly into hard problems.
 - The full DSA Bank remains available as a reference and search surface.
 
@@ -68,6 +75,7 @@ The user has access to strong preparation resources but loses track over time. D
 - Load the full question set by default.
 - Show title, section, pattern, difficulty, duration, NamasteDev link, and LeetCode link where available.
 - Filter by search text, pattern, and status.
+- Filter by priority: `Core 100`, `Supplemental`, or `Course-only`.
 - Update `Revise` and `Todo` through one-click actions.
 - Update `Solved` only after backend LeetCode verification passes.
 - Persist progress in PostgreSQL.
@@ -81,15 +89,16 @@ The user has access to strong preparation resources but loses track over time. D
 ### Dashboard
 
 - Show solved questions versus total questions.
-- Show revision queue count.
+- Show Core 100 solved count and Core 100 revision count.
 - Show total study minutes and sessions.
 - Show mock interview count.
+- Show weekly milestone completion count.
 - Show recent study logs.
 - Show top revision items.
 
 ### Roadmap
 
-- Show 12 weekly phases.
+- Show 16 weekly phases.
 - Each week includes theme and focus.
 
 ### Analytics

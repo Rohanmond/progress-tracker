@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { BarChart3, BookOpen, CalendarDays, CheckCircle2, ClipboardList, Database, ExternalLink, RefreshCcw, Search } from "lucide-react";
+import { BarChart3, BookOpen, CalendarDays, CheckCircle2, ClipboardList, Clock3, Database, ExternalLink, RefreshCcw, Search } from "lucide-react";
 import { api } from "./lib/api.js";
 
 const tabs = [
@@ -19,7 +19,7 @@ export default function App() {
   const [weeklyPlan, setWeeklyPlan] = useState([]);
   const [logs, setLogs] = useState([]);
   const [questions, setQuestions] = useState([]);
-  const [filters, setFilters] = useState({ search: "", pattern: "All", status: "All", limit: "500" });
+  const [filters, setFilters] = useState({ search: "", pattern: "All", status: "All", priority: "All", limit: "500" });
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -62,6 +62,19 @@ export default function App() {
       await api.updateQuestion(id, { status });
       await Promise.all([
         loadQuestions(),
+        api.metrics().then(setMetrics),
+        api.weeklyPlan().then((result) => setWeeklyPlan(result.weeks))
+      ]);
+    } catch (requestError) {
+      setError(requestError.message);
+    }
+  }
+
+  async function updateMilestone(id, status) {
+    setError("");
+    try {
+      await api.updateMilestone(id, { status });
+      await Promise.all([
         api.metrics().then(setMetrics),
         api.weeklyPlan().then((result) => setWeeklyPlan(result.weeks))
       ]);
@@ -123,7 +136,7 @@ export default function App() {
         <section className="sidebar-panel">
           <p className="label">Target</p>
           <h2>Senior Frontend</h2>
-          <p>Three-month switch plan with DSA tracking, mocks, and study analytics.</p>
+          <p>Four-month switch plan with DSA tracking, mocks, and study analytics.</p>
         </section>
       </aside>
 
@@ -142,7 +155,7 @@ export default function App() {
         {error ? <div className="banner">API connection issue: {error}</div> : null}
         {isLoading ? <div className="banner neutral">Loading tracker data...</div> : null}
 
-        {activeTab === "plan" ? <WeeklyPlan weeks={weeklyPlan} onUpdate={updateQuestion} /> : null}
+        {activeTab === "plan" ? <WeeklyPlan weeks={weeklyPlan} onMilestoneUpdate={updateMilestone} onUpdate={updateQuestion} /> : null}
         {activeTab === "dashboard" ? <Dashboard metrics={metrics} logs={logs} questions={questions} /> : null}
         {activeTab === "questions" ? (
           <QuestionBank
@@ -161,16 +174,17 @@ export default function App() {
 }
 
 function Dashboard({ metrics, logs, questions }) {
-  const solvedPercent = metrics?.total ? Math.round((metrics.solved / metrics.total) * 100) : 0;
+  const solvedPercent = metrics?.core_total ? Math.round((metrics.core_solved / metrics.core_total) * 100) : 0;
+  const milestonePercent = metrics?.milestone_total ? Math.round((metrics.milestone_done / metrics.milestone_total) * 100) : 0;
   const reviseQueue = questions.filter((question) => question.status === "Revise").slice(0, 5);
 
   return (
     <div className="view-stack">
       <section className="metrics-grid">
-        <Metric label="Solved" value={`${metrics?.solved || 0}/${metrics?.total || 0}`} helper={`${solvedPercent}% complete`} />
-        <Metric label="Revise" value={metrics?.revise || 0} helper="items needing another pass" />
+        <Metric label="Core DSA" value={`${metrics?.core_solved || 0}/${metrics?.core_total || 0}`} helper={`${solvedPercent}% of Core 100`} />
+        <Metric label="Revise" value={metrics?.core_revise || 0} helper={`${metrics?.revise || 0} across full bank`} />
         <Metric label="Study" value={`${metrics?.minutes || 0}m`} helper={`${metrics?.sessions || 0} logged sessions`} />
-        <Metric label="Mocks" value={metrics?.mocks || 0} helper="interview simulations" />
+        <Metric label="Plan" value={`${metrics?.milestone_done || 0}/${metrics?.milestone_total || 0}`} helper={`${milestonePercent}% milestones done`} />
       </section>
 
       <section className="split">
@@ -260,6 +274,15 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
               <option>Revise</option>
             </select>
           </label>
+          <label>
+            Priority
+            <select onChange={(event) => onFilter({ ...filters, priority: event.target.value })} value={filters.priority}>
+              <option>All</option>
+              <option>Core 100</option>
+              <option>Supplemental</option>
+              <option>Course-only</option>
+            </select>
+          </label>
         </div>
       </section>
 
@@ -270,6 +293,7 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
               <strong>{question.source_order}. {question.title}</strong>
               <p>{question.section} · {question.pattern} · {question.difficulty} · {question.duration || "self-paced"}</p>
               <div className="resource-links">
+                <span className={`priority-chip ${question.dsa_priority?.toLowerCase().replaceAll(" ", "-")}`}>{question.dsa_priority}</span>
                 <a href={question.namaste_url || question.url} rel="noreferrer" target="_blank">
                   <ExternalLink size={14} />
                   NamasteDev
@@ -298,7 +322,7 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
   );
 }
 
-function WeeklyPlan({ weeks, onUpdate }) {
+function WeeklyPlan({ weeks, onMilestoneUpdate, onUpdate }) {
   const [selectedWeek, setSelectedWeek] = useState(1);
   const currentWeek = weeks.find((week) => week.week === selectedWeek) || weeks[0];
   const grouped = useMemo(() => {
@@ -308,12 +332,35 @@ function WeeklyPlan({ weeks, onUpdate }) {
       return { ...groups, [key]: [...(groups[key] || []), question] };
     }, {});
   }, [currentWeek]);
+  const milestonesByDay = useMemo(() => {
+    if (!currentWeek) return [];
+    const days = currentWeek.milestones.reduce((groups, milestone) => {
+      const existing = groups[milestone.day_index] || {
+        dayIndex: milestone.day_index,
+        dayLabel: milestone.day_label,
+        minutes: 0,
+        milestones: []
+      };
+      return {
+        ...groups,
+        [milestone.day_index]: {
+          ...existing,
+          minutes: existing.minutes + milestone.estimated_minutes,
+          milestones: [...existing.milestones, milestone]
+        }
+      };
+    }, {});
+    return Object.values(days).sort((a, b) => a.dayIndex - b.dayIndex);
+  }, [currentWeek]);
 
   if (!currentWeek) {
     return <div className="banner neutral">Loading weekly plan...</div>;
   }
 
   const progressPercent = currentWeek.total ? Math.round((currentWeek.solved / currentWeek.total) * 100) : 0;
+  const milestonePercent = currentWeek.milestone_total
+    ? Math.round((currentWeek.milestone_done / currentWeek.milestone_total) * 100)
+    : 0;
 
   return (
     <div className="view-stack">
@@ -338,9 +385,53 @@ function WeeklyPlan({ weeks, onUpdate }) {
           <p className="quiet">Frontend: {currentWeek.frontend}</p>
         </div>
         <div className="commitment-score">
-          <strong>{currentWeek.solved}/{currentWeek.total}</strong>
-          <span>{progressPercent}% solved · {currentWeek.revise} revise</span>
+          <strong>{currentWeek.milestone_done}/{currentWeek.milestone_total}</strong>
+          <span>{milestonePercent}% weekly milestones · {currentWeek.milestone_revise} revise</span>
+          <small>{currentWeek.solved}/{currentWeek.total} DSA solved · {progressPercent}%</small>
         </div>
+      </section>
+
+      <section className="day-plan-grid">
+        {milestonesByDay.map((day) => (
+          <article className="panel day-plan" key={day.dayIndex}>
+            <div className="day-heading">
+              <div>
+                <p className="label">{day.dayLabel}</p>
+                <h3>{day.dayIndex === 7 ? "Buffer and review" : "Focused commitment"}</h3>
+              </div>
+              <span className="time-chip">
+                <Clock3 size={15} />
+                {day.minutes}m
+              </span>
+            </div>
+
+            <div className="milestone-list">
+              {day.milestones.map((milestone) => (
+                <div className="milestone" key={milestone.id}>
+                  <div className="milestone-copy">
+                    <span className={`track-chip ${milestone.track.toLowerCase().replaceAll(" ", "-")}`}>{milestone.track}</span>
+                    <strong>{milestone.title}</strong>
+                    <span>{milestone.difficulty} · {milestone.source}</span>
+                    <div className="resource-links compact-links">
+                      {(milestone.links?.length ? milestone.links : [{ label: "Open source", url: milestone.source_url }]).map((link) => (
+                        <a href={link.url} key={`${milestone.id}-${link.label}-${link.url}`} rel="noreferrer" target="_blank">
+                          <ExternalLink size={14} />
+                          {link.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="mini-actions">
+                    <span className={`pill ${milestone.status.toLowerCase()}`}>{milestone.status}</span>
+                    <button onClick={() => onMilestoneUpdate(milestone.id, "Done")} type="button">Done</button>
+                    <button className="warning" onClick={() => onMilestoneUpdate(milestone.id, "Revise")} type="button">Revise</button>
+                    <button className="muted" onClick={() => onMilestoneUpdate(milestone.id, "Todo")} type="button">Todo</button>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </article>
+        ))}
       </section>
 
       <section className="level-grid">
@@ -353,7 +444,7 @@ function WeeklyPlan({ weeks, onUpdate }) {
                 <div className="mini-question" key={question.id}>
                   <div>
                     <strong>{question.title}</strong>
-                    <span>{question.pattern} · {question.difficulty}</span>
+                    <span>{question.pattern} · {question.difficulty} · {question.dsa_priority}</span>
                   </div>
                   <div className="mini-actions">
                     <span className={`pill ${question.status.toLowerCase()}`}>{question.status}</span>

@@ -279,6 +279,121 @@ a {
   font-weight: 850;
 }
 
+.commitment-score small {
+  color: #31514a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.day-plan-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.day-plan {
+  align-content: start;
+  display: grid;
+  gap: 14px;
+}
+
+.day-heading {
+  align-items: start;
+  display: flex;
+  gap: 12px;
+  justify-content: space-between;
+}
+
+.day-heading h3 {
+  margin: 0;
+}
+
+.time-chip {
+  align-items: center;
+  background: #eef2ff;
+  border-radius: 999px;
+  color: #3730a3;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-size: 12px;
+  font-weight: 900;
+  gap: 5px;
+  min-height: 30px;
+  padding: 0 10px;
+}
+
+.milestone-list {
+  display: grid;
+  gap: 10px;
+}
+
+.milestone {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 12px;
+  padding: 12px;
+}
+
+.milestone-copy {
+  display: grid;
+  gap: 6px;
+}
+
+.milestone-copy strong {
+  line-height: 1.35;
+}
+
+.milestone-copy span:not(.track-chip) {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.milestone-copy a {
+  align-items: center;
+  color: var(--accent-dark);
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 850;
+  gap: 5px;
+}
+
+.track-chip {
+  border-radius: 999px;
+  display: inline-flex;
+  font-size: 11px;
+  font-weight: 950;
+  justify-self: start;
+  min-height: 24px;
+  padding: 5px 9px;
+  text-transform: uppercase;
+}
+
+.track-chip.dsa {
+  background: #e6f4f1;
+  color: #075e55;
+}
+
+.track-chip.javascript {
+  background: #fef9c3;
+  color: #854d0e;
+}
+
+.track-chip.react-lld {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.track-chip.frontend-hld {
+  background: #ede9fe;
+  color: #5b21b6;
+}
+
+.track-chip.patterns {
+  background: #fce7f3;
+  color: #9d174d;
+}
+
 .level-grid {
   display: grid;
   gap: 14px;
@@ -356,7 +471,7 @@ a {
 .log-form {
   display: grid;
   gap: 14px;
-  grid-template-columns: minmax(240px, 1fr) minmax(160px, 0.3fr) minmax(160px, 0.3fr);
+  grid-template-columns: minmax(240px, 1fr) repeat(3, minmax(150px, 0.25fr));
   align-items: end;
 }
 
@@ -440,6 +555,41 @@ textarea {
   color: var(--accent-dark);
 }
 
+.priority-chip {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+}
+
+.priority-chip.core-100 {
+  background: #ecfdf5;
+  border-color: #a7f3d0;
+  color: #047857;
+}
+
+.priority-chip.supplemental {
+  background: #eff6ff;
+  border-color: #bfdbfe;
+  color: #1d4ed8;
+}
+
+.priority-chip.course-only {
+  background: #f8fafc;
+  border-color: #cbd5e1;
+  color: #475569;
+}
+
+.compact-links {
+  gap: 6px;
+  margin-top: 2px;
+}
+
+.compact-links a {
+  border-radius: 8px;
+  font-size: 11px;
+  min-height: 26px;
+  padding: 0 8px;
+}
+
 .status-actions {
   align-items: center;
   display: flex;
@@ -473,6 +623,11 @@ textarea {
   color: #334155;
 }
 
+.pill.done {
+  background: #dcfce7;
+  color: #166534;
+}
+
 .verified {
   color: var(--accent-dark);
   font-size: 12px;
@@ -504,6 +659,7 @@ textarea {
   .toolbar,
   .log-form,
   .roadmap,
+  .day-plan-grid,
   .level-grid,
   .commitment-panel {
     grid-template-columns: 1fr;

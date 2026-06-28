@@ -24,7 +24,7 @@ Response:
 
 ### `GET /api/roadmap`
 
-Returns 12-week roadmap.
+Returns 16-week roadmap.
 
 Response:
 
@@ -44,7 +44,7 @@ Response:
 
 ### `GET /api/weekly-plan`
 
-Returns the commitment-first 12-week plan. Each week contains topic metadata, commitment text, staged Easy/Medium/Hard targets, progress counts, and linked question rows for that week.
+Returns the commitment-first 16-week plan. Each week contains topic metadata, commitment text, daily milestones, staged Easy/Medium/Hard DSA targets, progress counts, and linked Core 100 question rows for that week.
 
 Response:
 
@@ -53,12 +53,40 @@ Response:
   "weeks": [
     {
       "week": 1,
-      "theme": "Arrays foundation",
-      "commitment": "15 DSA touches...",
+      "theme": "Arrays and hashing",
+      "commitment": "8 Core 100 items...",
       "frontend": "Revise JS execution model...",
       "total": 9,
       "solved": 0,
       "revise": 0,
+      "milestone_total": 7,
+      "milestone_done": 0,
+      "milestone_revise": 0,
+      "milestones": [
+        {
+          "id": "v2-w1-d2-javascript-2",
+          "week": 1,
+          "day_index": 2,
+          "day_label": "Day 2",
+          "track": "JavaScript",
+          "title": "Closures, this, and event loop",
+          "source": "GreatFrontend + devtools.tech",
+          "source_url": "https://www.greatfrontend.com/questions/formats/javascript-functions",
+          "links": [
+            {
+              "label": "GreatFrontend JS",
+              "url": "https://www.greatfrontend.com/questions/formats/javascript-functions"
+            },
+            {
+              "label": "devtools JavaScript",
+              "url": "https://devtools.tech/questions/all?language=javascript"
+            }
+          ],
+          "estimated_minutes": 120,
+          "difficulty": "Medium",
+          "status": "Todo"
+        }
+      ],
       "levels": [
         {
           "name": "Easy",
@@ -67,14 +95,43 @@ Response:
       ],
       "questions": [
         {
-          "id": "namaste-reverse-string",
-          "title": "Reverse String",
+          "id": "namaste-best-time-to-buy-and-sell-stocks",
+          "title": "Best Time to Buy and Sell Stocks",
           "plan_stage": "Easy",
+          "is_core_100": true,
+          "dsa_priority": "Core 100",
           "status": "Todo"
         }
       ]
     }
   ]
+}
+```
+
+### `PATCH /api/milestones/:id/status`
+
+Request:
+
+```json
+{
+  "status": "Done",
+  "notes": ""
+}
+```
+
+Accepted statuses are `Todo`, `Done`, and `Revise`.
+
+Response:
+
+```json
+{
+  "milestone": {
+    "id": "v2-w1-d2-javascript-2",
+    "milestone_id": "v2-w1-d2-javascript-2",
+    "track": "JavaScript",
+    "status": "Done",
+    "completed_at": "2026-06-29T00:00:00.000Z"
+  }
 }
 ```
 
@@ -87,6 +144,7 @@ Query parameters:
 - `search`: optional text search.
 - `pattern`: default `All`.
 - `status`: default `All`; accepted values are `All`, `Todo`, `Solved`, `Revise`.
+- `priority`: default `All`; accepted values are `All`, `Core 100`, `Supplemental`, `Course-only`.
 - `limit`: default `500`, max `500`.
 
 Response:
@@ -104,6 +162,9 @@ Response:
       "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-duplicates",
       "leetcode_slug": "remove-duplicates-from-sorted-array",
       "leetcode_url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
+      "is_core_100": false,
+      "dsa_priority": "Supplemental",
+      "dsa_plan": "Supplemental",
       "status": "Todo"
     }
   ]
@@ -188,8 +249,14 @@ Response:
   "total": 243,
   "solved": 0,
   "revise": 0,
+  "core_total": 100,
+  "core_solved": 0,
+  "core_revise": 0,
   "minutes": 0,
   "sessions": 0,
-  "mocks": 0
+  "mocks": 0,
+  "milestone_total": 112,
+  "milestone_done": 0,
+  "milestone_revise": 0
 }
 ```

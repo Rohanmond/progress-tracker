@@ -27,6 +27,11 @@ export const api = {
       method: "PATCH",
       body: JSON.stringify(payload)
     }),
+  updateMilestone: (id, payload) =>
+    request(`/milestones/${id}/status`, {
+      method: "PATCH",
+      body: JSON.stringify(payload)
+    }),
   logs: () => request("/logs"),
   addLog: (payload) =>
     request("/logs", {
