@@ -51,6 +51,7 @@ Required environment variables:
 
 - `DATABASE_URL`: provided by Render database.
 - `CLIENT_ORIGIN`: Vercel frontend origin.
+- `LEETCODE_USERNAME`: optional but required if solved status should be verified against LeetCode.
 - `DATABASE_SSL=true` may be required depending on Render connection mode.
 
 Current Render start command runs:
@@ -79,6 +80,7 @@ See [../docs/superset.md](../docs/superset.md).
 - `VITE_API_URL` must include `/api`.
 - Render Postgres may require SSL; set `DATABASE_SSL=true` if connection fails in production.
 - The app is currently single-user; do not expose it as a shared multi-user app without auth.
+- LeetCode solved verification currently uses public accepted-submission data for `LEETCODE_USERNAME`; it does not store LeetCode credentials.
 
 ## CI/CD
 

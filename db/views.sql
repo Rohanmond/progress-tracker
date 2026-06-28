@@ -1,3 +1,7 @@
+drop view if exists superset_pattern_summary;
+drop view if exists superset_question_progress;
+drop view if exists superset_daily_study;
+
 create or replace view superset_question_progress as
 select
   q.id,
@@ -8,7 +12,11 @@ select
   q.pattern,
   q.difficulty,
   q.duration,
+  q.namaste_url,
+  q.leetcode_url,
+  q.leetcode_slug,
   coalesce(qp.status, 'Todo') as status,
+  qp.leetcode_verified_at,
   qp.updated_at as status_updated_at
 from questions q
 left join question_progress qp on qp.question_id = q.id;

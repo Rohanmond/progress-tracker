@@ -16,7 +16,10 @@ Columns:
 - `pattern`: normalized practice pattern, e.g. `Arrays`, `Graphs`.
 - `difficulty`: `Easy`, `Medium`, or `Hard`.
 - `duration`: course video duration when available.
-- `url`: Namaste DSA lesson URL.
+- `url`: legacy Namaste DSA lesson URL.
+- `namaste_url`: NamasteDev lesson URL.
+- `leetcode_slug`: LeetCode problem title slug when mapped.
+- `leetcode_url`: LeetCode problem URL when mapped.
 - `description`: short description from public or derived source.
 - `created_at`, `updated_at`: timestamps.
 
@@ -29,6 +32,8 @@ Columns:
 - `question_id`: references `questions(id)`.
 - `status`: `Todo`, `Solved`, or `Revise`.
 - `notes`: optional notes.
+- `leetcode_verified_at`: timestamp when `Solved` was verified against LeetCode.
+- `leetcode_verification_note`: verification detail, including the LeetCode username used.
 - `updated_at`: timestamp of latest status update.
 
 ### `study_logs`
@@ -51,6 +56,8 @@ Path: `server/data/namaste-dsa-questions.json`
 Current count: 243 items.
 
 The seed script is idempotent. Running `npm run seed` upserts questions, creates tables, and recreates analytics views.
+
+Run `npm run enrich:leetcode` after editing the Namaste seed if new titles need LeetCode mappings. The current curated mapping links 175 items.
 
 ## Superset Views
 

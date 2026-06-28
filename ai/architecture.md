@@ -69,10 +69,11 @@ Important files:
 1. `npm run seed` creates tables and inserts Namaste DSA questions.
 2. React requests `/api/questions`.
 3. Express joins `questions` with `question_progress`.
-4. User marks a question `Solved`, `Revise`, or `Todo`.
-5. Express upserts into `question_progress`.
-6. Dashboard calls `/api/metrics` to show updated totals.
-7. Superset reads analytics views from the same Postgres database.
+4. User opens NamasteDev or LeetCode links from the question card.
+5. User marks a question `Revise` or `Todo`; Express upserts directly into `question_progress`.
+6. User marks a question `Solved`; Express first verifies accepted LeetCode submissions for `LEETCODE_USERNAME` and the question `leetcode_slug`.
+7. Dashboard calls `/api/metrics` to show updated totals.
+8. Superset reads analytics views from the same Postgres database.
 
 ## Deployment Shape
 
@@ -85,4 +86,5 @@ Important files:
 - PostgreSQL is the source of truth; no browser `localStorage` for durable progress.
 - Seed data is JSON in the backend to keep the client small and database-first.
 - Superset is supported through SQL views rather than app-specific analytics code.
+- `Solved` is verification-gated for LeetCode-linked items instead of being a manual trust toggle.
 - The app is currently single-user by design. Multi-user auth is future work.

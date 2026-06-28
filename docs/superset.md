@@ -11,6 +11,8 @@ Useful datasets:
 Suggested charts:
 
 - Big number: solved questions
+- Big number: LeetCode verified solved questions
 - Bar chart: solved percent by pattern
 - Table: revise queue by pattern and title
+- Table: questions missing LeetCode links
 - Time series bar: study minutes by day and focus

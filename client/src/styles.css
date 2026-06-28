@@ -304,6 +304,33 @@ textarea {
   margin: 5px 0 0;
 }
 
+.resource-links {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.resource-links a,
+.resource-links span {
+  align-items: center;
+  background: #f1f5f9;
+  border-radius: 999px;
+  color: #334155;
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 850;
+  gap: 5px;
+  min-height: 28px;
+  padding: 0 10px;
+}
+
+.resource-links a:first-child {
+  background: #e6f4f1;
+  color: var(--accent-dark);
+}
+
 .status-actions {
   align-items: center;
   display: flex;
@@ -335,6 +362,12 @@ textarea {
 .pill.todo {
   background: #f1f5f9;
   color: #334155;
+}
+
+.verified {
+  color: var(--accent-dark);
+  font-size: 12px;
+  font-weight: 850;
 }
 
 .wide {

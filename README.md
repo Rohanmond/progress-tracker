@@ -8,6 +8,7 @@ Full-stack prep tracker for a senior frontend job switch plan.
 - Node + Express backend in `server/`
 - PostgreSQL schema and analytics views in `db/`
 - Namaste DSA seed data in `server/data/`
+- Optional LeetCode solved verification through `LEETCODE_USERNAME`
 
 ## AI Context
 
@@ -35,6 +36,8 @@ npm run dev
 ```
 
 Set `VITE_API_URL=http://localhost:8080/api` for local frontend API calls.
+
+Set `LEETCODE_USERNAME` in `server/.env` to require LeetCode verification before a linked DSA item can be marked `Solved`.
 
 ## Deploy
 

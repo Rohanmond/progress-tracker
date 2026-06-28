@@ -52,9 +52,10 @@ npm run dev:api
 
 1. Add seed data under `server/data/`.
 2. Update `server/src/seed.js`.
-3. Add or adjust schema only if needed.
-4. Update client filters and labels.
-5. Update `ai/data-model.md` and `ai/prd.md`.
+3. Run `npm run enrich:leetcode` if the resource maps to LeetCode.
+4. Add or adjust schema only if needed.
+5. Update client filters and labels.
+6. Update `ai/data-model.md` and `ai/prd.md`.
 
 ### Adding a new metric
 

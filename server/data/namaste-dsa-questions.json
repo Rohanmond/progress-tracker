@@ -9,7 +9,10 @@
     "difficulty": "Easy",
     "duration": "45m 5s",
     "url": "https://namastedev.com/learn/namaste-dsa/remove-duplicates",
-    "description": "Remove duplicate elements from a sorted array."
+    "description": "Remove duplicate elements from a sorted array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-duplicates",
+    "leetcode_slug": "remove-duplicates-from-sorted-array",
+    "leetcode_url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/"
   },
   {
     "id": "namaste-remove-element",
@@ -21,7 +24,10 @@
     "difficulty": "Easy",
     "duration": "22m 46s",
     "url": "https://namastedev.com/learn/namaste-dsa/remove-element",
-    "description": "Remove specific elements from an array."
+    "description": "Remove specific elements from an array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-element",
+    "leetcode_slug": "remove-element",
+    "leetcode_url": "https://leetcode.com/problems/remove-element/"
   },
   {
     "id": "namaste-reverse-string",
@@ -33,7 +39,10 @@
     "difficulty": "Easy",
     "duration": "26m 45s",
     "url": "https://namastedev.com/learn/namaste-dsa/reverse-string",
-    "description": "Reverse the characters of a string."
+    "description": "Reverse the characters of a string.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/reverse-string",
+    "leetcode_slug": "reverse-string",
+    "leetcode_url": "https://leetcode.com/problems/reverse-string/"
   },
   {
     "id": "namaste-best-time-to-buy-and-sell-stocks",
@@ -45,7 +54,10 @@
     "difficulty": "Easy",
     "duration": "28m 16s",
     "url": "https://namastedev.com/learn/namaste-dsa/best-time-to-buy-and-sell-stocks",
-    "description": "Maximize profit from stock prices using smart strategy."
+    "description": "Maximize profit from stock prices using smart strategy.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/best-time-to-buy-and-sell-stocks",
+    "leetcode_slug": "best-time-to-buy-and-sell-stock",
+    "leetcode_url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock/"
   },
   {
     "id": "namaste-merge-sorted-arrays",
@@ -57,7 +69,10 @@
     "difficulty": "Easy",
     "duration": "41m 33s",
     "url": "https://namastedev.com/learn/namaste-dsa/merge-sorted-arrays",
-    "description": "Merge two sorted arrays into one sorted array."
+    "description": "Merge two sorted arrays into one sorted array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/merge-sorted-arrays",
+    "leetcode_slug": "merge-sorted-array",
+    "leetcode_url": "https://leetcode.com/problems/merge-sorted-array/"
   },
   {
     "id": "namaste-move-zeros",
@@ -69,7 +84,10 @@
     "difficulty": "Easy",
     "duration": "26m 31s",
     "url": "https://namastedev.com/learn/namaste-dsa/move-zeros",
-    "description": "Move all zeros to the end of the array without changing order."
+    "description": "Move all zeros to the end of the array without changing order.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/move-zeros",
+    "leetcode_slug": "move-zeroes",
+    "leetcode_url": "https://leetcode.com/problems/move-zeroes/"
   },
   {
     "id": "namaste-max-consecutive-ones",
@@ -81,7 +99,10 @@
     "difficulty": "Easy",
     "duration": "16m 29s",
     "url": "https://namastedev.com/learn/namaste-dsa/max-consecutive-ones",
-    "description": "Find the maximum streak of 1s in a binary array."
+    "description": "Find the maximum streak of 1s in a binary array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/max-consecutive-ones",
+    "leetcode_slug": "max-consecutive-ones",
+    "leetcode_url": "https://leetcode.com/problems/max-consecutive-ones/"
   },
   {
     "id": "namaste-missing-number",
@@ -93,7 +114,10 @@
     "difficulty": "Easy",
     "duration": "16m 55s",
     "url": "https://namastedev.com/learn/namaste-dsa/missing-number",
-    "description": "Find the missing number in a sequence from 1 to N."
+    "description": "Find the missing number in a sequence from 1 to N.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/missing-number",
+    "leetcode_slug": "missing-number",
+    "leetcode_url": "https://leetcode.com/problems/missing-number/"
   },
   {
     "id": "namaste-single-number",
@@ -105,7 +129,10 @@
     "difficulty": "Easy",
     "duration": "19m 22s",
     "url": "https://namastedev.com/learn/namaste-dsa/single-number",
-    "description": "Find the unique element in an array where all others are repeated."
+    "description": "Find the unique element in an array where all others are repeated.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/single-number",
+    "leetcode_slug": "single-number",
+    "leetcode_url": "https://leetcode.com/problems/single-number/"
   },
   {
     "id": "namaste-recursion-101",
@@ -117,7 +144,10 @@
     "difficulty": "Easy",
     "duration": "1h 10m 13s",
     "url": "https://namastedev.com/learn/namaste-dsa/recursion-101",
-    "description": "Recursion - Easy/Medium lesson from Namaste DSA."
+    "description": "Recursion - Easy/Medium lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/recursion-101",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-sum-of-first-n-numbers",
@@ -129,7 +159,10 @@
     "difficulty": "Easy",
     "duration": "37m 16s",
     "url": "https://namastedev.com/learn/namaste-dsa/sum-of-first-n-numbers",
-    "description": "Calculate the sum of the first n natural numbers using recursion."
+    "description": "Calculate the sum of the first n natural numbers using recursion.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/sum-of-first-n-numbers",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-sum-of-all-numbers-in-array",
@@ -141,7 +174,10 @@
     "difficulty": "Easy",
     "duration": "",
     "url": "https://namastedev.com/learn/namaste-dsa/sum-of-all-numbers-in-array",
-    "description": "Find the sum of all elements in an array using simple logic."
+    "description": "Find the sum of all elements in an array using simple logic.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/sum-of-all-numbers-in-array",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-factorial-of-n",
@@ -153,7 +189,10 @@
     "difficulty": "Easy",
     "duration": "8m 57s",
     "url": "https://namastedev.com/learn/namaste-dsa/factorial-of-n",
-    "description": "Learn how to calculate factorials using recursion."
+    "description": "Learn how to calculate factorials using recursion.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/factorial-of-n",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-power-of-two",
@@ -165,7 +204,10 @@
     "difficulty": "Easy",
     "duration": "9m 43s",
     "url": "https://namastedev.com/learn/namaste-dsa/power-of-two",
-    "description": "Solve Power of Two problem with recursion and logic."
+    "description": "Solve Power of Two problem with recursion and logic.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/power-of-two",
+    "leetcode_slug": "power-of-two",
+    "leetcode_url": "https://leetcode.com/problems/power-of-two/"
   },
   {
     "id": "namaste-recursion-masterclass",
@@ -177,7 +219,10 @@
     "difficulty": "Easy",
     "duration": "1h 3m 35s",
     "url": "https://namastedev.com/learn/namaste-dsa/recursion-masterclass",
-    "description": "Recursion - Easy/Medium lesson from Namaste DSA."
+    "description": "Recursion - Easy/Medium lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/recursion-masterclass",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-linear-search",
@@ -189,7 +234,10 @@
     "difficulty": "Easy",
     "duration": "8m 8s",
     "url": "https://namastedev.com/learn/namaste-dsa/linear-search",
-    "description": "Find an element in an array using linear search."
+    "description": "Find an element in an array using linear search.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/linear-search",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-binary-search",
@@ -201,7 +249,10 @@
     "difficulty": "Easy",
     "duration": "39m 24s",
     "url": "https://namastedev.com/learn/namaste-dsa/binary-search",
-    "description": "Find an element in a sorted array using binary search."
+    "description": "Find an element in a sorted array using binary search.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/binary-search",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-bubble-sort",
@@ -213,7 +264,10 @@
     "difficulty": "Easy",
     "duration": "48m 22s",
     "url": "https://namastedev.com/learn/namaste-dsa/bubble-sort",
-    "description": "Sort an array using the bubble sort algorithm."
+    "description": "Sort an array using the bubble sort algorithm.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/bubble-sort",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-selection-sort",
@@ -225,7 +279,10 @@
     "difficulty": "Easy",
     "duration": "19m 43s",
     "url": "https://namastedev.com/learn/namaste-dsa/selection-sort",
-    "description": "Sort an array using the selection sort algorithm."
+    "description": "Sort an array using the selection sort algorithm.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/selection-sort",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-insertion-sort",
@@ -237,7 +294,10 @@
     "difficulty": "Easy",
     "duration": "34m 22s",
     "url": "https://namastedev.com/learn/namaste-dsa/insertion-sort",
-    "description": "Sort an array using the insertion sort algorithm."
+    "description": "Sort an array using the insertion sort algorithm.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/insertion-sort",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-merge-sort",
@@ -249,7 +309,10 @@
     "difficulty": "Easy",
     "duration": "1h 34m 19s",
     "url": "https://namastedev.com/learn/namaste-dsa/merge-sort",
-    "description": "Learn how Merge Sort works using recursion and divide & conquer."
+    "description": "Learn how Merge Sort works using recursion and divide & conquer.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/merge-sort",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-introduction-to-linked-list",
@@ -261,7 +324,10 @@
     "difficulty": "Easy",
     "duration": "27m 56s",
     "url": "https://namastedev.com/learn/namaste-dsa/introduction-to-linked-list",
-    "description": "Linked List - Easy/Medium lesson from Namaste DSA."
+    "description": "Linked List - Easy/Medium lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/introduction-to-linked-list",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-design-linked-list",
@@ -273,7 +339,10 @@
     "difficulty": "Easy",
     "duration": "21m 6s",
     "url": "https://namastedev.com/learn/namaste-dsa/design-linked-list",
-    "description": "Learn how to design and implement your own Linked List."
+    "description": "Learn how to design and implement your own Linked List.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/design-linked-list",
+    "leetcode_slug": "design-linked-list",
+    "leetcode_url": "https://leetcode.com/problems/design-linked-list/"
   },
   {
     "id": "namaste-adding-nodes-to-linked-list",
@@ -285,7 +354,10 @@
     "difficulty": "Easy",
     "duration": "46m 30s",
     "url": "https://namastedev.com/learn/namaste-dsa/adding-nodes-to-linked-list",
-    "description": "Learn to insert nodes into a Linked List at various positions."
+    "description": "Learn to insert nodes into a Linked List at various positions.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/adding-nodes-to-linked-list",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-deleting-nodes-in-linked-list",
@@ -297,7 +369,10 @@
     "difficulty": "Easy",
     "duration": "20m 19s",
     "url": "https://namastedev.com/learn/namaste-dsa/deleting-nodes-in-linked-list",
-    "description": "Understand node deletion in a Linked List."
+    "description": "Understand node deletion in a Linked List.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/deleting-nodes-in-linked-list",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-middle-of-linked-list",
@@ -309,7 +384,10 @@
     "difficulty": "Easy",
     "duration": "21m 19s",
     "url": "https://namastedev.com/learn/namaste-dsa/middle-of-linked-list",
-    "description": "Find the middle element in a Linked List efficiently."
+    "description": "Find the middle element in a Linked List efficiently.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/middle-of-linked-list",
+    "leetcode_slug": "middle-of-the-linked-list",
+    "leetcode_url": "https://leetcode.com/problems/middle-of-the-linked-list/"
   },
   {
     "id": "namaste-reverse-linked-list",
@@ -321,7 +399,10 @@
     "difficulty": "Easy",
     "duration": "24m 31s",
     "url": "https://namastedev.com/learn/namaste-dsa/reverse-linked-list",
-    "description": "Reverse a Linked List in-place using iteration."
+    "description": "Reverse a Linked List in-place using iteration.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/reverse-linked-list",
+    "leetcode_slug": "reverse-linked-list",
+    "leetcode_url": "https://leetcode.com/problems/reverse-linked-list/"
   },
   {
     "id": "namaste-linked-list-cycle-hash-table",
@@ -333,7 +414,10 @@
     "difficulty": "Easy",
     "duration": "26m 30s",
     "url": "https://namastedev.com/learn/namaste-dsa/linked-list-cycle-hash-table",
-    "description": "Detect cycles in a Linked List using extra space."
+    "description": "Detect cycles in a Linked List using extra space.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/linked-list-cycle-hash-table",
+    "leetcode_slug": "linked-list-cycle",
+    "leetcode_url": "https://leetcode.com/problems/linked-list-cycle/"
   },
   {
     "id": "namaste-linked-list-cycle-floyds-algorithm",
@@ -345,7 +429,10 @@
     "difficulty": "Easy",
     "duration": "29m 32s",
     "url": "https://namastedev.com/learn/namaste-dsa/linked-list-cycle-floyds-algorithm",
-    "description": "Detect cycles with Floyd’s Tortoise & Hare algorithm."
+    "description": "Detect cycles with Floyd’s Tortoise & Hare algorithm.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/linked-list-cycle-floyds-algorithm",
+    "leetcode_slug": "linked-list-cycle",
+    "leetcode_url": "https://leetcode.com/problems/linked-list-cycle/"
   },
   {
     "id": "namaste-palindrome-linked-list",
@@ -357,7 +444,10 @@
     "difficulty": "Easy",
     "duration": "45m 31s",
     "url": "https://namastedev.com/learn/namaste-dsa/palindrome-linked-list",
-    "description": "Check if a Linked List is a palindrome."
+    "description": "Check if a Linked List is a palindrome.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/palindrome-linked-list",
+    "leetcode_slug": "palindrome-linked-list",
+    "leetcode_url": "https://leetcode.com/problems/palindrome-linked-list/"
   },
   {
     "id": "namaste-intersection-of-two-linked-lists",
@@ -369,7 +459,10 @@
     "difficulty": "Easy",
     "duration": "22m 7s",
     "url": "https://namastedev.com/learn/namaste-dsa/intersection-of-two-linked-lists",
-    "description": "Find the intersection node of two Linked Lists."
+    "description": "Find the intersection node of two Linked Lists.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/intersection-of-two-linked-lists",
+    "leetcode_slug": "intersection-of-two-linked-lists",
+    "leetcode_url": "https://leetcode.com/problems/intersection-of-two-linked-lists/"
   },
   {
     "id": "namaste-remove-linked-list-elements",
@@ -381,7 +474,10 @@
     "difficulty": "Easy",
     "duration": "20m 34s",
     "url": "https://namastedev.com/learn/namaste-dsa/remove-linked-list-elements",
-    "description": "Remove nodes with a specific value from a Linked List."
+    "description": "Remove nodes with a specific value from a Linked List.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-linked-list-elements",
+    "leetcode_slug": "remove-linked-list-elements",
+    "leetcode_url": "https://leetcode.com/problems/remove-linked-list-elements/"
   },
   {
     "id": "namaste-remove-nth-node-from-end-of-list-two-pass",
@@ -393,7 +489,10 @@
     "difficulty": "Easy",
     "duration": "21m 10s",
     "url": "https://namastedev.com/learn/namaste-dsa/remove-nth-node-from-end-of-list-two-pass",
-    "description": "Remove the nth node from the end using a two-pass method."
+    "description": "Remove the nth node from the end using a two-pass method.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-nth-node-from-end-of-list-two-pass",
+    "leetcode_slug": "remove-nth-node-from-end-of-list",
+    "leetcode_url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
   },
   {
     "id": "namaste-remove-nth-node-from-end-one-pass",
@@ -405,7 +504,10 @@
     "difficulty": "Easy",
     "duration": "28m 28s",
     "url": "https://namastedev.com/learn/namaste-dsa/remove-nth-node-from-end-one-pass",
-    "description": "Remove the nth node from the end in one pass using two pointers."
+    "description": "Remove the nth node from the end in one pass using two pointers.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-nth-node-from-end-one-pass",
+    "leetcode_slug": "remove-nth-node-from-end-of-list",
+    "leetcode_url": "https://leetcode.com/problems/remove-nth-node-from-end-of-list/"
   },
   {
     "id": "namaste-remove-duplicates-from-sorted-list",
@@ -417,7 +519,10 @@
     "difficulty": "Easy",
     "duration": "15m 42s",
     "url": "https://namastedev.com/learn/namaste-dsa/remove-duplicates-from-sorted-list",
-    "description": "Remove consecutive duplicates from a sorted Linked List."
+    "description": "Remove consecutive duplicates from a sorted Linked List.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-duplicates-from-sorted-list",
+    "leetcode_slug": "remove-duplicates-from-sorted-list",
+    "leetcode_url": "https://leetcode.com/problems/remove-duplicates-from-sorted-list/"
   },
   {
     "id": "namaste-odd-even-linked-list",
@@ -429,7 +534,10 @@
     "difficulty": "Easy",
     "duration": "23m 25s",
     "url": "https://namastedev.com/learn/namaste-dsa/odd-even-linked-list",
-    "description": "Rearrange nodes based on their position (odd/even index)."
+    "description": "Rearrange nodes based on their position (odd/even index).",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/odd-even-linked-list",
+    "leetcode_slug": "odd-even-linked-list",
+    "leetcode_url": "https://leetcode.com/problems/odd-even-linked-list/"
   },
   {
     "id": "namaste-add-two-numbers",
@@ -441,7 +549,10 @@
     "difficulty": "Easy",
     "duration": "43m 38s",
     "url": "https://namastedev.com/learn/namaste-dsa/add-two-numbers",
-    "description": "Add two numbers represented as Linked Lists."
+    "description": "Add two numbers represented as Linked Lists.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/add-two-numbers",
+    "leetcode_slug": "add-two-numbers",
+    "leetcode_url": "https://leetcode.com/problems/add-two-numbers/"
   },
   {
     "id": "namaste-merge-two-sorted-lists",
@@ -453,7 +564,10 @@
     "difficulty": "Medium",
     "duration": "36m 41s",
     "url": "https://namastedev.com/learn/namaste-dsa/merge-two-sorted-lists",
-    "description": "Merge two sorted Linked Lists into one."
+    "description": "Merge two sorted Linked Lists into one.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/merge-two-sorted-lists",
+    "leetcode_slug": "merge-two-sorted-lists",
+    "leetcode_url": "https://leetcode.com/problems/merge-two-sorted-lists/"
   },
   {
     "id": "namaste-rotate-list",
@@ -465,7 +579,10 @@
     "difficulty": "Medium",
     "duration": "29m 53s",
     "url": "https://namastedev.com/learn/namaste-dsa/rotate-list",
-    "description": "Rotate a Linked List to the right by k places."
+    "description": "Rotate a Linked List to the right by k places.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/rotate-list",
+    "leetcode_slug": "rotate-list",
+    "leetcode_url": "https://leetcode.com/problems/rotate-list/"
   },
   {
     "id": "namaste-swap-nodes-in-pairs-iterative-approach",
@@ -477,7 +594,10 @@
     "difficulty": "Medium",
     "duration": "36m 58s",
     "url": "https://namastedev.com/learn/namaste-dsa/swap-nodes-in-pairs-iterative-approach",
-    "description": "Swap every two adjacent nodes in a Linked List iteratively."
+    "description": "Swap every two adjacent nodes in a Linked List iteratively.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/swap-nodes-in-pairs-iterative-approach",
+    "leetcode_slug": "swap-nodes-in-pairs",
+    "leetcode_url": "https://leetcode.com/problems/swap-nodes-in-pairs/"
   },
   {
     "id": "namaste-swap-nodes-in-pair-recursive-approach",
@@ -489,7 +609,10 @@
     "difficulty": "Medium",
     "duration": "31m 34s",
     "url": "https://namastedev.com/learn/namaste-dsa/swap-nodes-in-pair-recursive-approach",
-    "description": "Recursively swap every two adjacent nodes in a Linked List."
+    "description": "Recursively swap every two adjacent nodes in a Linked List.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/swap-nodes-in-pair-recursive-approach",
+    "leetcode_slug": "swap-nodes-in-pairs",
+    "leetcode_url": "https://leetcode.com/problems/swap-nodes-in-pairs/"
   },
   {
     "id": "namaste-length-of-last-word-approach-1-two-loops",
@@ -501,7 +624,10 @@
     "difficulty": "Medium",
     "duration": "40m 25s",
     "url": "https://namastedev.com/learn/namaste-dsa/length-of-last-word-approach-1-two-loops",
-    "description": "Find the length of the last word using a basic loop approach."
+    "description": "Find the length of the last word using a basic loop approach.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/length-of-last-word-approach-1-two-loops",
+    "leetcode_slug": "length-of-last-word",
+    "leetcode_url": "https://leetcode.com/problems/length-of-last-word/"
   },
   {
     "id": "namaste-length-of-last-word-approach-2-one-loop",
@@ -513,7 +639,10 @@
     "difficulty": "Medium",
     "duration": "26m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/length-of-last-word-approach-2-one-loop",
-    "description": "Optimized one-pass solution to find the last word’s length."
+    "description": "Optimized one-pass solution to find the last word’s length.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/length-of-last-word-approach-2-one-loop",
+    "leetcode_slug": "length-of-last-word",
+    "leetcode_url": "https://leetcode.com/problems/length-of-last-word/"
   },
   {
     "id": "namaste-find-words-containing-character",
@@ -525,7 +654,10 @@
     "difficulty": "Medium",
     "duration": "21m 58s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-words-containing-character",
-    "description": "Find words from a list that contain a specific character."
+    "description": "Find words from a list that contain a specific character.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-words-containing-character",
+    "leetcode_slug": "find-words-containing-character",
+    "leetcode_url": "https://leetcode.com/problems/find-words-containing-character/"
   },
   {
     "id": "namaste-jewels-and-stones",
@@ -537,7 +669,10 @@
     "difficulty": "Medium",
     "duration": "38m 25s",
     "url": "https://namastedev.com/learn/namaste-dsa/jewels-and-stones",
-    "description": "Count how many stones are also jewels."
+    "description": "Count how many stones are also jewels.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/jewels-and-stones",
+    "leetcode_slug": "jewels-and-stones",
+    "leetcode_url": "https://leetcode.com/problems/jewels-and-stones/"
   },
   {
     "id": "namaste-find-most-frequent-vowel-and-consonant",
@@ -549,7 +684,10 @@
     "difficulty": "Medium",
     "duration": "48m 13s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-most-frequent-vowel-and-consonant",
-    "description": "Identify the most frequent vowel and consonant in a string."
+    "description": "Identify the most frequent vowel and consonant in a string.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-most-frequent-vowel-and-consonant",
+    "leetcode_slug": "find-most-frequent-vowel-and-consonant",
+    "leetcode_url": "https://leetcode.com/problems/find-most-frequent-vowel-and-consonant/"
   },
   {
     "id": "namaste-split-a-string-in-balanced-strings",
@@ -561,7 +699,10 @@
     "difficulty": "Medium",
     "duration": "23m 37s",
     "url": "https://namastedev.com/learn/namaste-dsa/split-a-string-in-balanced-strings",
-    "description": "Split a string into maximum balanced substrings."
+    "description": "Split a string into maximum balanced substrings.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/split-a-string-in-balanced-strings",
+    "leetcode_slug": "split-a-string-in-balanced-strings",
+    "leetcode_url": "https://leetcode.com/problems/split-a-string-in-balanced-strings/"
   },
   {
     "id": "namaste-reverse-string-ii",
@@ -573,7 +714,10 @@
     "difficulty": "Medium",
     "duration": "49m 10s",
     "url": "https://namastedev.com/learn/namaste-dsa/reverse-string-ii",
-    "description": "Reverse parts of a string based on a pattern."
+    "description": "Reverse parts of a string based on a pattern.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/reverse-string-ii",
+    "leetcode_slug": "reverse-string-ii",
+    "leetcode_url": "https://leetcode.com/problems/reverse-string-ii/"
   },
   {
     "id": "namaste-valid-palindrome-approach-1-extra-space",
@@ -585,7 +729,10 @@
     "difficulty": "Medium",
     "duration": "24m 12s",
     "url": "https://namastedev.com/learn/namaste-dsa/valid-palindrome-approach-1-extra-space",
-    "description": "Check palindrome by cleaning and reversing a string."
+    "description": "Check palindrome by cleaning and reversing a string.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/valid-palindrome-approach-1-extra-space",
+    "leetcode_slug": "valid-palindrome",
+    "leetcode_url": "https://leetcode.com/problems/valid-palindrome/"
   },
   {
     "id": "namaste-valid-palindrome-approach-2-two-pointers",
@@ -597,7 +744,10 @@
     "difficulty": "Medium",
     "duration": "24m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/valid-palindrome-approach-2-two-pointers",
-    "description": "Use two-pointer technique to validate palindrome."
+    "description": "Use two-pointer technique to validate palindrome.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/valid-palindrome-approach-2-two-pointers",
+    "leetcode_slug": "valid-palindrome",
+    "leetcode_url": "https://leetcode.com/problems/valid-palindrome/"
   },
   {
     "id": "namaste-largest-odd-number-in-a-string",
@@ -609,7 +759,10 @@
     "difficulty": "Medium",
     "duration": "14m 59s",
     "url": "https://namastedev.com/learn/namaste-dsa/largest-odd-number-in-a-string",
-    "description": "Find the largest odd number that can be formed from a string."
+    "description": "Find the largest odd number that can be formed from a string.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/largest-odd-number-in-a-string",
+    "leetcode_slug": "largest-odd-number-in-string",
+    "leetcode_url": "https://leetcode.com/problems/largest-odd-number-in-string/"
   },
   {
     "id": "namaste-longest-common-prefix",
@@ -621,7 +774,10 @@
     "difficulty": "Medium",
     "duration": "24m 36s",
     "url": "https://namastedev.com/learn/namaste-dsa/longest-common-prefix",
-    "description": "Find the longest common starting substring among strings."
+    "description": "Find the longest common starting substring among strings.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/longest-common-prefix",
+    "leetcode_slug": "longest-common-prefix",
+    "leetcode_url": "https://leetcode.com/problems/longest-common-prefix/"
   },
   {
     "id": "namaste-valid-anagram",
@@ -633,7 +789,10 @@
     "difficulty": "Medium",
     "duration": "40m 57s",
     "url": "https://namastedev.com/learn/namaste-dsa/valid-anagram",
-    "description": "Check if two strings are anagrams of each other."
+    "description": "Check if two strings are anagrams of each other.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/valid-anagram",
+    "leetcode_slug": "valid-anagram",
+    "leetcode_url": "https://leetcode.com/problems/valid-anagram/"
   },
   {
     "id": "namaste-isomorphic-strings",
@@ -645,7 +804,10 @@
     "difficulty": "Medium",
     "duration": "39m 55s",
     "url": "https://namastedev.com/learn/namaste-dsa/isomorphic-strings",
-    "description": "Check if two strings have a one-to-one character mapping."
+    "description": "Check if two strings have a one-to-one character mapping.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/isomorphic-strings",
+    "leetcode_slug": "isomorphic-strings",
+    "leetcode_url": "https://leetcode.com/problems/isomorphic-strings/"
   },
   {
     "id": "namaste-group-anagrams-approach-1-sorted-key",
@@ -657,7 +819,10 @@
     "difficulty": "Medium",
     "duration": "21m 54s",
     "url": "https://namastedev.com/learn/namaste-dsa/group-anagrams-approach-1-sorted-key",
-    "description": "Group words that are anagrams using sorted string keys."
+    "description": "Group words that are anagrams using sorted string keys.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/group-anagrams-approach-1-sorted-key",
+    "leetcode_slug": "group-anagrams",
+    "leetcode_url": "https://leetcode.com/problems/group-anagrams/"
   },
   {
     "id": "namaste-group-anagrams-approach-2-hashed-key",
@@ -669,7 +834,10 @@
     "difficulty": "Medium",
     "duration": "29m 30s",
     "url": "https://namastedev.com/learn/namaste-dsa/group-anagrams-approach-2-hashed-key",
-    "description": "Group anagrams using character frequency hash as key."
+    "description": "Group anagrams using character frequency hash as key.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/group-anagrams-approach-2-hashed-key",
+    "leetcode_slug": "group-anagrams",
+    "leetcode_url": "https://leetcode.com/problems/group-anagrams/"
   },
   {
     "id": "namaste-introduction-to-stacks-and-queues",
@@ -681,7 +849,10 @@
     "difficulty": "Easy",
     "duration": "35m 24s",
     "url": "https://namastedev.com/learn/namaste-dsa/introduction-to-stacks-and-queues",
-    "description": "Stack and Queues lesson from Namaste DSA."
+    "description": "Stack and Queues lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/introduction-to-stacks-and-queues",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-playing-with-stacks-queues",
@@ -693,7 +864,10 @@
     "difficulty": "Medium",
     "duration": "23m 14s",
     "url": "https://namastedev.com/learn/namaste-dsa/playing-with-stacks-queues",
-    "description": "Explore basic operations on stacks and queues hands-on."
+    "description": "Explore basic operations on stacks and queues hands-on.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/playing-with-stacks-queues",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-implement-stack-using-two-queues",
@@ -705,7 +879,10 @@
     "difficulty": "Medium",
     "duration": "55m 54s",
     "url": "https://namastedev.com/learn/namaste-dsa/implement-stack-using-two-queues",
-    "description": "Build a stack using two queues."
+    "description": "Build a stack using two queues.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/implement-stack-using-two-queues",
+    "leetcode_slug": "implement-stack-using-queues",
+    "leetcode_url": "https://leetcode.com/problems/implement-stack-using-queues/"
   },
   {
     "id": "namaste-implement-stack-using-one-queue",
@@ -717,7 +894,10 @@
     "difficulty": "Medium",
     "duration": "13m 28s",
     "url": "https://namastedev.com/learn/namaste-dsa/implement-stack-using-one-queue",
-    "description": "Implement a stack using a single queue cleverly."
+    "description": "Implement a stack using a single queue cleverly.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/implement-stack-using-one-queue",
+    "leetcode_slug": "implement-stack-using-queues",
+    "leetcode_url": "https://leetcode.com/problems/implement-stack-using-queues/"
   },
   {
     "id": "namaste-implement-queue-using-stacks",
@@ -729,7 +909,10 @@
     "difficulty": "Medium",
     "duration": "43m 47s",
     "url": "https://namastedev.com/learn/namaste-dsa/implement-queue-using-stacks",
-    "description": "Simulate a queue using two stacks."
+    "description": "Simulate a queue using two stacks.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/implement-queue-using-stacks",
+    "leetcode_slug": "implement-queue-using-stacks",
+    "leetcode_url": "https://leetcode.com/problems/implement-queue-using-stacks/"
   },
   {
     "id": "namaste-valid-parentheses",
@@ -741,7 +924,10 @@
     "difficulty": "Medium",
     "duration": "25m 39s",
     "url": "https://namastedev.com/learn/namaste-dsa/valid-parentheses",
-    "description": "Check if a string of parentheses is valid."
+    "description": "Check if a string of parentheses is valid.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/valid-parentheses",
+    "leetcode_slug": "valid-parentheses",
+    "leetcode_url": "https://leetcode.com/problems/valid-parentheses/"
   },
   {
     "id": "namaste-min-stack",
@@ -753,7 +939,10 @@
     "difficulty": "Medium",
     "duration": "29m 9s",
     "url": "https://namastedev.com/learn/namaste-dsa/min-stack",
-    "description": "Design a stack that supports retrieving the minimum in O(1)."
+    "description": "Design a stack that supports retrieving the minimum in O(1).",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/min-stack",
+    "leetcode_slug": "min-stack",
+    "leetcode_url": "https://leetcode.com/problems/min-stack/"
   },
   {
     "id": "namaste-remove-outermost-parentheses-using-stack",
@@ -765,7 +954,10 @@
     "difficulty": "Medium",
     "duration": "43m 32s",
     "url": "https://namastedev.com/learn/namaste-dsa/remove-outermost-parentheses-using-stack",
-    "description": "Remove outermost parentheses using a stack-based approach."
+    "description": "Remove outermost parentheses using a stack-based approach.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-outermost-parentheses-using-stack",
+    "leetcode_slug": "remove-outermost-parentheses",
+    "leetcode_url": "https://leetcode.com/problems/remove-outermost-parentheses/"
   },
   {
     "id": "namaste-remove-outermost-parentheses-without-stack",
@@ -777,7 +969,10 @@
     "difficulty": "Medium",
     "duration": "13m 5s",
     "url": "https://namastedev.com/learn/namaste-dsa/remove-outermost-parentheses-without-stack",
-    "description": "Remove outer parentheses without using a stack."
+    "description": "Remove outer parentheses without using a stack.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-outermost-parentheses-without-stack",
+    "leetcode_slug": "remove-outermost-parentheses",
+    "leetcode_url": "https://leetcode.com/problems/remove-outermost-parentheses/"
   },
   {
     "id": "namaste-evaluate-reverse-polish-notation",
@@ -789,7 +984,10 @@
     "difficulty": "Medium",
     "duration": "51m 14s",
     "url": "https://namastedev.com/learn/namaste-dsa/evaluate-reverse-polish-notation",
-    "description": "Evaluate mathematical expressions in postfix notation."
+    "description": "Evaluate mathematical expressions in postfix notation.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/evaluate-reverse-polish-notation",
+    "leetcode_slug": "evaluate-reverse-polish-notation",
+    "leetcode_url": "https://leetcode.com/problems/evaluate-reverse-polish-notation/"
   },
   {
     "id": "namaste-next-greater-element",
@@ -801,7 +999,10 @@
     "difficulty": "Medium",
     "duration": "55m 46s",
     "url": "https://namastedev.com/learn/namaste-dsa/next-greater-element",
-    "description": "Find the next greater element for each number in an array."
+    "description": "Find the next greater element for each number in an array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/next-greater-element",
+    "leetcode_slug": "next-greater-element-i",
+    "leetcode_url": "https://leetcode.com/problems/next-greater-element-i/"
   },
   {
     "id": "namaste-daily-temperatures",
@@ -813,7 +1014,10 @@
     "difficulty": "Medium",
     "duration": "30m 50s",
     "url": "https://namastedev.com/learn/namaste-dsa/daily-temperatures",
-    "description": "Find how many days until a warmer temperature."
+    "description": "Find how many days until a warmer temperature.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/daily-temperatures",
+    "leetcode_slug": "daily-temperatures",
+    "leetcode_url": "https://leetcode.com/problems/daily-temperatures/"
   },
   {
     "id": "namaste-next-greater-element-ii",
@@ -825,7 +1029,10 @@
     "difficulty": "Medium",
     "duration": "39m 27s",
     "url": "https://namastedev.com/learn/namaste-dsa/next-greater-element-ii",
-    "description": "Solve the circular version of Next Greater Element."
+    "description": "Solve the circular version of Next Greater Element.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/next-greater-element-ii",
+    "leetcode_slug": "next-greater-element-ii",
+    "leetcode_url": "https://leetcode.com/problems/next-greater-element-ii/"
   },
   {
     "id": "namaste-rotting-oranges",
@@ -837,7 +1044,10 @@
     "difficulty": "Medium",
     "duration": "49m 0s",
     "url": "https://namastedev.com/learn/namaste-dsa/rotting-oranges",
-    "description": "Simulate the rotting process of oranges using BFS."
+    "description": "Simulate the rotting process of oranges using BFS.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/rotting-oranges",
+    "leetcode_slug": "rotting-oranges",
+    "leetcode_url": "https://leetcode.com/problems/rotting-oranges/"
   },
   {
     "id": "namaste-square-root-of-x",
@@ -849,7 +1059,10 @@
     "difficulty": "Medium",
     "duration": "36m 44s",
     "url": "https://namastedev.com/learn/namaste-dsa/square-root-of-x",
-    "description": "Find the square root of a number using binary search."
+    "description": "Find the square root of a number using binary search.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/square-root-of-x",
+    "leetcode_slug": "sqrtx",
+    "leetcode_url": "https://leetcode.com/problems/sqrtx/"
   },
   {
     "id": "namaste-best-practice-finding-middle-element",
@@ -861,7 +1074,10 @@
     "difficulty": "Medium",
     "duration": "6m 33s",
     "url": "https://namastedev.com/learn/namaste-dsa/best-practice-finding-middle-element",
-    "description": "Learn the safe and optimal way to find the middle index."
+    "description": "Learn the safe and optimal way to find the middle index.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/best-practice-finding-middle-element",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-guess-higher-or-lower",
@@ -873,7 +1089,10 @@
     "difficulty": "Medium",
     "duration": "12m 24s",
     "url": "https://namastedev.com/learn/namaste-dsa/guess-higher-or-lower",
-    "description": "Use binary search to guess a hidden number."
+    "description": "Use binary search to guess a hidden number.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/guess-higher-or-lower",
+    "leetcode_slug": "guess-number-higher-or-lower",
+    "leetcode_url": "https://leetcode.com/problems/guess-number-higher-or-lower/"
   },
   {
     "id": "namaste-search-in-rotated-sorted-array",
@@ -885,7 +1104,10 @@
     "difficulty": "Medium",
     "duration": "58m 18s",
     "url": "https://namastedev.com/learn/namaste-dsa/search-in-rotated-sorted-array",
-    "description": "Search an element in a rotated sorted array."
+    "description": "Search an element in a rotated sorted array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/search-in-rotated-sorted-array",
+    "leetcode_slug": "search-in-rotated-sorted-array",
+    "leetcode_url": "https://leetcode.com/problems/search-in-rotated-sorted-array/"
   },
   {
     "id": "namaste-first-bad-version",
@@ -897,7 +1119,10 @@
     "difficulty": "Medium",
     "duration": "33m 13s",
     "url": "https://namastedev.com/learn/namaste-dsa/first-bad-version",
-    "description": "Identify the first bad version using binary search."
+    "description": "Identify the first bad version using binary search.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/first-bad-version",
+    "leetcode_slug": "first-bad-version",
+    "leetcode_url": "https://leetcode.com/problems/first-bad-version/"
   },
   {
     "id": "namaste-find-peak-element",
@@ -909,7 +1134,10 @@
     "difficulty": "Medium",
     "duration": "42m 9s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-peak-element",
-    "description": "Locate a peak element using binary search."
+    "description": "Locate a peak element using binary search.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-peak-element",
+    "leetcode_slug": "find-peak-element",
+    "leetcode_url": "https://leetcode.com/problems/find-peak-element/"
   },
   {
     "id": "namaste-find-minimum-in-rotated-sorted-array",
@@ -921,7 +1149,10 @@
     "difficulty": "Medium",
     "duration": "42m 30s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-minimum-in-rotated-sorted-array",
-    "description": "Find the smallest element in a rotated sorted array."
+    "description": "Find the smallest element in a rotated sorted array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-minimum-in-rotated-sorted-array",
+    "leetcode_slug": "find-minimum-in-rotated-sorted-array",
+    "leetcode_url": "https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/"
   },
   {
     "id": "namaste-find-first-last-position-in-sorted-array",
@@ -933,7 +1164,10 @@
     "difficulty": "Medium",
     "duration": "37m 7s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-first-last-position-in-sorted-array",
-    "description": "Find the first and last index of a target in a sorted array."
+    "description": "Find the first and last index of a target in a sorted array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-first-last-position-in-sorted-array",
+    "leetcode_slug": "find-first-and-last-position-of-element-in-sorted-array",
+    "leetcode_url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
   },
   {
     "id": "namaste-find-first-last-position-in-sorted-array-approach-2",
@@ -945,7 +1179,10 @@
     "difficulty": "Medium",
     "duration": "19m 31s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-first-last-position-in-sorted-array-approach-2",
-    "description": "Optimized approach for finding first and last index of target."
+    "description": "Optimized approach for finding first and last index of target.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-first-last-position-in-sorted-array-approach-2",
+    "leetcode_slug": "find-first-and-last-position-of-element-in-sorted-array",
+    "leetcode_url": "https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/"
   },
   {
     "id": "namaste-find-peak-in-a-mountain-array",
@@ -957,7 +1194,10 @@
     "difficulty": "Medium",
     "duration": "27m 9s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-peak-in-a-mountain-array",
-    "description": "Find the peak element in a mountain-shaped array."
+    "description": "Find the peak element in a mountain-shaped array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-peak-in-a-mountain-array",
+    "leetcode_slug": "peak-index-in-a-mountain-array",
+    "leetcode_url": "https://leetcode.com/problems/peak-index-in-a-mountain-array/"
   },
   {
     "id": "namaste-single-element-in-a-sorted-array",
@@ -969,7 +1209,10 @@
     "difficulty": "Medium",
     "duration": "50m 31s",
     "url": "https://namastedev.com/learn/namaste-dsa/single-element-in-a-sorted-array",
-    "description": "Find the single non-duplicate element in a sorted array."
+    "description": "Find the single non-duplicate element in a sorted array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/single-element-in-a-sorted-array",
+    "leetcode_slug": "single-element-in-a-sorted-array",
+    "leetcode_url": "https://leetcode.com/problems/single-element-in-a-sorted-array/"
   },
   {
     "id": "namaste-find-k-closest-elements",
@@ -981,7 +1224,10 @@
     "difficulty": "Medium",
     "duration": "53m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-k-closest-elements",
-    "description": "Find the k elements closest to a target in a sorted array."
+    "description": "Find the k elements closest to a target in a sorted array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-k-closest-elements",
+    "leetcode_slug": "find-k-closest-elements",
+    "leetcode_url": "https://leetcode.com/problems/find-k-closest-elements/"
   },
   {
     "id": "namaste-two-sum",
@@ -993,7 +1239,10 @@
     "difficulty": "Medium",
     "duration": "30m 21s",
     "url": "https://namastedev.com/learn/namaste-dsa/two-sum",
-    "description": "Find two numbers that add up to a target using hashing."
+    "description": "Find two numbers that add up to a target using hashing.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/two-sum",
+    "leetcode_slug": "two-sum",
+    "leetcode_url": "https://leetcode.com/problems/two-sum/"
   },
   {
     "id": "namaste-two-sum-ii-input-array-is-sorted",
@@ -1005,7 +1254,10 @@
     "difficulty": "Medium",
     "duration": "21m 27s",
     "url": "https://namastedev.com/learn/namaste-dsa/two-sum-ii-input-array-is-sorted",
-    "description": "Solve Two Sum with a sorted array using two pointers."
+    "description": "Solve Two Sum with a sorted array using two pointers.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/two-sum-ii-input-array-is-sorted",
+    "leetcode_slug": "two-sum-ii-input-array-is-sorted",
+    "leetcode_url": "https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/"
   },
   {
     "id": "namaste-is-subsequence",
@@ -1017,7 +1269,10 @@
     "difficulty": "Medium",
     "duration": "14m 14s",
     "url": "https://namastedev.com/learn/namaste-dsa/is-subsequence",
-    "description": "Check if one string is a subsequence of another."
+    "description": "Check if one string is a subsequence of another.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/is-subsequence",
+    "leetcode_slug": "is-subsequence",
+    "leetcode_url": "https://leetcode.com/problems/is-subsequence/"
   },
   {
     "id": "namaste-find-index-of-first-occurrence-in-string",
@@ -1029,7 +1284,10 @@
     "difficulty": "Medium",
     "duration": "23m 0s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-index-of-first-occurrence-in-string",
-    "description": "Locate the first occurrence of a substring in a string."
+    "description": "Locate the first occurrence of a substring in a string.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-index-of-first-occurrence-in-string",
+    "leetcode_slug": "find-the-index-of-the-first-occurrence-in-a-string",
+    "leetcode_url": "https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/"
   },
   {
     "id": "namaste-kmp-knuth-morris-pratt-algorithm",
@@ -1041,7 +1299,10 @@
     "difficulty": "Medium",
     "duration": "1h 14m 58s",
     "url": "https://namastedev.com/learn/namaste-dsa/kmp-knuth-morris-pratt-algorithm",
-    "description": "Efficient substring search using the KMP algorithm."
+    "description": "Efficient substring search using the KMP algorithm.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/kmp-knuth-morris-pratt-algorithm",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-intersection-of-two-linked-lists-two-pointers",
@@ -1053,7 +1314,10 @@
     "difficulty": "Medium",
     "duration": "34m 47s",
     "url": "https://namastedev.com/learn/namaste-dsa/intersection-of-two-linked-lists-two-pointers",
-    "description": "Find the intersection node of two linked lists using two pointers."
+    "description": "Find the intersection node of two linked lists using two pointers.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/intersection-of-two-linked-lists-two-pointers",
+    "leetcode_slug": "intersection-of-two-linked-lists",
+    "leetcode_url": "https://leetcode.com/problems/intersection-of-two-linked-lists/"
   },
   {
     "id": "namaste-container-with-most-water",
@@ -1065,7 +1329,10 @@
     "difficulty": "Medium",
     "duration": "22m 16s",
     "url": "https://namastedev.com/learn/namaste-dsa/container-with-most-water",
-    "description": "Maximize water between two lines using two pointers."
+    "description": "Maximize water between two lines using two pointers.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/container-with-most-water",
+    "leetcode_slug": "container-with-most-water",
+    "leetcode_url": "https://leetcode.com/problems/container-with-most-water/"
   },
   {
     "id": "namaste-three-sum",
@@ -1077,7 +1344,10 @@
     "difficulty": "Medium",
     "duration": "29m 33s",
     "url": "https://namastedev.com/learn/namaste-dsa/three-sum",
-    "description": "Find all unique triplets that sum to zero."
+    "description": "Find all unique triplets that sum to zero.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/three-sum",
+    "leetcode_slug": "3sum",
+    "leetcode_url": "https://leetcode.com/problems/3sum/"
   },
   {
     "id": "namaste-trapping-rain-water",
@@ -1089,7 +1359,10 @@
     "difficulty": "Medium",
     "duration": "48m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/trapping-rain-water",
-    "description": "Calculate how much water can be trapped after rain."
+    "description": "Calculate how much water can be trapped after rain.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/trapping-rain-water",
+    "leetcode_slug": "trapping-rain-water",
+    "leetcode_url": "https://leetcode.com/problems/trapping-rain-water/"
   },
   {
     "id": "namaste-longest-substring-without-repeating-characters",
@@ -1101,7 +1374,10 @@
     "difficulty": "Medium",
     "duration": "58m 9s",
     "url": "https://namastedev.com/learn/namaste-dsa/longest-substring-without-repeating-characters",
-    "description": "Find the longest substring with all unique characters."
+    "description": "Find the longest substring with all unique characters.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/longest-substring-without-repeating-characters",
+    "leetcode_slug": "longest-substring-without-repeating-characters",
+    "leetcode_url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/"
   },
   {
     "id": "namaste-longest-repeating-character-replacement",
@@ -1113,7 +1389,10 @@
     "difficulty": "Medium",
     "duration": "58m 20s",
     "url": "https://namastedev.com/learn/namaste-dsa/longest-repeating-character-replacement",
-    "description": "Maximize the length of a repeating character substring."
+    "description": "Maximize the length of a repeating character substring.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/longest-repeating-character-replacement",
+    "leetcode_slug": "longest-repeating-character-replacement",
+    "leetcode_url": "https://leetcode.com/problems/longest-repeating-character-replacement/"
   },
   {
     "id": "namaste-permutation-in-string",
@@ -1125,7 +1404,10 @@
     "difficulty": "Medium",
     "duration": "40m 4s",
     "url": "https://namastedev.com/learn/namaste-dsa/permutation-in-string",
-    "description": "Check if one string contains a permutation of another."
+    "description": "Check if one string contains a permutation of another.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/permutation-in-string",
+    "leetcode_slug": "permutation-in-string",
+    "leetcode_url": "https://leetcode.com/problems/permutation-in-string/"
   },
   {
     "id": "namaste-sliding-window-maximum",
@@ -1137,7 +1419,10 @@
     "difficulty": "Medium",
     "duration": "49m 36s",
     "url": "https://namastedev.com/learn/namaste-dsa/sliding-window-maximum",
-    "description": "Find the max value in every window of size k."
+    "description": "Find the max value in every window of size k.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/sliding-window-maximum",
+    "leetcode_slug": "sliding-window-maximum",
+    "leetcode_url": "https://leetcode.com/problems/sliding-window-maximum/"
   },
   {
     "id": "namaste-introduction-to-trees",
@@ -1149,7 +1434,10 @@
     "difficulty": "Medium",
     "duration": "29m 2s",
     "url": "https://namastedev.com/learn/namaste-dsa/introduction-to-trees",
-    "description": "Understand what trees are and their core properties."
+    "description": "Understand what trees are and their core properties.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/introduction-to-trees",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-binary-tree-traversals-explained",
@@ -1161,7 +1449,10 @@
     "difficulty": "Medium",
     "duration": "34m 32s",
     "url": "https://namastedev.com/learn/namaste-dsa/binary-tree-traversals-explained",
-    "description": "Explore preorder, inorder, and postorder tree traversals."
+    "description": "Explore preorder, inorder, and postorder tree traversals.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/binary-tree-traversals-explained",
+    "leetcode_slug": "binary-tree-inorder-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-inorder-traversal/"
   },
   {
     "id": "namaste-preorder-traversal-recursive-approach",
@@ -1173,7 +1464,10 @@
     "difficulty": "Medium",
     "duration": "41m 3s",
     "url": "https://namastedev.com/learn/namaste-dsa/preorder-traversal-recursive-approach",
-    "description": "Perform preorder traversal using recursion."
+    "description": "Perform preorder traversal using recursion.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/preorder-traversal-recursive-approach",
+    "leetcode_slug": "binary-tree-preorder-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-preorder-traversal/"
   },
   {
     "id": "namaste-inorder-postorder-recursive-approach",
@@ -1185,7 +1479,10 @@
     "difficulty": "Medium",
     "duration": "13m 34s",
     "url": "https://namastedev.com/learn/namaste-dsa/inorder-postorder-recursive-approach",
-    "description": "Implement inorder and postorder recursively."
+    "description": "Implement inorder and postorder recursively.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/inorder-postorder-recursive-approach",
+    "leetcode_slug": "binary-tree-inorder-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-inorder-traversal/"
   },
   {
     "id": "namaste-preorder-traversal-iterative-approach",
@@ -1197,7 +1494,10 @@
     "difficulty": "Medium",
     "duration": "35m 33s",
     "url": "https://namastedev.com/learn/namaste-dsa/preorder-traversal-iterative-approach",
-    "description": "Use a stack to perform preorder traversal iteratively."
+    "description": "Use a stack to perform preorder traversal iteratively.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/preorder-traversal-iterative-approach",
+    "leetcode_slug": "binary-tree-preorder-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-preorder-traversal/"
   },
   {
     "id": "namaste-inorder-traversal-iterative-approach",
@@ -1209,7 +1509,10 @@
     "difficulty": "Medium",
     "duration": "32m 47s",
     "url": "https://namastedev.com/learn/namaste-dsa/inorder-traversal-iterative-approach",
-    "description": "Inorder traversal using a stack instead of recursion."
+    "description": "Inorder traversal using a stack instead of recursion.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/inorder-traversal-iterative-approach",
+    "leetcode_slug": "binary-tree-inorder-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-inorder-traversal/"
   },
   {
     "id": "namaste-postorder-iterative-approach-2-stacks",
@@ -1221,7 +1524,10 @@
     "difficulty": "Medium",
     "duration": "32m 55s",
     "url": "https://namastedev.com/learn/namaste-dsa/postorder-iterative-approach-2-stacks",
-    "description": "Use two stacks for iterative postorder traversal."
+    "description": "Use two stacks for iterative postorder traversal.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/postorder-iterative-approach-2-stacks",
+    "leetcode_slug": "binary-tree-postorder-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-postorder-traversal/"
   },
   {
     "id": "namaste-postorder-iterative-approach-one-stack",
@@ -1233,7 +1539,10 @@
     "difficulty": "Medium",
     "duration": "51m 21s",
     "url": "https://namastedev.com/learn/namaste-dsa/postorder-iterative-approach-one-stack",
-    "description": "Efficient postorder traversal using just one stack."
+    "description": "Efficient postorder traversal using just one stack.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/postorder-iterative-approach-one-stack",
+    "leetcode_slug": "binary-tree-postorder-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-postorder-traversal/"
   },
   {
     "id": "namaste-dfs-and-bfs-in-binary-tree",
@@ -1245,7 +1554,10 @@
     "difficulty": "Medium",
     "duration": "27m 6s",
     "url": "https://namastedev.com/learn/namaste-dsa/dfs-and-bfs-in-binary-tree",
-    "description": "Understand DFS vs BFS in binary trees."
+    "description": "Understand DFS vs BFS in binary trees.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/dfs-and-bfs-in-binary-tree",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-level-order-traversal-queue-bfs",
@@ -1257,7 +1569,10 @@
     "difficulty": "Medium",
     "duration": "32m 43s",
     "url": "https://namastedev.com/learn/namaste-dsa/level-order-traversal-queue-bfs",
-    "description": "Implement level order traversal using a queue."
+    "description": "Implement level order traversal using a queue.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/level-order-traversal-queue-bfs",
+    "leetcode_slug": "binary-tree-level-order-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
   },
   {
     "id": "namaste-level-order-traversal-recursive-approach",
@@ -1269,7 +1584,10 @@
     "difficulty": "Medium",
     "duration": "24m 39s",
     "url": "https://namastedev.com/learn/namaste-dsa/level-order-traversal-recursive-approach",
-    "description": "Perform level order traversal recursively."
+    "description": "Perform level order traversal recursively.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/level-order-traversal-recursive-approach",
+    "leetcode_slug": "binary-tree-level-order-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
   },
   {
     "id": "namaste-maximum-depth-of-binary-tree",
@@ -1281,7 +1599,10 @@
     "difficulty": "Medium",
     "duration": "50m 37s",
     "url": "https://namastedev.com/learn/namaste-dsa/maximum-depth-of-binary-tree",
-    "description": "Find the max depth of a binary tree."
+    "description": "Find the max depth of a binary tree.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/maximum-depth-of-binary-tree",
+    "leetcode_slug": "maximum-depth-of-binary-tree",
+    "leetcode_url": "https://leetcode.com/problems/maximum-depth-of-binary-tree/"
   },
   {
     "id": "namaste-path-sum",
@@ -1293,7 +1614,10 @@
     "difficulty": "Medium",
     "duration": "30m 30s",
     "url": "https://namastedev.com/learn/namaste-dsa/path-sum",
-    "description": "Check if a path adds up to a target sum."
+    "description": "Check if a path adds up to a target sum.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/path-sum",
+    "leetcode_slug": "path-sum",
+    "leetcode_url": "https://leetcode.com/problems/path-sum/"
   },
   {
     "id": "namaste-symmetric-tree-recursive-approach",
@@ -1305,7 +1629,10 @@
     "difficulty": "Medium",
     "duration": "15m 16s",
     "url": "https://namastedev.com/learn/namaste-dsa/symmetric-tree-recursive-approach",
-    "description": "Check if a binary tree is symmetric using recursion."
+    "description": "Check if a binary tree is symmetric using recursion.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/symmetric-tree-recursive-approach",
+    "leetcode_slug": "symmetric-tree",
+    "leetcode_url": "https://leetcode.com/problems/symmetric-tree/"
   },
   {
     "id": "namaste-symmetric-tree-iterative-approach",
@@ -1317,7 +1644,10 @@
     "difficulty": "Medium",
     "duration": "21m 0s",
     "url": "https://namastedev.com/learn/namaste-dsa/symmetric-tree-iterative-approach",
-    "description": "Check symmetry in a binary tree using BFS."
+    "description": "Check symmetry in a binary tree using BFS.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/symmetric-tree-iterative-approach",
+    "leetcode_slug": "symmetric-tree",
+    "leetcode_url": "https://leetcode.com/problems/symmetric-tree/"
   },
   {
     "id": "namaste-invert-a-binary-tree",
@@ -1329,7 +1659,10 @@
     "difficulty": "Medium",
     "duration": "8m 41s",
     "url": "https://namastedev.com/learn/namaste-dsa/invert-a-binary-tree",
-    "description": "Flip a binary tree by swapping left and right nodes."
+    "description": "Flip a binary tree by swapping left and right nodes.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/invert-a-binary-tree",
+    "leetcode_slug": "invert-binary-tree",
+    "leetcode_url": "https://leetcode.com/problems/invert-binary-tree/"
   },
   {
     "id": "namaste-same-tree",
@@ -1341,7 +1674,10 @@
     "difficulty": "Medium",
     "duration": "7m 50s",
     "url": "https://namastedev.com/learn/namaste-dsa/same-tree",
-    "description": "Check if two binary trees are exactly the same."
+    "description": "Check if two binary trees are exactly the same.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/same-tree",
+    "leetcode_slug": "same-tree",
+    "leetcode_url": "https://leetcode.com/problems/same-tree/"
   },
   {
     "id": "namaste-balanced-binary-tree",
@@ -1353,7 +1689,10 @@
     "difficulty": "Medium",
     "duration": "14m 19s",
     "url": "https://namastedev.com/learn/namaste-dsa/balanced-binary-tree",
-    "description": "Check if a binary tree is height-balanced."
+    "description": "Check if a binary tree is height-balanced.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/balanced-binary-tree",
+    "leetcode_slug": "balanced-binary-tree",
+    "leetcode_url": "https://leetcode.com/problems/balanced-binary-tree/"
   },
   {
     "id": "namaste-diameter-of-a-binary-tree",
@@ -1365,7 +1704,10 @@
     "difficulty": "Medium",
     "duration": "22m 44s",
     "url": "https://namastedev.com/learn/namaste-dsa/diameter-of-a-binary-tree",
-    "description": "Find the longest path between any two nodes."
+    "description": "Find the longest path between any two nodes.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/diameter-of-a-binary-tree",
+    "leetcode_slug": "diameter-of-binary-tree",
+    "leetcode_url": "https://leetcode.com/problems/diameter-of-binary-tree/"
   },
   {
     "id": "namaste-zigzag-level-order-traversal",
@@ -1377,7 +1719,10 @@
     "difficulty": "Medium",
     "duration": "17m 37s",
     "url": "https://namastedev.com/learn/namaste-dsa/zigzag-level-order-traversal",
-    "description": "Traverse a binary tree in zigzag order."
+    "description": "Traverse a binary tree in zigzag order.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/zigzag-level-order-traversal",
+    "leetcode_slug": "binary-tree-zigzag-level-order-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/"
   },
   {
     "id": "namaste-subtree-of-another-tree",
@@ -1389,7 +1734,10 @@
     "difficulty": "Medium",
     "duration": "47m 10s",
     "url": "https://namastedev.com/learn/namaste-dsa/subtree-of-another-tree",
-    "description": "Check if one binary tree is a subtree of another."
+    "description": "Check if one binary tree is a subtree of another.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/subtree-of-another-tree",
+    "leetcode_slug": "subtree-of-another-tree",
+    "leetcode_url": "https://leetcode.com/problems/subtree-of-another-tree/"
   },
   {
     "id": "namaste-lowest-common-ancestor",
@@ -1401,7 +1749,10 @@
     "difficulty": "Medium",
     "duration": "27m 49s",
     "url": "https://namastedev.com/learn/namaste-dsa/lowest-common-ancestor",
-    "description": "Find the lowest common ancestor of two nodes."
+    "description": "Find the lowest common ancestor of two nodes.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/lowest-common-ancestor",
+    "leetcode_slug": "lowest-common-ancestor-of-a-binary-tree",
+    "leetcode_url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/"
   },
   {
     "id": "namaste-binary-tree-right-side-view",
@@ -1413,7 +1764,10 @@
     "difficulty": "Medium",
     "duration": "14m 5s",
     "url": "https://namastedev.com/learn/namaste-dsa/binary-tree-right-side-view",
-    "description": "Print the nodes visible from the right side."
+    "description": "Print the nodes visible from the right side.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/binary-tree-right-side-view",
+    "leetcode_slug": "binary-tree-right-side-view",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-right-side-view/"
   },
   {
     "id": "namaste-count-good-nodes-in-binary-tree",
@@ -1425,7 +1779,10 @@
     "difficulty": "Medium",
     "duration": "21m 44s",
     "url": "https://namastedev.com/learn/namaste-dsa/count-good-nodes-in-binary-tree",
-    "description": "Count nodes that are greater than all previous nodes on the path."
+    "description": "Count nodes that are greater than all previous nodes on the path.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/count-good-nodes-in-binary-tree",
+    "leetcode_slug": "count-good-nodes-in-binary-tree",
+    "leetcode_url": "https://leetcode.com/problems/count-good-nodes-in-binary-tree/"
   },
   {
     "id": "namaste-populating-next-right-pointers-in-each-node",
@@ -1437,7 +1794,10 @@
     "difficulty": "Medium",
     "duration": "21m 7s",
     "url": "https://namastedev.com/learn/namaste-dsa/populating-next-right-pointers-in-each-node",
-    "description": "Connect each node to its next right node in the same level."
+    "description": "Connect each node to its next right node in the same level.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/populating-next-right-pointers-in-each-node",
+    "leetcode_slug": "populating-next-right-pointers-in-each-node",
+    "leetcode_url": "https://leetcode.com/problems/populating-next-right-pointers-in-each-node/"
   },
   {
     "id": "namaste-binary-tree-maximum-path-sum",
@@ -1449,7 +1809,10 @@
     "difficulty": "Medium",
     "duration": "35m 30s",
     "url": "https://namastedev.com/learn/namaste-dsa/binary-tree-maximum-path-sum",
-    "description": "Find the path in a tree with the maximum sum."
+    "description": "Find the path in a tree with the maximum sum.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/binary-tree-maximum-path-sum",
+    "leetcode_slug": "binary-tree-maximum-path-sum",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-maximum-path-sum/"
   },
   {
     "id": "namaste-binary-search-tree-introduction",
@@ -1461,7 +1824,10 @@
     "difficulty": "Medium",
     "duration": "17m 59s",
     "url": "https://namastedev.com/learn/namaste-dsa/binary-search-tree-introduction",
-    "description": "Learn the basics of Binary Search Trees."
+    "description": "Learn the basics of Binary Search Trees.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/binary-search-tree-introduction",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-valid-binary-search-tree",
@@ -1473,7 +1839,10 @@
     "difficulty": "Medium",
     "duration": "30m 58s",
     "url": "https://namastedev.com/learn/namaste-dsa/valid-binary-search-tree",
-    "description": "Check if a tree is a valid BST."
+    "description": "Check if a tree is a valid BST.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/valid-binary-search-tree",
+    "leetcode_slug": "validate-binary-search-tree",
+    "leetcode_url": "https://leetcode.com/problems/validate-binary-search-tree/"
   },
   {
     "id": "namaste-search-in-a-bst",
@@ -1485,7 +1854,10 @@
     "difficulty": "Medium",
     "duration": "17m 35s",
     "url": "https://namastedev.com/learn/namaste-dsa/search-in-a-bst",
-    "description": "Search for a value in a Binary Search Tree."
+    "description": "Search for a value in a Binary Search Tree.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/search-in-a-bst",
+    "leetcode_slug": "search-in-a-binary-search-tree",
+    "leetcode_url": "https://leetcode.com/problems/search-in-a-binary-search-tree/"
   },
   {
     "id": "namaste-insert-into-a-bst",
@@ -1497,7 +1869,10 @@
     "difficulty": "Medium",
     "duration": "15m 54s",
     "url": "https://namastedev.com/learn/namaste-dsa/insert-into-a-bst",
-    "description": "Insert a new node in a BST."
+    "description": "Insert a new node in a BST.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/insert-into-a-bst",
+    "leetcode_slug": "insert-into-a-binary-search-tree",
+    "leetcode_url": "https://leetcode.com/problems/insert-into-a-binary-search-tree/"
   },
   {
     "id": "namaste-kth-smallest-element",
@@ -1509,7 +1884,10 @@
     "difficulty": "Medium",
     "duration": "14m 40s",
     "url": "https://namastedev.com/learn/namaste-dsa/kth-smallest-element",
-    "description": "Find the kth smallest element in BST."
+    "description": "Find the kth smallest element in BST.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/kth-smallest-element",
+    "leetcode_slug": "kth-smallest-element-in-a-bst",
+    "leetcode_url": "https://leetcode.com/problems/kth-smallest-element-in-a-bst/"
   },
   {
     "id": "namaste-lowest-common-ancestor-of-a-bst",
@@ -1521,7 +1899,10 @@
     "difficulty": "Medium",
     "duration": "19m 58s",
     "url": "https://namastedev.com/learn/namaste-dsa/lowest-common-ancestor-of-a-bst",
-    "description": "Find the lowest common ancestor in a Binary Search Tree."
+    "description": "Find the lowest common ancestor in a Binary Search Tree.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/lowest-common-ancestor-of-a-bst",
+    "leetcode_slug": "lowest-common-ancestor-of-a-binary-search-tree",
+    "leetcode_url": "https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-search-tree/"
   },
   {
     "id": "namaste-introduction-to-heaps",
@@ -1533,7 +1914,10 @@
     "difficulty": "Medium",
     "duration": "35m 33s",
     "url": "https://namastedev.com/learn/namaste-dsa/introduction-to-heaps",
-    "description": "Heap / Priority Queue lesson from Namaste DSA."
+    "description": "Heap / Priority Queue lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/introduction-to-heaps",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-creating-a-heap",
@@ -1545,7 +1929,10 @@
     "difficulty": "Medium",
     "duration": "50m 53s",
     "url": "https://namastedev.com/learn/namaste-dsa/creating-a-heap",
-    "description": "Learn how to build a heap from an array."
+    "description": "Learn how to build a heap from an array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/creating-a-heap",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-inserting-a-node-in-heap",
@@ -1557,7 +1944,10 @@
     "difficulty": "Medium",
     "duration": "51m 21s",
     "url": "https://namastedev.com/learn/namaste-dsa/inserting-a-node-in-heap",
-    "description": "Insert an element into a heap and maintain the heap property."
+    "description": "Insert an element into a heap and maintain the heap property.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/inserting-a-node-in-heap",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-extracting-values-in-heap-heapifydown",
@@ -1569,7 +1959,10 @@
     "difficulty": "Medium",
     "duration": "46m 33s",
     "url": "https://namastedev.com/learn/namaste-dsa/extracting-values-in-heap-heapifydown",
-    "description": "Remove the root and restore heap order."
+    "description": "Remove the root and restore heap order.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/extracting-values-in-heap-heapifydown",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-heap-sort-algorithm",
@@ -1581,7 +1974,10 @@
     "difficulty": "Medium",
     "duration": "48m 24s",
     "url": "https://namastedev.com/learn/namaste-dsa/heap-sort-algorithm",
-    "description": "Understand the Heap Sort algorithm step-by-step."
+    "description": "Understand the Heap Sort algorithm step-by-step.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/heap-sort-algorithm",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-heap-sort-code",
@@ -1593,7 +1989,10 @@
     "difficulty": "Medium",
     "duration": "38m 11s",
     "url": "https://namastedev.com/learn/namaste-dsa/heap-sort-code",
-    "description": "Implement Heap Sort in code."
+    "description": "Implement Heap Sort in code.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/heap-sort-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-heap-sort-dive-deep",
@@ -1605,7 +2004,10 @@
     "difficulty": "Medium",
     "duration": "30m 11s",
     "url": "https://namastedev.com/learn/namaste-dsa/heap-sort-dive-deep",
-    "description": "Explore advanced insights into Heap Sort."
+    "description": "Explore advanced insights into Heap Sort.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/heap-sort-dive-deep",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-priority-queues-introduction",
@@ -1617,7 +2019,10 @@
     "difficulty": "Medium",
     "duration": "39m 52s",
     "url": "https://namastedev.com/learn/namaste-dsa/priority-queues-introduction",
-    "description": "Learn how priority queues work using heaps."
+    "description": "Learn how priority queues work using heaps.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/priority-queues-introduction",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-priority-queue-code",
@@ -1629,7 +2034,10 @@
     "difficulty": "Medium",
     "duration": "26m 10s",
     "url": "https://namastedev.com/learn/namaste-dsa/priority-queue-code",
-    "description": "Implement a priority queue in code."
+    "description": "Implement a priority queue in code.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/priority-queue-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-kth-largest-element-in-an-array",
@@ -1641,7 +2049,10 @@
     "difficulty": "Medium",
     "duration": "32m 54s",
     "url": "https://namastedev.com/learn/namaste-dsa/kth-largest-element-in-an-array",
-    "description": "Find the kth largest element using a heap."
+    "description": "Find the kth largest element using a heap.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/kth-largest-element-in-an-array",
+    "leetcode_slug": "kth-largest-element-in-an-array",
+    "leetcode_url": "https://leetcode.com/problems/kth-largest-element-in-an-array/"
   },
   {
     "id": "namaste-kth-largest-element-in-a-stream",
@@ -1653,7 +2064,10 @@
     "difficulty": "Medium",
     "duration": "21m 32s",
     "url": "https://namastedev.com/learn/namaste-dsa/kth-largest-element-in-a-stream",
-    "description": "Maintain the kth largest value as numbers stream in."
+    "description": "Maintain the kth largest value as numbers stream in.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/kth-largest-element-in-a-stream",
+    "leetcode_slug": "kth-largest-element-in-a-stream",
+    "leetcode_url": "https://leetcode.com/problems/kth-largest-element-in-a-stream/"
   },
   {
     "id": "namaste-last-stone-weight",
@@ -1665,7 +2079,10 @@
     "difficulty": "Medium",
     "duration": "29m 0s",
     "url": "https://namastedev.com/learn/namaste-dsa/last-stone-weight",
-    "description": "Simulate a stone smashing game using heaps."
+    "description": "Simulate a stone smashing game using heaps.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/last-stone-weight",
+    "leetcode_slug": "last-stone-weight",
+    "leetcode_url": "https://leetcode.com/problems/last-stone-weight/"
   },
   {
     "id": "namaste-top-k-frequent-elements",
@@ -1677,7 +2094,10 @@
     "difficulty": "Medium",
     "duration": "32m 49s",
     "url": "https://namastedev.com/learn/namaste-dsa/top-k-frequent-elements",
-    "description": "Find the k most frequent elements in an array."
+    "description": "Find the k most frequent elements in an array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/top-k-frequent-elements",
+    "leetcode_slug": "top-k-frequent-elements",
+    "leetcode_url": "https://leetcode.com/problems/top-k-frequent-elements/"
   },
   {
     "id": "namaste-kth-smallest-element-in-a-sorted-matrix",
@@ -1689,7 +2109,10 @@
     "difficulty": "Medium",
     "duration": "42m 37s",
     "url": "https://namastedev.com/learn/namaste-dsa/kth-smallest-element-in-a-sorted-matrix",
-    "description": "Find the kth smallest element in a sorted matrix."
+    "description": "Find the kth smallest element in a sorted matrix.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/kth-smallest-element-in-a-sorted-matrix",
+    "leetcode_slug": "kth-smallest-element-in-a-sorted-matrix",
+    "leetcode_url": "https://leetcode.com/problems/kth-smallest-element-in-a-sorted-matrix/"
   },
   {
     "id": "namaste-introduction-to-backtracking",
@@ -1701,7 +2124,10 @@
     "difficulty": "Medium",
     "duration": "50m 4s",
     "url": "https://namastedev.com/learn/namaste-dsa/introduction-to-backtracking",
-    "description": "Understand the core concept of backtracking."
+    "description": "Understand the core concept of backtracking.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/introduction-to-backtracking",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-subsets-the-power-set",
@@ -1713,7 +2139,10 @@
     "difficulty": "Medium",
     "duration": "47m 25s",
     "url": "https://namastedev.com/learn/namaste-dsa/subsets-the-power-set",
-    "description": "Generate all subsets of a set."
+    "description": "Generate all subsets of a set.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/subsets-the-power-set",
+    "leetcode_slug": "subsets",
+    "leetcode_url": "https://leetcode.com/problems/subsets/"
   },
   {
     "id": "namaste-combinations",
@@ -1725,7 +2154,10 @@
     "difficulty": "Medium",
     "duration": "42m 26s",
     "url": "https://namastedev.com/learn/namaste-dsa/combinations",
-    "description": "Find all combinations of numbers."
+    "description": "Find all combinations of numbers.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/combinations",
+    "leetcode_slug": "combinations",
+    "leetcode_url": "https://leetcode.com/problems/combinations/"
   },
   {
     "id": "namaste-permutations",
@@ -1737,7 +2169,10 @@
     "difficulty": "Medium",
     "duration": "25m 46s",
     "url": "https://namastedev.com/learn/namaste-dsa/permutations",
-    "description": "Generate all permutations of a list."
+    "description": "Generate all permutations of a list.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/permutations",
+    "leetcode_slug": "permutations",
+    "leetcode_url": "https://leetcode.com/problems/permutations/"
   },
   {
     "id": "namaste-subset-ii",
@@ -1749,7 +2184,10 @@
     "difficulty": "Medium",
     "duration": "26m 45s",
     "url": "https://namastedev.com/learn/namaste-dsa/subset-ii",
-    "description": "Subsets with duplicate elements."
+    "description": "Subsets with duplicate elements.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/subset-ii",
+    "leetcode_slug": "subsets-ii",
+    "leetcode_url": "https://leetcode.com/problems/subsets-ii/"
   },
   {
     "id": "namaste-combination-sum",
@@ -1761,7 +2199,10 @@
     "difficulty": "Medium",
     "duration": "45m 12s",
     "url": "https://namastedev.com/learn/namaste-dsa/combination-sum",
-    "description": "Find all combinations that sum to a target."
+    "description": "Find all combinations that sum to a target.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/combination-sum",
+    "leetcode_slug": "combination-sum",
+    "leetcode_url": "https://leetcode.com/problems/combination-sum/"
   },
   {
     "id": "namaste-combination-sum-ii",
@@ -1773,7 +2214,10 @@
     "difficulty": "Medium",
     "duration": "28m 15s",
     "url": "https://namastedev.com/learn/namaste-dsa/combination-sum-ii",
-    "description": "Combination sum with single-use elements."
+    "description": "Combination sum with single-use elements.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/combination-sum-ii",
+    "leetcode_slug": "combination-sum-ii",
+    "leetcode_url": "https://leetcode.com/problems/combination-sum-ii/"
   },
   {
     "id": "namaste-combination-sum-iii",
@@ -1785,7 +2229,10 @@
     "difficulty": "Medium",
     "duration": "27m 34s",
     "url": "https://namastedev.com/learn/namaste-dsa/combination-sum-iii",
-    "description": "Find k numbers that sum to n."
+    "description": "Find k numbers that sum to n.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/combination-sum-iii",
+    "leetcode_slug": "combination-sum-iii",
+    "leetcode_url": "https://leetcode.com/problems/combination-sum-iii/"
   },
   {
     "id": "namaste-letter-combinations-of-a-phone-number",
@@ -1797,7 +2244,10 @@
     "difficulty": "Medium",
     "duration": "27m 31s",
     "url": "https://namastedev.com/learn/namaste-dsa/letter-combinations-of-a-phone-number",
-    "description": "Generate letter combinations from digits."
+    "description": "Generate letter combinations from digits.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/letter-combinations-of-a-phone-number",
+    "leetcode_slug": "letter-combinations-of-a-phone-number",
+    "leetcode_url": "https://leetcode.com/problems/letter-combinations-of-a-phone-number/"
   },
   {
     "id": "namaste-permutations-ii",
@@ -1809,7 +2259,10 @@
     "difficulty": "Medium",
     "duration": "33m 52s",
     "url": "https://namastedev.com/learn/namaste-dsa/permutations-ii",
-    "description": "Unique permutations with duplicates."
+    "description": "Unique permutations with duplicates.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/permutations-ii",
+    "leetcode_slug": "permutations-ii",
+    "leetcode_url": "https://leetcode.com/problems/permutations-ii/"
   },
   {
     "id": "namaste-palindrome-partitioning",
@@ -1821,7 +2274,10 @@
     "difficulty": "Medium",
     "duration": "47m 43s",
     "url": "https://namastedev.com/learn/namaste-dsa/palindrome-partitioning",
-    "description": "Partition a string into palindromes."
+    "description": "Partition a string into palindromes.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/palindrome-partitioning",
+    "leetcode_slug": "palindrome-partitioning",
+    "leetcode_url": "https://leetcode.com/problems/palindrome-partitioning/"
   },
   {
     "id": "namaste-word-search",
@@ -1833,7 +2289,10 @@
     "difficulty": "Medium",
     "duration": "52m 53s",
     "url": "https://namastedev.com/learn/namaste-dsa/word-search",
-    "description": "Search a word in a grid."
+    "description": "Search a word in a grid.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/word-search",
+    "leetcode_slug": "word-search",
+    "leetcode_url": "https://leetcode.com/problems/word-search/"
   },
   {
     "id": "namaste-n-queens",
@@ -1845,7 +2304,10 @@
     "difficulty": "Medium",
     "duration": "1h 20m 19s",
     "url": "https://namastedev.com/learn/namaste-dsa/n-queens",
-    "description": "Place queens safely on a chessboard."
+    "description": "Place queens safely on a chessboard.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/n-queens",
+    "leetcode_slug": "n-queens",
+    "leetcode_url": "https://leetcode.com/problems/n-queens/"
   },
   {
     "id": "namaste-introduction-to-greedy-algorithm",
@@ -1857,7 +2319,10 @@
     "difficulty": "Medium",
     "duration": "42m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/introduction-to-greedy-algorithm",
-    "description": "Learn the basics of the Greedy Algorithm technique with simple examples."
+    "description": "Learn the basics of the Greedy Algorithm technique with simple examples.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/introduction-to-greedy-algorithm",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-two-city-scheduling",
@@ -1869,7 +2334,10 @@
     "difficulty": "Medium",
     "duration": "23m 1s",
     "url": "https://namastedev.com/learn/namaste-dsa/two-city-scheduling",
-    "description": "Solve the classic Two City Scheduling problem using a greedy approach."
+    "description": "Solve the classic Two City Scheduling problem using a greedy approach.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/two-city-scheduling",
+    "leetcode_slug": "two-city-scheduling",
+    "leetcode_url": "https://leetcode.com/problems/two-city-scheduling/"
   },
   {
     "id": "namaste-assign-cookies",
@@ -1881,7 +2349,10 @@
     "difficulty": "Medium",
     "duration": "16m 13s",
     "url": "https://namastedev.com/learn/namaste-dsa/assign-cookies",
-    "description": "Understand how to maximize content children by assigning cookies efficiently."
+    "description": "Understand how to maximize content children by assigning cookies efficiently.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/assign-cookies",
+    "leetcode_slug": "assign-cookies",
+    "leetcode_url": "https://leetcode.com/problems/assign-cookies/"
   },
   {
     "id": "namaste-lemonade-change",
@@ -1893,7 +2364,10 @@
     "difficulty": "Medium",
     "duration": "25m 39s",
     "url": "https://namastedev.com/learn/namaste-dsa/lemonade-change",
-    "description": "Learn how to apply greedy techniques to manage change in the Lemonade Stand problem."
+    "description": "Learn how to apply greedy techniques to manage change in the Lemonade Stand problem.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/lemonade-change",
+    "leetcode_slug": "lemonade-change",
+    "leetcode_url": "https://leetcode.com/problems/lemonade-change/"
   },
   {
     "id": "namaste-best-time-to-buy-and-sell-stock-ii",
@@ -1905,7 +2379,10 @@
     "difficulty": "Medium",
     "duration": "17m 22s",
     "url": "https://namastedev.com/learn/namaste-dsa/best-time-to-buy-and-sell-stock-ii",
-    "description": "Master stock trading with multiple transactions using greedy techniques."
+    "description": "Master stock trading with multiple transactions using greedy techniques.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/best-time-to-buy-and-sell-stock-ii",
+    "leetcode_slug": "best-time-to-buy-and-sell-stock-ii",
+    "leetcode_url": "https://leetcode.com/problems/best-time-to-buy-and-sell-stock-ii/"
   },
   {
     "id": "namaste-insert-interval",
@@ -1917,7 +2394,10 @@
     "difficulty": "Medium",
     "duration": "28m 38s",
     "url": "https://namastedev.com/learn/namaste-dsa/insert-interval",
-    "description": "Learn how to insert a new interval into a set of non-overlapping intervals."
+    "description": "Learn how to insert a new interval into a set of non-overlapping intervals.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/insert-interval",
+    "leetcode_slug": "insert-interval",
+    "leetcode_url": "https://leetcode.com/problems/insert-interval/"
   },
   {
     "id": "namaste-merge-intervals",
@@ -1929,7 +2409,10 @@
     "difficulty": "Medium",
     "duration": "23m 3s",
     "url": "https://namastedev.com/learn/namaste-dsa/merge-intervals",
-    "description": "Understand how to merge overlapping intervals into non-overlapping ones."
+    "description": "Understand how to merge overlapping intervals into non-overlapping ones.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/merge-intervals",
+    "leetcode_slug": "merge-intervals",
+    "leetcode_url": "https://leetcode.com/problems/merge-intervals/"
   },
   {
     "id": "namaste-partition-labels",
@@ -1941,7 +2424,10 @@
     "difficulty": "Medium",
     "duration": "38m 21s",
     "url": "https://namastedev.com/learn/namaste-dsa/partition-labels",
-    "description": "Split a string into partitions where each character appears in at most one part."
+    "description": "Split a string into partitions where each character appears in at most one part.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/partition-labels",
+    "leetcode_slug": "partition-labels",
+    "leetcode_url": "https://leetcode.com/problems/partition-labels/"
   },
   {
     "id": "namaste-non-overlapping-intervals",
@@ -1953,7 +2439,10 @@
     "difficulty": "Medium",
     "duration": "26m 39s",
     "url": "https://namastedev.com/learn/namaste-dsa/non-overlapping-intervals",
-    "description": "Find the minimum number of intervals to remove to avoid overlaps."
+    "description": "Find the minimum number of intervals to remove to avoid overlaps.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/non-overlapping-intervals",
+    "leetcode_slug": "non-overlapping-intervals",
+    "leetcode_url": "https://leetcode.com/problems/non-overlapping-intervals/"
   },
   {
     "id": "namaste-task-scheduler",
@@ -1965,7 +2454,10 @@
     "difficulty": "Medium",
     "duration": "39m 29s",
     "url": "https://namastedev.com/learn/namaste-dsa/task-scheduler",
-    "description": "Schedule tasks efficiently with cooldown periods using greedy + heaps."
+    "description": "Schedule tasks efficiently with cooldown periods using greedy + heaps.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/task-scheduler",
+    "leetcode_slug": "task-scheduler",
+    "leetcode_url": "https://leetcode.com/problems/task-scheduler/"
   },
   {
     "id": "namaste-gas-station",
@@ -1977,7 +2469,10 @@
     "difficulty": "Medium",
     "duration": "43m 29s",
     "url": "https://namastedev.com/learn/namaste-dsa/gas-station",
-    "description": "Learn how to find the starting gas station index to complete a circuit."
+    "description": "Learn how to find the starting gas station index to complete a circuit.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/gas-station",
+    "leetcode_slug": "gas-station",
+    "leetcode_url": "https://leetcode.com/problems/gas-station/"
   },
   {
     "id": "namaste-car-pooling",
@@ -1989,7 +2484,10 @@
     "difficulty": "Medium",
     "duration": "27m 42s",
     "url": "https://namastedev.com/learn/namaste-dsa/car-pooling",
-    "description": "Check if carpooling is possible given trips and capacity."
+    "description": "Check if carpooling is possible given trips and capacity.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/car-pooling",
+    "leetcode_slug": "car-pooling",
+    "leetcode_url": "https://leetcode.com/problems/car-pooling/"
   },
   {
     "id": "namaste-candy-two-pass-on-space",
@@ -2001,7 +2499,10 @@
     "difficulty": "Medium",
     "duration": "34m 11s",
     "url": "https://namastedev.com/learn/namaste-dsa/candy-two-pass-on-space",
-    "description": "Distribute candies fairly using a two-pass O(n) approach."
+    "description": "Distribute candies fairly using a two-pass O(n) approach.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/candy-two-pass-on-space",
+    "leetcode_slug": "candy",
+    "leetcode_url": "https://leetcode.com/problems/candy/"
   },
   {
     "id": "namaste-candy-one-pass-o1-space",
@@ -2013,7 +2514,10 @@
     "difficulty": "Medium",
     "duration": "21m 49s",
     "url": "https://namastedev.com/learn/namaste-dsa/candy-one-pass-o1-space",
-    "description": "Distribute candies fairly using a two-pass O(n) approach."
+    "description": "Distribute candies fairly using a two-pass O(n) approach.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/candy-one-pass-o1-space",
+    "leetcode_slug": "candy",
+    "leetcode_url": "https://leetcode.com/problems/candy/"
   },
   {
     "id": "namaste-introduction-to-dynamic-programming",
@@ -2025,7 +2529,10 @@
     "difficulty": "Hard",
     "duration": "44m 46s",
     "url": "https://namastedev.com/learn/namaste-dsa/introduction-to-dynamic-programming",
-    "description": "Dynamic Programming lesson from Namaste DSA."
+    "description": "Dynamic Programming lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/introduction-to-dynamic-programming",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-fibonacci-numbers-using-dp",
@@ -2037,7 +2544,10 @@
     "difficulty": "Medium",
     "duration": "34m 41s",
     "url": "https://namastedev.com/learn/namaste-dsa/fibonacci-numbers-using-dp",
-    "description": "Solve Fibonacci efficiently with Dynamic Programming."
+    "description": "Solve Fibonacci efficiently with Dynamic Programming.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/fibonacci-numbers-using-dp",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-top-down-bottom-up-dp-approach",
@@ -2049,7 +2559,10 @@
     "difficulty": "Medium",
     "duration": "39m 51s",
     "url": "https://namastedev.com/learn/namaste-dsa/top-down-bottom-up-dp-approach",
-    "description": "Compare top-down and bottom-up DP techniques."
+    "description": "Compare top-down and bottom-up DP techniques.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/top-down-bottom-up-dp-approach",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-climbing-stairs",
@@ -2061,7 +2574,10 @@
     "difficulty": "Medium",
     "duration": "19m 37s",
     "url": "https://namastedev.com/learn/namaste-dsa/climbing-stairs",
-    "description": "Learn how to solve the classic Climbing Stairs DP problem."
+    "description": "Learn how to solve the classic Climbing Stairs DP problem.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/climbing-stairs",
+    "leetcode_slug": "climbing-stairs",
+    "leetcode_url": "https://leetcode.com/problems/climbing-stairs/"
   },
   {
     "id": "namaste-minimum-cost-climbing-stairs",
@@ -2073,7 +2589,10 @@
     "difficulty": "Medium",
     "duration": "27m 46s",
     "url": "https://namastedev.com/learn/namaste-dsa/minimum-cost-climbing-stairs",
-    "description": "Solve minimum cost climbing stairs with DP."
+    "description": "Solve minimum cost climbing stairs with DP.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/minimum-cost-climbing-stairs",
+    "leetcode_slug": "min-cost-climbing-stairs",
+    "leetcode_url": "https://leetcode.com/problems/min-cost-climbing-stairs/"
   },
   {
     "id": "namaste-house-robber",
@@ -2085,7 +2604,10 @@
     "difficulty": "Medium",
     "duration": "51m 15s",
     "url": "https://namastedev.com/learn/namaste-dsa/house-robber",
-    "description": "Maximize robbery amount without robbing adjacent houses."
+    "description": "Maximize robbery amount without robbing adjacent houses.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/house-robber",
+    "leetcode_slug": "house-robber",
+    "leetcode_url": "https://leetcode.com/problems/house-robber/"
   },
   {
     "id": "namaste-house-robber-ii",
@@ -2097,7 +2619,10 @@
     "difficulty": "Medium",
     "duration": "16m 35s",
     "url": "https://namastedev.com/learn/namaste-dsa/house-robber-ii",
-    "description": "Solve House Robber II with circular houses constraint using DP."
+    "description": "Solve House Robber II with circular houses constraint using DP.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/house-robber-ii",
+    "leetcode_slug": "house-robber-ii",
+    "leetcode_url": "https://leetcode.com/problems/house-robber-ii/"
   },
   {
     "id": "namaste-coin-change-top-down-recursive",
@@ -2109,7 +2634,10 @@
     "difficulty": "Medium",
     "duration": "50m 57s",
     "url": "https://namastedev.com/learn/namaste-dsa/coin-change-top-down-recursive",
-    "description": "Learn recursive top-down DP for the Coin Change problem."
+    "description": "Learn recursive top-down DP for the Coin Change problem.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/coin-change-top-down-recursive",
+    "leetcode_slug": "coin-change",
+    "leetcode_url": "https://leetcode.com/problems/coin-change/"
   },
   {
     "id": "namaste-coin-change-bottom-up-iterative",
@@ -2121,7 +2649,10 @@
     "difficulty": "Medium",
     "duration": "29m 9s",
     "url": "https://namastedev.com/learn/namaste-dsa/coin-change-bottom-up-iterative",
-    "description": "Solve Coin Change with bottom-up DP using iteration."
+    "description": "Solve Coin Change with bottom-up DP using iteration.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/coin-change-bottom-up-iterative",
+    "leetcode_slug": "coin-change",
+    "leetcode_url": "https://leetcode.com/problems/coin-change/"
   },
   {
     "id": "namaste-palindromic-substrings",
@@ -2133,7 +2664,10 @@
     "difficulty": "Medium",
     "duration": "55m 2s",
     "url": "https://namastedev.com/learn/namaste-dsa/palindromic-substrings",
-    "description": "Count palindromic substrings using DP."
+    "description": "Count palindromic substrings using DP.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/palindromic-substrings",
+    "leetcode_slug": "palindromic-substrings",
+    "leetcode_url": "https://leetcode.com/problems/palindromic-substrings/"
   },
   {
     "id": "namaste-longest-palindromic-substring",
@@ -2145,7 +2679,10 @@
     "difficulty": "Medium",
     "duration": "7m 23s",
     "url": "https://namastedev.com/learn/namaste-dsa/longest-palindromic-substring",
-    "description": "Find the longest palindromic substring with DP."
+    "description": "Find the longest palindromic substring with DP.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/longest-palindromic-substring",
+    "leetcode_slug": "longest-palindromic-substring",
+    "leetcode_url": "https://leetcode.com/problems/longest-palindromic-substring/"
   },
   {
     "id": "namaste-decode-ways",
@@ -2157,7 +2694,10 @@
     "difficulty": "Medium",
     "duration": "30m 45s",
     "url": "https://namastedev.com/learn/namaste-dsa/decode-ways",
-    "description": "Solve Decode Ways problem with recursion and DP."
+    "description": "Solve Decode Ways problem with recursion and DP.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/decode-ways",
+    "leetcode_slug": "decode-ways",
+    "leetcode_url": "https://leetcode.com/problems/decode-ways/"
   },
   {
     "id": "namaste-maximum-subarray-kadanes-algorithm",
@@ -2169,7 +2709,10 @@
     "difficulty": "Medium",
     "duration": "40m 12s",
     "url": "https://namastedev.com/learn/namaste-dsa/maximum-subarray-kadanes-algorithm",
-    "description": "Find maximum subarray sum using Kadane’s Algorithm."
+    "description": "Find maximum subarray sum using Kadane’s Algorithm.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/maximum-subarray-kadanes-algorithm",
+    "leetcode_slug": "maximum-subarray",
+    "leetcode_url": "https://leetcode.com/problems/maximum-subarray/"
   },
   {
     "id": "namaste-maximum-product-subarray-approach-1",
@@ -2181,7 +2724,10 @@
     "difficulty": "Medium",
     "duration": "43m 49s",
     "url": "https://namastedev.com/learn/namaste-dsa/maximum-product-subarray-approach-1",
-    "description": "Solve Maximum Product Subarray with DP approach 1."
+    "description": "Solve Maximum Product Subarray with DP approach 1.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/maximum-product-subarray-approach-1",
+    "leetcode_slug": "maximum-product-subarray",
+    "leetcode_url": "https://leetcode.com/problems/maximum-product-subarray/"
   },
   {
     "id": "namaste-maximum-product-subarray-approach-2",
@@ -2193,7 +2739,10 @@
     "difficulty": "Medium",
     "duration": "23m 6s",
     "url": "https://namastedev.com/learn/namaste-dsa/maximum-product-subarray-approach-2",
-    "description": "Optimize Maximum Product Subarray with approach 2."
+    "description": "Optimize Maximum Product Subarray with approach 2.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/maximum-product-subarray-approach-2",
+    "leetcode_slug": "maximum-product-subarray",
+    "leetcode_url": "https://leetcode.com/problems/maximum-product-subarray/"
   },
   {
     "id": "namaste-word-break",
@@ -2205,7 +2754,10 @@
     "difficulty": "Medium",
     "duration": "33m 41s",
     "url": "https://namastedev.com/learn/namaste-dsa/word-break",
-    "description": "Solve the classic Word Break problem by checking if a given string can be segmented into valid words from a dictionary"
+    "description": "Solve the classic Word Break problem by checking if a given string can be segmented into valid words from a dictionary",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/word-break",
+    "leetcode_slug": "word-break",
+    "leetcode_url": "https://leetcode.com/problems/word-break/"
   },
   {
     "id": "namaste-longest-increasing-subsequence",
@@ -2217,7 +2769,10 @@
     "difficulty": "Medium",
     "duration": "39m 48s",
     "url": "https://namastedev.com/learn/namaste-dsa/longest-increasing-subsequence",
-    "description": "Solve the Longest Increasing Subsequence problem by finding the length of the longest strictly increasing sequence in an array."
+    "description": "Solve the Longest Increasing Subsequence problem by finding the length of the longest strictly increasing sequence in an array.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/longest-increasing-subsequence",
+    "leetcode_slug": "longest-increasing-subsequence",
+    "leetcode_url": "https://leetcode.com/problems/longest-increasing-subsequence/"
   },
   {
     "id": "namaste-partition-equal-subset-sum",
@@ -2229,7 +2784,10 @@
     "difficulty": "Medium",
     "duration": "40m 20s",
     "url": "https://namastedev.com/learn/namaste-dsa/partition-equal-subset-sum",
-    "description": "Tackle the Partition Equal Subset Sum problem by checking if an array can be split into two subsets with the same total sum."
+    "description": "Tackle the Partition Equal Subset Sum problem by checking if an array can be split into two subsets with the same total sum.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/partition-equal-subset-sum",
+    "leetcode_slug": "partition-equal-subset-sum",
+    "leetcode_url": "https://leetcode.com/problems/partition-equal-subset-sum/"
   },
   {
     "id": "namaste-coin-change-ii",
@@ -2241,7 +2799,10 @@
     "difficulty": "Medium",
     "duration": "47m 54s",
     "url": "https://namastedev.com/learn/namaste-dsa/coin-change-ii",
-    "description": "Solve the Coin Change II problem by finding how many ways you can make a given amount using an unlimited supply of coins"
+    "description": "Solve the Coin Change II problem by finding how many ways you can make a given amount using an unlimited supply of coins",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/coin-change-ii",
+    "leetcode_slug": "coin-change-ii",
+    "leetcode_url": "https://leetcode.com/problems/coin-change-ii/"
   },
   {
     "id": "namaste-unique-paths",
@@ -2253,7 +2814,10 @@
     "difficulty": "Medium",
     "duration": "28m 16s",
     "url": "https://namastedev.com/learn/namaste-dsa/unique-paths",
-    "description": "Solve the Unique Paths problem by finding the total number of ways to move from the top-left to the bottom-right of a grid."
+    "description": "Solve the Unique Paths problem by finding the total number of ways to move from the top-left to the bottom-right of a grid.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/unique-paths",
+    "leetcode_slug": "unique-paths",
+    "leetcode_url": "https://leetcode.com/problems/unique-paths/"
   },
   {
     "id": "namaste-introduction-to-graphs",
@@ -2265,7 +2829,10 @@
     "difficulty": "Hard",
     "duration": "44m 13s",
     "url": "https://namastedev.com/learn/namaste-dsa/introduction-to-graphs",
-    "description": "Graphs lesson from Namaste DSA."
+    "description": "Graphs lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/introduction-to-graphs",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-breadth-first-search-bfs",
@@ -2277,7 +2844,10 @@
     "difficulty": "Medium",
     "duration": "57m 47s",
     "url": "https://namastedev.com/learn/namaste-dsa/breadth-first-search-bfs",
-    "description": "Learn the Breadth First Search (BFS) algorithm step by step."
+    "description": "Learn the Breadth First Search (BFS) algorithm step by step.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/breadth-first-search-bfs",
+    "leetcode_slug": "binary-tree-level-order-traversal",
+    "leetcode_url": "https://leetcode.com/problems/binary-tree-level-order-traversal/"
   },
   {
     "id": "namaste-depth-first-search-dfs",
@@ -2289,7 +2859,10 @@
     "difficulty": "Medium",
     "duration": "18m 10s",
     "url": "https://namastedev.com/learn/namaste-dsa/depth-first-search-dfs",
-    "description": "Master the Depth First Search (DFS) algorithm for graphs."
+    "description": "Master the Depth First Search (DFS) algorithm for graphs.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/depth-first-search-dfs",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-find-if-path-exists-bfs",
@@ -2301,7 +2874,10 @@
     "difficulty": "Medium",
     "duration": "27m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/find-if-path-exists-bfs",
-    "description": "Check if a path exists between two nodes using BFS."
+    "description": "Check if a path exists between two nodes using BFS.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/find-if-path-exists-bfs",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-dfs-recursive",
@@ -2313,7 +2889,10 @@
     "difficulty": "Medium",
     "duration": "27m 7s",
     "url": "https://namastedev.com/learn/namaste-dsa/dfs-recursive",
-    "description": "Implement Depth First Search recursively in graphs."
+    "description": "Implement Depth First Search recursively in graphs.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/dfs-recursive",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-all-paths-from-source-to-target",
@@ -2325,7 +2904,10 @@
     "difficulty": "Medium",
     "duration": "27m 32s",
     "url": "https://namastedev.com/learn/namaste-dsa/all-paths-from-source-to-target",
-    "description": "Find all possible paths from source to target using DFS."
+    "description": "Find all possible paths from source to target using DFS.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/all-paths-from-source-to-target",
+    "leetcode_slug": "all-paths-from-source-to-target",
+    "leetcode_url": "https://leetcode.com/problems/all-paths-from-source-to-target/"
   },
   {
     "id": "namaste-reconstruct-itinerary",
@@ -2337,7 +2919,10 @@
     "difficulty": "Medium",
     "duration": "51m 14s",
     "url": "https://namastedev.com/learn/namaste-dsa/reconstruct-itinerary",
-    "description": "Rebuild an itinerary using graph traversal."
+    "description": "Rebuild an itinerary using graph traversal.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/reconstruct-itinerary",
+    "leetcode_slug": "reconstruct-itinerary",
+    "leetcode_url": "https://leetcode.com/problems/reconstruct-itinerary/"
   },
   {
     "id": "namaste-detect-cycle-in-undirected-connected-graph",
@@ -2349,7 +2934,10 @@
     "difficulty": "Medium",
     "duration": "22m 43s",
     "url": "https://namastedev.com/learn/namaste-dsa/detect-cycle-in-undirected-connected-graph",
-    "description": "Detect if a cycle exists in an undirected graph."
+    "description": "Detect if a cycle exists in an undirected graph.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/detect-cycle-in-undirected-connected-graph",
+    "leetcode_slug": "graph-valid-tree",
+    "leetcode_url": "https://leetcode.com/problems/graph-valid-tree/"
   },
   {
     "id": "namaste-topological-sort-dfs",
@@ -2361,7 +2949,10 @@
     "difficulty": "Medium",
     "duration": "48m 33s",
     "url": "https://namastedev.com/learn/namaste-dsa/topological-sort-dfs",
-    "description": "Perform Topological Sorting using DFS."
+    "description": "Perform Topological Sorting using DFS.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/topological-sort-dfs",
+    "leetcode_slug": "course-schedule",
+    "leetcode_url": "https://leetcode.com/problems/course-schedule/"
   },
   {
     "id": "namaste-kahns-algorithm-topological-sort-bfs",
@@ -2373,7 +2964,10 @@
     "difficulty": "Medium",
     "duration": "29m 14s",
     "url": "https://namastedev.com/learn/namaste-dsa/kahns-algorithm-topological-sort-bfs",
-    "description": "Learn Kahn’s Algorithm for Topological Sorting using BFS."
+    "description": "Learn Kahn’s Algorithm for Topological Sorting using BFS.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/kahns-algorithm-topological-sort-bfs",
+    "leetcode_slug": "course-schedule",
+    "leetcode_url": "https://leetcode.com/problems/course-schedule/"
   },
   {
     "id": "namaste-shortest-path-algorithms-in-graphs",
@@ -2385,7 +2979,10 @@
     "difficulty": "Medium",
     "duration": "7m 51s",
     "url": "https://namastedev.com/learn/namaste-dsa/shortest-path-algorithms-in-graphs",
-    "description": "Overview of shortest path algorithms in graphs."
+    "description": "Overview of shortest path algorithms in graphs.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/shortest-path-algorithms-in-graphs",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-shortest-path-in-unweighted-graph-bfs",
@@ -2397,7 +2994,10 @@
     "difficulty": "Medium",
     "duration": "30m 8s",
     "url": "https://namastedev.com/learn/namaste-dsa/shortest-path-in-unweighted-graph-bfs",
-    "description": "Find the shortest path in an unweighted graph using BFS."
+    "description": "Find the shortest path in an unweighted graph using BFS.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/shortest-path-in-unweighted-graph-bfs",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-dijkstras-algorithm-shortest-path-weighted-graph",
@@ -2409,7 +3009,10 @@
     "difficulty": "Medium",
     "duration": "28m 58s",
     "url": "https://namastedev.com/learn/namaste-dsa/dijkstras-algorithm-shortest-path-weighted-graph",
-    "description": "Understand Dijkstra’s Algorithm for weighted graphs."
+    "description": "Understand Dijkstra’s Algorithm for weighted graphs.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/dijkstras-algorithm-shortest-path-weighted-graph",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-dijkstras-algorithm-code",
@@ -2421,7 +3024,10 @@
     "difficulty": "Medium",
     "duration": "18m 3s",
     "url": "https://namastedev.com/learn/namaste-dsa/dijkstras-algorithm-code",
-    "description": "Implement Dijkstra’s Algorithm in code."
+    "description": "Implement Dijkstra’s Algorithm in code.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/dijkstras-algorithm-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-bellman-ford-algorithm-shortest-path-with-negative-weights",
@@ -2433,7 +3039,10 @@
     "difficulty": "Medium",
     "duration": "26m 46s",
     "url": "https://namastedev.com/learn/namaste-dsa/bellman-ford-algorithm-shortest-path-with-negative-weights",
-    "description": "Find shortest paths with negative weights using Bellman-Ford."
+    "description": "Find shortest paths with negative weights using Bellman-Ford.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/bellman-ford-algorithm-shortest-path-with-negative-weights",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-bellman-ford-algorithm-code",
@@ -2445,7 +3054,10 @@
     "difficulty": "Medium",
     "duration": "17m 2s",
     "url": "https://namastedev.com/learn/namaste-dsa/bellman-ford-algorithm-code",
-    "description": "Code the Bellman-Ford Algorithm step by step."
+    "description": "Code the Bellman-Ford Algorithm step by step.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/bellman-ford-algorithm-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-floyd-warshall-algorithm-all-pairs-shortest-path",
@@ -2457,7 +3069,10 @@
     "difficulty": "Medium",
     "duration": "40m 12s",
     "url": "https://namastedev.com/learn/namaste-dsa/floyd-warshall-algorithm-all-pairs-shortest-path",
-    "description": "Understand the Floyd-Warshall Algorithm for all-pairs shortest paths."
+    "description": "Understand the Floyd-Warshall Algorithm for all-pairs shortest paths.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/floyd-warshall-algorithm-all-pairs-shortest-path",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-floyd-warshall-code",
@@ -2469,7 +3084,10 @@
     "difficulty": "Medium",
     "duration": "17m 44s",
     "url": "https://namastedev.com/learn/namaste-dsa/floyd-warshall-code",
-    "description": "Implement the Floyd-Warshall Algorithm step by step in code."
+    "description": "Implement the Floyd-Warshall Algorithm step by step in code.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/floyd-warshall-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-comparing-all-shortest-path-graph-algorithms",
@@ -2481,7 +3099,10 @@
     "difficulty": "Medium",
     "duration": "8m 5s",
     "url": "https://namastedev.com/learn/namaste-dsa/comparing-all-shortest-path-graph-algorithms",
-    "description": "Compare Dijkstra, Bellman-Ford, and Floyd-Warshall algorithms."
+    "description": "Compare Dijkstra, Bellman-Ford, and Floyd-Warshall algorithms.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/comparing-all-shortest-path-graph-algorithms",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-minimum-spanning-tree",
@@ -2493,7 +3114,10 @@
     "difficulty": "Medium",
     "duration": "26m 12s",
     "url": "https://namastedev.com/learn/namaste-dsa/minimum-spanning-tree",
-    "description": "Understand the concept of a Minimum Spanning Tree (MST)."
+    "description": "Understand the concept of a Minimum Spanning Tree (MST).",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/minimum-spanning-tree",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-prims-algorithm",
@@ -2505,7 +3129,10 @@
     "difficulty": "Medium",
     "duration": "15m 13s",
     "url": "https://namastedev.com/learn/namaste-dsa/prims-algorithm",
-    "description": "Learn Prim’s Algorithm for building MSTs."
+    "description": "Learn Prim’s Algorithm for building MSTs.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/prims-algorithm",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-prims-algorithm-code",
@@ -2517,7 +3144,10 @@
     "difficulty": "Medium",
     "duration": "38m 54s",
     "url": "https://namastedev.com/learn/namaste-dsa/prims-algorithm-code",
-    "description": "Implement Prim’s Algorithm in code."
+    "description": "Implement Prim’s Algorithm in code.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/prims-algorithm-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-disjoint-set-union-find",
@@ -2529,7 +3159,10 @@
     "difficulty": "Medium",
     "duration": "30m 59s",
     "url": "https://namastedev.com/learn/namaste-dsa/disjoint-set-union-find",
-    "description": "Learn the Union-Find data structure for efficient set merging."
+    "description": "Learn the Union-Find data structure for efficient set merging.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/disjoint-set-union-find",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-kruskals-algorithm",
@@ -2541,7 +3174,10 @@
     "difficulty": "Medium",
     "duration": "23m 58s",
     "url": "https://namastedev.com/learn/namaste-dsa/kruskals-algorithm",
-    "description": "Understand Kruskal’s Algorithm for MST construction."
+    "description": "Understand Kruskal’s Algorithm for MST construction.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/kruskals-algorithm",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-kruskal-union-find-code",
@@ -2553,7 +3189,10 @@
     "difficulty": "Medium",
     "duration": "33m 16s",
     "url": "https://namastedev.com/learn/namaste-dsa/kruskal-union-find-code",
-    "description": "Implement Kruskal’s Algorithm using Union-Find."
+    "description": "Implement Kruskal’s Algorithm using Union-Find.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/kruskal-union-find-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-comparison-prims-vs-kruskal-algorithm",
@@ -2565,7 +3204,10 @@
     "difficulty": "Medium",
     "duration": "9m 39s",
     "url": "https://namastedev.com/learn/namaste-dsa/comparison-prims-vs-kruskal-algorithm",
-    "description": "Compare Prim’s and Kruskal’s MST algorithms."
+    "description": "Compare Prim’s and Kruskal’s MST algorithms.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/comparison-prims-vs-kruskal-algorithm",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-number-of-operations-to-make-network-connected",
@@ -2577,7 +3219,10 @@
     "difficulty": "Medium",
     "duration": "35m 25s",
     "url": "https://namastedev.com/learn/namaste-dsa/number-of-operations-to-make-network-connected",
-    "description": "Find the minimum operations to connect all computers in a network."
+    "description": "Find the minimum operations to connect all computers in a network.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/number-of-operations-to-make-network-connected",
+    "leetcode_slug": "number-of-operations-to-make-network-connected",
+    "leetcode_url": "https://leetcode.com/problems/number-of-operations-to-make-network-connected/"
   },
   {
     "id": "namaste-cheapest-flight-with-k-stops",
@@ -2589,7 +3234,10 @@
     "difficulty": "Medium",
     "duration": "27m 41s",
     "url": "https://namastedev.com/learn/namaste-dsa/cheapest-flight-with-k-stops",
-    "description": "Find the cheapest flight within a limited number of stops."
+    "description": "Find the cheapest flight within a limited number of stops.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/cheapest-flight-with-k-stops",
+    "leetcode_slug": "cheapest-flights-within-k-stops",
+    "leetcode_url": "https://leetcode.com/problems/cheapest-flights-within-k-stops/"
   },
   {
     "id": "namaste-number-of-ways-to-arrive-at-destination",
@@ -2601,7 +3249,10 @@
     "difficulty": "Medium",
     "duration": "39m 40s",
     "url": "https://namastedev.com/learn/namaste-dsa/number-of-ways-to-arrive-at-destination",
-    "description": "Count the number of shortest paths to reach the destination."
+    "description": "Count the number of shortest paths to reach the destination.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/number-of-ways-to-arrive-at-destination",
+    "leetcode_slug": "number-of-ways-to-arrive-at-destination",
+    "leetcode_url": "https://leetcode.com/problems/number-of-ways-to-arrive-at-destination/"
   },
   {
     "id": "namaste-min-cost-to-connect-all-points",
@@ -2613,7 +3264,10 @@
     "difficulty": "Medium",
     "duration": "22m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/min-cost-to-connect-all-points",
-    "description": "Connect all points with minimum total cost."
+    "description": "Connect all points with minimum total cost.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/min-cost-to-connect-all-points",
+    "leetcode_slug": "min-cost-to-connect-all-points",
+    "leetcode_url": "https://leetcode.com/problems/min-cost-to-connect-all-points/"
   },
   {
     "id": "namaste-introduction-to-tries",
@@ -2625,7 +3279,10 @@
     "difficulty": "Easy",
     "duration": "16m 35s",
     "url": "https://namastedev.com/learn/namaste-dsa/introduction-to-tries",
-    "description": "Tries lesson from Namaste DSA."
+    "description": "Tries lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/introduction-to-tries",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-trie-and-trienode-structure",
@@ -2637,7 +3294,10 @@
     "difficulty": "Medium",
     "duration": "20m 7s",
     "url": "https://namastedev.com/learn/namaste-dsa/trie-and-trienode-structure",
-    "description": "Design the TrieNode class and the overall Trie structure."
+    "description": "Design the TrieNode class and the overall Trie structure.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/trie-and-trienode-structure",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-insert-search-prefixfind-trie-code",
@@ -2649,7 +3309,10 @@
     "difficulty": "Medium",
     "duration": "17m 33s",
     "url": "https://namastedev.com/learn/namaste-dsa/insert-search-prefixfind-trie-code",
-    "description": "Implement the core operations: Insert, Search, and StartsWith."
+    "description": "Implement the core operations: Insert, Search, and StartsWith.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/insert-search-prefixfind-trie-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-time-space-complexity-in-tries",
@@ -2661,7 +3324,10 @@
     "difficulty": "Medium",
     "duration": "11m 28s",
     "url": "https://namastedev.com/learn/namaste-dsa/time-space-complexity-in-tries",
-    "description": "Analyze the efficiency of Trie operations and their memory footprint."
+    "description": "Analyze the efficiency of Trie operations and their memory footprint.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/time-space-complexity-in-tries",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-quick-sort",
@@ -2673,7 +3339,10 @@
     "difficulty": "Medium",
     "duration": "51m 2s",
     "url": "https://namastedev.com/learn/namaste-dsa/quick-sort",
-    "description": "Learn how Quick Sort works using divide and conquer."
+    "description": "Learn how Quick Sort works using divide and conquer.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/quick-sort",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-counting-sort",
@@ -2685,7 +3354,10 @@
     "difficulty": "Medium",
     "duration": "19m 59s",
     "url": "https://namastedev.com/learn/namaste-dsa/counting-sort",
-    "description": "Understand the basics of Counting Sort."
+    "description": "Understand the basics of Counting Sort.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/counting-sort",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-counting-sort-stable-logic",
@@ -2697,7 +3369,10 @@
     "difficulty": "Medium",
     "duration": "27m 2s",
     "url": "https://namastedev.com/learn/namaste-dsa/counting-sort-stable-logic",
-    "description": "Learn the logic behind stable Counting Sort."
+    "description": "Learn the logic behind stable Counting Sort.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/counting-sort-stable-logic",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-counting-sort-stable-code",
@@ -2709,7 +3384,10 @@
     "difficulty": "Medium",
     "duration": "15m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/counting-sort-stable-code",
-    "description": "Implement stable Counting Sort in code."
+    "description": "Implement stable Counting Sort in code.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/counting-sort-stable-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-radix-sort",
@@ -2721,7 +3399,10 @@
     "difficulty": "Medium",
     "duration": "32m 50s",
     "url": "https://namastedev.com/learn/namaste-dsa/radix-sort",
-    "description": "Sort numbers digit by digit using Radix Sort."
+    "description": "Sort numbers digit by digit using Radix Sort.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/radix-sort",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-bucket-sort",
@@ -2733,7 +3414,10 @@
     "difficulty": "Medium",
     "duration": "21m 43s",
     "url": "https://namastedev.com/learn/namaste-dsa/bucket-sort",
-    "description": "Distribute elements into buckets for efficient sorting."
+    "description": "Distribute elements into buckets for efficient sorting.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/bucket-sort",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-interview-cheatsheet",
@@ -2745,7 +3429,10 @@
     "difficulty": "Hard",
     "duration": "16m 3s",
     "url": "https://namastedev.com/learn/namaste-dsa/interview-cheatsheet",
-    "description": "Searching & Sorting - Advanced lesson from Namaste DSA."
+    "description": "Searching & Sorting - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/interview-cheatsheet",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-jump-game-dp",
@@ -2757,7 +3444,10 @@
     "difficulty": "Hard",
     "duration": "31m 47s",
     "url": "https://namastedev.com/learn/namaste-dsa/jump-game-dp",
-    "description": "DP and Arrays - Advanced lesson from Namaste DSA."
+    "description": "DP and Arrays - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/jump-game-dp",
+    "leetcode_slug": "jump-game",
+    "leetcode_url": "https://leetcode.com/problems/jump-game/"
   },
   {
     "id": "namaste-jump-game-greedy",
@@ -2769,7 +3459,10 @@
     "difficulty": "Hard",
     "duration": "19m 5s",
     "url": "https://namastedev.com/learn/namaste-dsa/jump-game-greedy",
-    "description": "DP and Arrays - Advanced lesson from Namaste DSA."
+    "description": "DP and Arrays - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/jump-game-greedy",
+    "leetcode_slug": "jump-game",
+    "leetcode_url": "https://leetcode.com/problems/jump-game/"
   },
   {
     "id": "namaste-jump-game-ii",
@@ -2781,7 +3474,10 @@
     "difficulty": "Hard",
     "duration": "20m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/jump-game-ii",
-    "description": "DP and Arrays - Advanced lesson from Namaste DSA."
+    "description": "DP and Arrays - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/jump-game-ii",
+    "leetcode_slug": "jump-game-ii",
+    "leetcode_url": "https://leetcode.com/problems/jump-game-ii/"
   },
   {
     "id": "namaste-min-cost-to-cut-a-stick-rod-cutting-problem",
@@ -2793,7 +3489,10 @@
     "difficulty": "Hard",
     "duration": "37m 20s",
     "url": "https://namastedev.com/learn/namaste-dsa/min-cost-to-cut-a-stick-rod-cutting-problem",
-    "description": "DP and Arrays - Advanced lesson from Namaste DSA."
+    "description": "DP and Arrays - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/min-cost-to-cut-a-stick-rod-cutting-problem",
+    "leetcode_slug": "minimum-cost-to-cut-a-stick",
+    "leetcode_url": "https://leetcode.com/problems/minimum-cost-to-cut-a-stick/"
   },
   {
     "id": "namaste-super-egg-drop",
@@ -2805,7 +3504,10 @@
     "difficulty": "Hard",
     "duration": "43m 52s",
     "url": "https://namastedev.com/learn/namaste-dsa/super-egg-drop",
-    "description": "DP and Arrays - Advanced lesson from Namaste DSA."
+    "description": "DP and Arrays - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/super-egg-drop",
+    "leetcode_slug": "super-egg-drop",
+    "leetcode_url": "https://leetcode.com/problems/super-egg-drop/"
   },
   {
     "id": "namaste-minimum-add-to-make-parenthesis-valid",
@@ -2817,7 +3519,10 @@
     "difficulty": "Hard",
     "duration": "24m 22s",
     "url": "https://namastedev.com/learn/namaste-dsa/minimum-add-to-make-parenthesis-valid",
-    "description": "Strings - Advanced lesson from Namaste DSA."
+    "description": "Strings - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/minimum-add-to-make-parenthesis-valid",
+    "leetcode_slug": "minimum-add-to-make-parentheses-valid",
+    "leetcode_url": "https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/"
   },
   {
     "id": "namaste-reverse-words-in-a-string",
@@ -2829,7 +3534,10 @@
     "difficulty": "Hard",
     "duration": "18m 18s",
     "url": "https://namastedev.com/learn/namaste-dsa/reverse-words-in-a-string",
-    "description": "Strings - Advanced lesson from Namaste DSA."
+    "description": "Strings - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/reverse-words-in-a-string",
+    "leetcode_slug": "reverse-words-in-a-string",
+    "leetcode_url": "https://leetcode.com/problems/reverse-words-in-a-string/"
   },
   {
     "id": "namaste-sum-of-beauty-of-all-substrings",
@@ -2841,7 +3549,10 @@
     "difficulty": "Hard",
     "duration": "26m 3s",
     "url": "https://namastedev.com/learn/namaste-dsa/sum-of-beauty-of-all-substrings",
-    "description": "Strings - Advanced lesson from Namaste DSA."
+    "description": "Strings - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/sum-of-beauty-of-all-substrings",
+    "leetcode_slug": "sum-of-beauty-of-all-substrings",
+    "leetcode_url": "https://leetcode.com/problems/sum-of-beauty-of-all-substrings/"
   },
   {
     "id": "namaste-decode-string",
@@ -2853,7 +3564,10 @@
     "difficulty": "Hard",
     "duration": "32m 18s",
     "url": "https://namastedev.com/learn/namaste-dsa/decode-string",
-    "description": "Strings - Advanced lesson from Namaste DSA."
+    "description": "Strings - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/decode-string",
+    "leetcode_slug": "decode-string",
+    "leetcode_url": "https://leetcode.com/problems/decode-string/"
   },
   {
     "id": "namaste-count-and-say",
@@ -2865,7 +3579,10 @@
     "difficulty": "Hard",
     "duration": "21m 17s",
     "url": "https://namastedev.com/learn/namaste-dsa/count-and-say",
-    "description": "Strings - Advanced lesson from Namaste DSA."
+    "description": "Strings - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/count-and-say",
+    "leetcode_slug": "count-and-say",
+    "leetcode_url": "https://leetcode.com/problems/count-and-say/"
   },
   {
     "id": "namaste-reorganize-string",
@@ -2877,7 +3594,10 @@
     "difficulty": "Hard",
     "duration": "32m 40s",
     "url": "https://namastedev.com/learn/namaste-dsa/reorganize-string",
-    "description": "Strings - Advanced lesson from Namaste DSA."
+    "description": "Strings - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/reorganize-string",
+    "leetcode_slug": "reorganize-string",
+    "leetcode_url": "https://leetcode.com/problems/reorganize-string/"
   },
   {
     "id": "namaste-repeated-string-match",
@@ -2889,7 +3609,10 @@
     "difficulty": "Hard",
     "duration": "19m 51s",
     "url": "https://namastedev.com/learn/namaste-dsa/repeated-string-match",
-    "description": "Strings - Advanced lesson from Namaste DSA."
+    "description": "Strings - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/repeated-string-match",
+    "leetcode_slug": "repeated-string-match",
+    "leetcode_url": "https://leetcode.com/problems/repeated-string-match/"
   },
   {
     "id": "namaste-rabin-karp-algorithm",
@@ -2901,7 +3624,10 @@
     "difficulty": "Hard",
     "duration": "34m 1s",
     "url": "https://namastedev.com/learn/namaste-dsa/rabin-karp-algorithm",
-    "description": "Strings - Advanced lesson from Namaste DSA."
+    "description": "Strings - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/rabin-karp-algorithm",
+    "leetcode_slug": null,
+    "leetcode_url": null
   },
   {
     "id": "namaste-rabin-karp-code",
@@ -2913,6 +3639,9 @@
     "difficulty": "Hard",
     "duration": "37m 53s",
     "url": "https://namastedev.com/learn/namaste-dsa/rabin-karp-code",
-    "description": "Strings - Advanced lesson from Namaste DSA."
+    "description": "Strings - Advanced lesson from Namaste DSA.",
+    "namaste_url": "https://namastedev.com/learn/namaste-dsa/rabin-karp-code",
+    "leetcode_slug": null,
+    "leetcode_url": null
   }
 ]

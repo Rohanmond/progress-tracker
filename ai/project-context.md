@@ -8,6 +8,8 @@ The product combines:
 
 - A 12-week interview preparation roadmap.
 - DSA problem tracking, seeded from Namaste DSA.
+- Separate NamasteDev lesson links and LeetCode problem links where a mapping exists.
+- LeetCode-backed solved verification for linked problems.
 - Daily study logging.
 - Progress metrics for solved questions, revision queue, minutes studied, and mock interviews.
 - PostgreSQL-backed analytics that can be explored in Superset.
@@ -44,3 +46,5 @@ The app is a full-stack monorepo:
 - `server/data/`: seed dataset.
 
 The first seed dataset contains 243 Namaste DSA course items extracted from the authenticated course outline, excluding intro/warm-up/time-complexity/bonus sections.
+
+175 of those items currently have curated LeetCode links. Course-only lessons intentionally have no LeetCode link and cannot be marked `Solved` through LeetCode verification.

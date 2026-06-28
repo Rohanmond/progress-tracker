@@ -3,6 +3,7 @@ require("dotenv").config({ path: require("node:path").resolve(__dirname, "..", "
 const cors = require("cors");
 const express = require("express");
 const { query } = require("./db");
+const { verifySolved } = require("./leetcode");
 
 const app = express();
 const port = process.env.PORT || 8080;
@@ -71,7 +72,13 @@ app.get("/api/questions", async (req, res, next) => {
     values.push(Math.min(Number(limit) || 120, 500));
     const where = clauses.length ? `where ${clauses.join(" and ")}` : "";
     const result = await query(
-      `select q.*, coalesce(qp.status, 'Todo') as status, qp.notes, qp.updated_at as progress_updated_at
+      `select
+        q.*,
+        coalesce(qp.status, 'Todo') as status,
+        qp.notes,
+        qp.leetcode_verified_at,
+        qp.leetcode_verification_note,
+        qp.updated_at as progress_updated_at
        from questions q
        left join question_progress qp on qp.question_id = q.id
        ${where}
@@ -93,15 +100,36 @@ app.patch("/api/questions/:id/status", async (req, res, next) => {
       res.status(400).json({ error: "Invalid status" });
       return;
     }
+
+    const questionResult = await query("select * from questions where id = $1", [req.params.id]);
+    if (!questionResult.rowCount) {
+      res.status(404).json({ error: "Question not found" });
+      return;
+    }
+
+    let verifiedAt = null;
+    let verificationNote = "";
+    if (status === "Solved") {
+      const verification = await verifySolved(questionResult.rows[0]);
+      if (!verification.ok) {
+        res.status(409).json({ error: verification.reason });
+        return;
+      }
+      verifiedAt = new Date();
+      verificationNote = `Verified against LeetCode user ${verification.username}.`;
+    }
+
     const result = await query(
-      `insert into question_progress (question_id, status, notes)
-       values ($1, $2, $3)
+      `insert into question_progress (question_id, status, notes, leetcode_verified_at, leetcode_verification_note)
+       values ($1, $2, $3, $4, $5)
        on conflict (question_id) do update set
          status = excluded.status,
          notes = excluded.notes,
+         leetcode_verified_at = excluded.leetcode_verified_at,
+         leetcode_verification_note = excluded.leetcode_verification_note,
          updated_at = now()
        returning *`,
-      [req.params.id, status, notes]
+      [req.params.id, status, notes, verifiedAt, verificationNote]
     );
     res.json({ progress: result.rows[0] });
   } catch (error) {

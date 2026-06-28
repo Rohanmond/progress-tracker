@@ -13,6 +13,7 @@
     "build": "npm run build --workspace client",
     "check": "npm run check --workspace client && npm run check --workspace server",
     "check:docs": "node scripts/check-docs.js",
+    "enrich:leetcode": "node scripts/enrich-leetcode-links.js",
     "lint:commits": "node scripts/lint-commits.js",
     "seed": "npm run seed --workspace server"
   },

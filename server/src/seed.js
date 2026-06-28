@@ -9,8 +9,8 @@ async function seed() {
   for (const item of questions) {
     await query(
       `insert into questions (
-        id, source, source_order, title, section, pattern, difficulty, duration, url, description
-      ) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10)
+        id, source, source_order, title, section, pattern, difficulty, duration, url, namaste_url, leetcode_slug, leetcode_url, description
+      ) values ($1,$2,$3,$4,$5,$6,$7,$8,$9,$10,$11,$12,$13)
       on conflict (id) do update set
         source = excluded.source,
         source_order = excluded.source_order,
@@ -20,6 +20,9 @@ async function seed() {
         difficulty = excluded.difficulty,
         duration = excluded.duration,
         url = excluded.url,
+        namaste_url = excluded.namaste_url,
+        leetcode_slug = excluded.leetcode_slug,
+        leetcode_url = excluded.leetcode_url,
         description = excluded.description`,
       [
         item.id,
@@ -31,6 +34,9 @@ async function seed() {
         item.difficulty,
         item.duration,
         item.url,
+        item.namaste_url || item.url,
+        item.leetcode_slug || null,
+        item.leetcode_url || null,
         item.description
       ]
     );

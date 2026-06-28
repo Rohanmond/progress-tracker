@@ -31,12 +31,14 @@ The user has access to strong preparation resources but loses track over time. D
 ## Primary User Stories
 
 1. As a candidate, I can view all Namaste DSA problems in one searchable list.
-2. As a candidate, I can mark a problem as `Solved`, `Revise`, or `Todo`.
-3. As a candidate, I can filter problems by pattern and status.
-4. As a candidate, I can log what I studied today and how many minutes I spent.
-5. As a candidate, I can see dashboard metrics for solved count, revision count, study minutes, and mocks.
-6. As a candidate, I can review a 12-week preparation roadmap.
-7. As a candidate, I can connect Superset to analyze progress by pattern and day.
+2. As a candidate, I can open both the NamasteDev lesson and the LeetCode problem when both links exist.
+3. As a candidate, I can mark a problem as `Solved` only when LeetCode verification confirms an accepted submission.
+4. As a candidate, I can mark a problem as `Revise` or `Todo` manually.
+5. As a candidate, I can filter problems by pattern and status.
+6. As a candidate, I can log what I studied today and how many minutes I spent.
+7. As a candidate, I can see dashboard metrics for solved count, revision count, study minutes, and mocks.
+8. As a candidate, I can review a 12-week preparation roadmap.
+9. As a candidate, I can connect Superset to analyze progress by pattern and day.
 
 ## Success Metrics
 
@@ -51,9 +53,10 @@ The user has access to strong preparation resources but loses track over time. D
 ### DSA Bank
 
 - Show seeded Namaste DSA items.
-- Show title, section, pattern, difficulty, duration, and link.
+- Show title, section, pattern, difficulty, duration, NamasteDev link, and LeetCode link where available.
 - Filter by search text, pattern, and status.
-- Update status through one-click actions.
+- Update `Revise` and `Todo` through one-click actions.
+- Update `Solved` only after backend LeetCode verification passes.
 - Persist progress in PostgreSQL.
 
 ### Daily Log

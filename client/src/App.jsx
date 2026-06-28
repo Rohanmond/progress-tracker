@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { BarChart3, BookOpen, CalendarDays, CheckCircle2, Database, RefreshCcw, Search } from "lucide-react";
+import { BarChart3, BookOpen, CalendarDays, CheckCircle2, Database, ExternalLink, RefreshCcw, Search } from "lucide-react";
 import { api } from "./lib/api.js";
 
 const tabs = [
@@ -53,8 +53,13 @@ export default function App() {
   }
 
   async function updateQuestion(id, status) {
-    await api.updateQuestion(id, { status });
-    await Promise.all([loadQuestions(), api.metrics().then(setMetrics)]);
+    setError("");
+    try {
+      await api.updateQuestion(id, { status });
+      await Promise.all([loadQuestions(), api.metrics().then(setMetrics)]);
+    } catch (requestError) {
+      setError(requestError.message);
+    }
   }
 
   async function addLog(event) {
@@ -168,7 +173,7 @@ function Dashboard({ metrics, logs, questions }) {
           <div className="list">
             {reviseQueue.length ? (
               reviseQueue.map((question) => (
-                <a href={question.url} key={question.id} rel="noreferrer" target="_blank">
+                <a href={question.namaste_url || question.url} key={question.id} rel="noreferrer" target="_blank">
                   <strong>{question.title}</strong>
                   <span>{question.pattern} · {question.difficulty}</span>
                 </a>
@@ -247,11 +252,26 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
         {questions.map((question) => (
           <article className="question-card" key={question.id}>
             <div>
-              <a href={question.url} rel="noreferrer" target="_blank">{question.source_order}. {question.title}</a>
+              <strong>{question.source_order}. {question.title}</strong>
               <p>{question.section} · {question.pattern} · {question.difficulty} · {question.duration || "self-paced"}</p>
+              <div className="resource-links">
+                <a href={question.namaste_url || question.url} rel="noreferrer" target="_blank">
+                  <ExternalLink size={14} />
+                  NamasteDev
+                </a>
+                {question.leetcode_url ? (
+                  <a href={question.leetcode_url} rel="noreferrer" target="_blank">
+                    <ExternalLink size={14} />
+                    LeetCode
+                  </a>
+                ) : (
+                  <span>No LeetCode link</span>
+                )}
+              </div>
             </div>
             <div className="status-actions">
               <span className={`pill ${question.status.toLowerCase()}`}>{question.status}</span>
+              {question.leetcode_verified_at ? <span className="verified">LeetCode verified</span> : null}
               <button onClick={() => onUpdate(question.id, "Solved")} type="button">Solved</button>
               <button className="warning" onClick={() => onUpdate(question.id, "Revise")} type="button">Revise</button>
               <button className="muted" onClick={() => onUpdate(question.id, "Todo")} type="button">Todo</button>

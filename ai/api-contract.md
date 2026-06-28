@@ -63,6 +63,9 @@ Response:
       "pattern": "Arrays",
       "difficulty": "Easy",
       "duration": "45m 5s",
+      "namaste_url": "https://namastedev.com/learn/namaste-dsa/remove-duplicates",
+      "leetcode_slug": "remove-duplicates-from-sorted-array",
+      "leetcode_url": "https://leetcode.com/problems/remove-duplicates-from-sorted-array/",
       "status": "Todo"
     }
   ]
@@ -90,6 +93,16 @@ Response:
     "notes": "",
     "updated_at": "2026-06-29T00:00:00.000Z"
   }
+}
+```
+
+When `status` is `Solved`, the API verifies the question against LeetCode using `LEETCODE_USERNAME`. If verification fails, the API returns `409`.
+
+Example failure:
+
+```json
+{
+  "error": "LeetCode user example has no accepted submission for two-sum in the public accepted-submissions feed."
 }
 ```
 
