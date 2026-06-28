@@ -35,6 +35,8 @@ Run before committing:
 ```sh
 npm run check
 npm run build --workspace client
+npm run lint:commits
+npm run check:docs
 ```
 
 If database behavior changes, also run against a real Postgres instance:
@@ -77,3 +79,21 @@ This is a major architecture change. Update:
 - No migrations framework.
 - No automated tests beyond syntax/build checks.
 - Seed runs at Render startup in current config.
+
+## Commit And Documentation Guardrails
+
+Commit messages are validated with Conventional Commits through Commitlint.
+
+Examples:
+
+- `feat: add weekly goal tracking`
+- `fix: correct question status update`
+- `docs: update deployment notes`
+- `chore: add CI doc checks`
+
+CI runs `npm run check:docs`. When feature-sensitive files change, update the matching docs in the same PR:
+
+- Client behavior: `ai/prd.md`, `ai/architecture.md`, or `ai/project-context.md`.
+- API behavior: `ai/api-contract.md` or `ai/architecture.md`.
+- Database/seed behavior: `ai/data-model.md`, `ai/architecture.md`, or `docs/superset.md`.
+- Deployment/config behavior: `ai/deployment.md`, `README.md`, or `ai/ai-working-guide.md`.

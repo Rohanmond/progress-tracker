@@ -79,3 +79,17 @@ See [../docs/superset.md](../docs/superset.md).
 - `VITE_API_URL` must include `/api`.
 - Render Postgres may require SSL; set `DATABASE_SSL=true` if connection fails in production.
 - The app is currently single-user; do not expose it as a shared multi-user app without auth.
+
+## CI/CD
+
+GitHub Actions workflow: `.github/workflows/ci.yml`.
+
+The workflow runs on pushes to `main` and pull requests:
+
+1. `npm ci`
+2. `npm run lint:commits`
+3. `npm run check:docs`
+4. `npm run check`
+5. `npm run build`
+
+The docs check enforces that feature-sensitive changes include relevant documentation updates in `ai/`, `docs/`, or `README.md`.

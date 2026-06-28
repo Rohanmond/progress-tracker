@@ -13,6 +13,17 @@ Full-stack prep tracker for a senior frontend job switch plan.
 
 Architecture, PRD, API contract, deployment notes, and AI working context live in [`ai/`](./ai/README.md).
 
+## Quality Gates
+
+```sh
+npm run lint:commits
+npm run check:docs
+npm run check
+npm run build
+```
+
+GitHub Actions runs the same guardrails on pushes and pull requests.
+
 ## Local Setup
 
 ```sh

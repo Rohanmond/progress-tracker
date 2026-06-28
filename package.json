@@ -10,7 +10,14 @@
   "scripts": {
     "dev": "npm run dev --workspace client",
     "dev:api": "npm run dev --workspace server",
+    "build": "npm run build --workspace client",
     "check": "npm run check --workspace client && npm run check --workspace server",
+    "check:docs": "node scripts/check-docs.js",
+    "lint:commits": "node scripts/lint-commits.js",
     "seed": "npm run seed --workspace server"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1"
   }
 }
