@@ -9,6 +9,10 @@ Full-stack prep tracker for a senior frontend job switch plan.
 - PostgreSQL schema and analytics views in `db/`
 - Namaste DSA seed data in `server/data/`
 
+## AI Context
+
+Architecture, PRD, API contract, deployment notes, and AI working context live in [`ai/`](./ai/README.md).
+
 ## Local Setup
 
 ```sh
