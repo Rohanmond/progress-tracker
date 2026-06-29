@@ -57,7 +57,6 @@ Required environment variables:
 - `GMAIL_APP_PASSWORD`: Google App Password for Gmail SMTP.
 - `RESEND_API_KEY`: optional fallback provider for production OTP email delivery.
 - `AUTH_EMAIL_FROM`: optional sender label/address for OTP email delivery.
-- `LEETCODE_USERNAME`: optional but required if solved status should be verified against LeetCode.
 - `DATABASE_SSL=true` may be required depending on Render connection mode.
 
 Current Render start command runs:
@@ -88,7 +87,7 @@ See [../docs/superset.md](../docs/superset.md).
 - Without `GMAIL_USER`/`GMAIL_APP_PASSWORD` or `RESEND_API_KEY`, OTPs are printed in API logs, which is acceptable only for local development.
 - Render Postgres may require SSL; set `DATABASE_SSL=true` if connection fails in production.
 - The app is still single-progress-track; auth gates access but does not yet split tracker data per user.
-- LeetCode solved verification currently uses public accepted-submission data for `LEETCODE_USERNAME`; it does not store LeetCode credentials.
+- LeetCode solved verification uses the username collected after first login; it does not store LeetCode credentials.
 
 ## CI/CD
 

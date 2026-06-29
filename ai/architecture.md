@@ -72,15 +72,16 @@ Important files:
 1. `npm run seed` creates tables and inserts Namaste DSA questions.
 2. React checks `/api/auth/me`; unauthenticated users see the Gmail OTP login screen.
 3. User requests and verifies a Gmail OTP; Express stores hashed OTPs and creates an HTTP-only session cookie.
-4. React requests `/api/weekly-plan` for the default commitment-first experience.
-5. Express joins `questions` with `question_progress`, overlays seed-backed weekly milestones with `milestone_progress`, maps weekly DSA work to curated Core 100 question IDs, and attaches optional weekly bonus topics.
-6. React requests `/api/questions` for full-bank reference mode, defaulting to the full seeded dataset with computed priority labels.
-7. User opens NamasteDev or LeetCode links from plan or bank cards.
-8. User marks a question `Revise` or `Todo`; Express upserts directly into `question_progress`.
-9. User marks a question `Solved`; Express first verifies accepted LeetCode submissions for `LEETCODE_USERNAME` and the question `leetcode_slug`.
-10. User marks weekly DSA, JavaScript, React LLD, HLD, or revision milestones `Done`, `Revise`, or `Todo`; optional performance/accessibility/security bonus topics remain untracked stretch work.
-11. Dashboard calls `/api/metrics` to show updated Core 100, full-bank, and milestone totals.
-12. Superset reads analytics views from the same Postgres database.
+4. After first login, React requires a LeetCode username and saves it on `app_users`.
+5. React requests `/api/weekly-plan` for the default commitment-first experience.
+6. Express joins `questions` with `question_progress`, overlays seed-backed weekly milestones with `milestone_progress`, maps weekly DSA work to curated Core 100 question IDs, and attaches optional weekly bonus topics.
+7. React requests `/api/questions` for full-bank reference mode, defaulting to the full seeded dataset with computed priority labels.
+8. User opens NamasteDev or LeetCode links from plan or bank cards.
+9. User marks a question `Revise` or `Todo`; Express upserts directly into `question_progress`.
+10. User marks a question `Solved`; Express first verifies accepted LeetCode submissions for the logged-in user's saved LeetCode username and the question `leetcode_slug`.
+11. User marks weekly DSA, JavaScript, React LLD, HLD, or revision milestones `Done`, `Revise`, or `Todo`; optional performance/accessibility/security bonus topics remain untracked stretch work.
+12. Dashboard calls `/api/metrics` to show updated Core 100, full-bank, and milestone totals.
+13. Superset reads analytics views from the same Postgres database.
 
 ## Deployment Shape
 

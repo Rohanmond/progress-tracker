@@ -10,6 +10,7 @@ Columns:
 
 - `id`: generated primary key.
 - `email`: unique Gmail address.
+- `leetcode_username`: LeetCode username collected after first login and used for solved-status verification.
 - `created_at`: first-seen timestamp.
 - `last_login_at`: latest successful OTP login.
 

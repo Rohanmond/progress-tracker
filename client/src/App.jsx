@@ -36,7 +36,7 @@ export default function App() {
     try {
       const result = await api.me();
       setUser(result.user);
-      if (result.user) {
+      if (result.user?.leetcode_username) {
         await loadApp();
       }
     } catch (requestError) {
@@ -120,6 +120,13 @@ export default function App() {
   }
 
   async function handleAuthenticated(nextUser) {
+    setUser(nextUser);
+    if (nextUser.leetcode_username) {
+      await loadApp();
+    }
+  }
+
+  async function handleProfileSaved(nextUser) {
     setUser(nextUser);
     await loadApp();
   }
@@ -253,6 +260,19 @@ export default function App() {
     );
   }
 
+  if (!user.leetcode_username) {
+    return (
+      <ProfileSetup
+        error={error}
+        onLogout={logout}
+        onSaved={handleProfileSaved}
+        theme={theme}
+        onThemeChange={() => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"))}
+        user={user}
+      />
+    );
+  }
+
   return shell;
 }
 
@@ -373,6 +393,82 @@ function AuthScreen({ error, onAuthenticated, theme, onThemeChange }) {
             </div>
           </form>
         )}
+      </section>
+    </main>
+  );
+}
+
+function ProfileSetup({ error, onLogout, onSaved, theme, onThemeChange, user }) {
+  const [leetcodeUsername, setLeetcodeUsername] = useState("");
+  const [profileError, setProfileError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function saveProfile(event) {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setProfileError("");
+    try {
+      const result = await api.updateProfile({ leetcodeUsername });
+      await onSaved(result.user);
+    } catch (requestError) {
+      setProfileError(requestError.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  return (
+    <main className="auth-shell">
+      <section className="auth-card">
+        <div className="auth-topline">
+          <div className="brand auth-brand">
+            <span>FS</span>
+            <div>
+              <h1>Switch OS</h1>
+              <p>{user.email}</p>
+            </div>
+          </div>
+          <button
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            aria-pressed={theme === "dark"}
+            className="icon-button"
+            onClick={onThemeChange}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            type="button"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
+
+        <div className="auth-copy">
+          <p className="label">One-time setup</p>
+          <h2>Add your LeetCode username</h2>
+          <p>This lets Switch OS verify accepted submissions before marking linked DSA problems as solved.</p>
+        </div>
+
+        {error ? <div className="banner">API connection issue: {error}</div> : null}
+        {profileError ? <div className="banner">{profileError}</div> : null}
+
+        <form className="auth-form" onSubmit={saveProfile}>
+          <label>
+            LeetCode username
+            <input
+              autoComplete="username"
+              onChange={(event) => setLeetcodeUsername(event.target.value)}
+              placeholder="Rohan108"
+              required
+              value={leetcodeUsername}
+            />
+          </label>
+          <div className="auth-actions">
+            <button disabled={isSubmitting} type="submit">
+              {isSubmitting ? "Saving..." : "Save and continue"}
+            </button>
+            <button className="muted" disabled={isSubmitting} onClick={onLogout} type="button">
+              Logout
+            </button>
+          </div>
+        </form>
       </section>
     </main>
   );

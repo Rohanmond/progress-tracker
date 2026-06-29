@@ -32,7 +32,8 @@ Returns the current session user, or `null`.
 {
   "user": {
     "id": 1,
-    "email": "user@gmail.com"
+    "email": "user@gmail.com",
+    "leetcode_username": "Rohan108"
   }
 }
 ```
@@ -94,6 +95,30 @@ Response:
 ```json
 {
   "ok": true
+}
+```
+
+### `PATCH /api/auth/profile`
+
+Saves profile fields required after first login.
+
+Request:
+
+```json
+{
+  "leetcodeUsername": "Rohan108"
+}
+```
+
+Response:
+
+```json
+{
+  "user": {
+    "id": 1,
+    "email": "user@gmail.com",
+    "leetcode_username": "Rohan108"
+  }
 }
 ```
 
@@ -284,7 +309,7 @@ Response:
 }
 ```
 
-When `status` is `Solved`, the API verifies the question against LeetCode using `LEETCODE_USERNAME`. If verification fails, the API returns `409`.
+When `status` is `Solved`, the API verifies the question against the logged-in user's saved LeetCode username. If verification fails, the API returns `409`.
 
 Example failure:
 

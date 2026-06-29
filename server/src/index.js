@@ -929,7 +929,7 @@ async function requireAuth(req, res, next) {
     }
 
     const sessionResult = await query(
-      `select s.id as session_id, s.expires_at, u.id as user_id, u.email
+      `select s.id as session_id, s.expires_at, u.id as user_id, u.email, u.leetcode_username
        from auth_sessions s
        join app_users u on u.id = s.user_id
        where s.token_hash = $1 and s.expires_at > now()`,
@@ -944,7 +944,8 @@ async function requireAuth(req, res, next) {
 
     req.user = {
       id: sessionResult.rows[0].user_id,
-      email: sessionResult.rows[0].email
+      email: sessionResult.rows[0].email,
+      leetcode_username: sessionResult.rows[0].leetcode_username
     };
     await query("update auth_sessions set last_seen_at = now() where id = $1", [sessionResult.rows[0].session_id]);
     next();
@@ -971,7 +972,7 @@ app.get("/api/auth/me", async (req, res, next) => {
     }
 
     const sessionResult = await query(
-      `select u.id, u.email
+      `select u.id, u.email, u.leetcode_username
        from auth_sessions s
        join app_users u on u.id = s.user_id
        where s.token_hash = $1 and s.expires_at > now()`,
@@ -1066,7 +1067,7 @@ app.post("/api/auth/verify-otp", async (req, res, next) => {
       `insert into app_users (email, last_login_at)
        values ($1, now())
        on conflict (email) do update set last_login_at = now()
-       returning id, email`,
+       returning id, email, leetcode_username`,
       [email]
     );
     await query("update email_otps set consumed_at = now() where id = $1", [otpRow.id]);
@@ -1100,6 +1101,28 @@ app.post("/api/auth/logout", async (req, res, next) => {
 });
 
 app.use("/api", requireAuth);
+
+app.patch("/api/auth/profile", async (req, res, next) => {
+  try {
+    const leetcodeUsername = String(req.body.leetcodeUsername || "").trim();
+    if (!/^[A-Za-z0-9_-]{3,30}$/.test(leetcodeUsername)) {
+      res.status(400).json({ error: "Enter a valid LeetCode username, 3-30 characters using letters, numbers, underscore, or hyphen." });
+      return;
+    }
+
+    const result = await query(
+      `update app_users
+       set leetcode_username = $1
+       where id = $2
+       returning id, email, leetcode_username`,
+      [leetcodeUsername, req.user.id]
+    );
+
+    res.json({ user: result.rows[0] });
+  } catch (error) {
+    next(error);
+  }
+});
 
 app.get("/api/roadmap", (_req, res) => {
   res.json({ roadmap });
@@ -1262,7 +1285,7 @@ app.patch("/api/questions/:id/status", async (req, res, next) => {
     let verifiedAt = null;
     let verificationNote = "";
     if (status === "Solved") {
-      const verification = await verifySolved(questionResult.rows[0]);
+      const verification = await verifySolved(questionResult.rows[0], req.user.leetcode_username);
       if (!verification.ok) {
         res.status(409).json({ error: verification.reason });
         return;

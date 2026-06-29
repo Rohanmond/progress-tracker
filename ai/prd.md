@@ -52,6 +52,7 @@ The user has access to strong preparation resources but loses track over time. D
 16. As a candidate, I can see optional weekly bonus topics for performance, accessibility, and security after the core plan is complete.
 17. As a candidate, I can switch between light and dark mode, with my preference remembered on the same browser.
 18. As a candidate, I can log in with a Gmail OTP and log out without managing a password.
+19. As a candidate, I can add my LeetCode username after first login so solved verification uses my own account.
 
 ## Success Metrics
 
@@ -73,6 +74,7 @@ The user has access to strong preparation resources but loses track over time. D
 - Production OTP delivery can use Gmail SMTP through `GMAIL_USER` and `GMAIL_APP_PASSWORD`, or Resend through `RESEND_API_KEY`.
 - Local development may print OTP codes in the API console when no email provider is configured.
 - Passwords are not collected or stored.
+- After first login, the user must add a LeetCode username before entering the tracker.
 
 ### Weekly Plan
 
@@ -106,6 +108,7 @@ The user has access to strong preparation resources but loses track over time. D
 - Filter by priority: `Core 100`, `Supplemental`, or `Course-only`.
 - Update `Revise` and `Todo` through one-click actions.
 - Update `Solved` only after backend LeetCode verification passes.
+- LeetCode verification uses the logged-in user's saved LeetCode username.
 - Persist progress in PostgreSQL.
 
 ### Daily Log

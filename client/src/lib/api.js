@@ -30,6 +30,11 @@ export const api = {
       method: "POST",
       body: JSON.stringify(payload)
     }),
+  updateProfile: (payload) =>
+    request("/auth/profile", {
+      method: "PATCH",
+      body: JSON.stringify(payload)
+    }),
   logout: () =>
     request("/auth/logout", {
       method: "POST"

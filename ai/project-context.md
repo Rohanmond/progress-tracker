@@ -13,6 +13,7 @@ The product combines:
 - Separate NamasteDev lesson links and LeetCode problem links where a mapping exists.
 - LeetCode-backed solved verification for linked problems.
 - Passwordless Gmail OTP login and logout.
+- First-login LeetCode username setup for solved-status verification.
 - Daily study logging.
 - Progress metrics for Core 100 solved questions, revision queue, minutes studied, and mock interviews.
 - PostgreSQL-backed analytics that can be explored in Superset.
@@ -56,7 +57,7 @@ The app is a full-stack monorepo:
 - `db/`: schema and analytics views.
 - `server/data/`: seed dataset.
 
-Authentication is an access gate over the current single-user tracker data. It stores Gmail identities, hashed OTPs, and hashed session tokens in Postgres. It does not yet partition question progress, milestone progress, or study logs by user.
+Authentication is an access gate over the current single-user tracker data. It stores Gmail identities, LeetCode usernames, hashed OTPs, and hashed session tokens in Postgres. It does not yet partition question progress, milestone progress, or study logs by user.
 
 The first seed dataset contains 243 Namaste DSA course items extracted from the authenticated course outline, excluding intro/warm-up/time-complexity/bonus sections.
 

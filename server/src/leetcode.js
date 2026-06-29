@@ -44,12 +44,11 @@ async function fetchSolvedSlugs(username) {
   return slugs;
 }
 
-async function verifySolved(question) {
-  const username = process.env.LEETCODE_USERNAME;
+async function verifySolved(question, username) {
   if (!username) {
     return {
       ok: false,
-      reason: "Set LEETCODE_USERNAME in server/.env to verify solved status from LeetCode."
+      reason: "Add your LeetCode username in your profile before marking linked problems as solved."
     };
   }
 

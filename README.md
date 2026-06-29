@@ -10,7 +10,7 @@ The primary workflow is the Weekly Plan: each week has five humane day-by-day co
 - Node + Express backend in `server/`
 - PostgreSQL schema and analytics views in `db/`
 - Namaste DSA seed data in `server/data/`
-- Optional LeetCode solved verification through `LEETCODE_USERNAME`
+- Per-user LeetCode solved verification after first login
 - Weekly milestone progress for the 16-week interview plan
 
 ## AI Context
@@ -40,7 +40,7 @@ npm run dev
 
 Set `VITE_API_URL=http://localhost:8080/api` for local frontend API calls.
 
-Set `LEETCODE_USERNAME` in `server/.env` to require LeetCode verification before a linked DSA item can be marked `Solved`.
+After first login, the app asks for your LeetCode username and uses it to verify linked DSA items before they can be marked `Solved`.
 
 Set `AUTH_SECRET` for signed OTP/session hashing. Add `GMAIL_USER` and `GMAIL_APP_PASSWORD` to send OTP emails through Gmail SMTP. `RESEND_API_KEY` remains available as a fallback provider; without either provider, local development prints OTPs in the API console.
 

@@ -52,9 +52,12 @@ create table if not exists milestone_progress (
 create table if not exists app_users (
   id bigserial primary key,
   email text not null unique,
+  leetcode_username text,
   created_at timestamptz not null default now(),
   last_login_at timestamptz
 );
+
+alter table app_users add column if not exists leetcode_username text;
 
 create table if not exists email_otps (
   id bigserial primary key,
