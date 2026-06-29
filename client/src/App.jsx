@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { BarChart3, BookOpen, CalendarDays, CheckCircle2, ClipboardList, Clock3, Database, ExternalLink, RefreshCcw, Search } from "lucide-react";
+import { BarChart3, BookOpen, CalendarDays, CheckCircle2, ClipboardList, Clock3, Database, ExternalLink, Moon, RefreshCcw, Search, Sun } from "lucide-react";
 import { api } from "./lib/api.js";
 
 const tabs = [
@@ -12,8 +12,15 @@ const tabs = [
 
 const today = () => new Date().toISOString().slice(0, 10);
 
+function getInitialTheme() {
+  const storedTheme = window.localStorage.getItem("switch-os-theme");
+  if (storedTheme === "dark" || storedTheme === "light") return storedTheme;
+  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+}
+
 export default function App() {
   const [activeTab, setActiveTab] = useState("plan");
+  const [theme, setTheme] = useState(getInitialTheme);
   const [metrics, setMetrics] = useState(null);
   const [roadmap, setRoadmap] = useState([]);
   const [weeklyPlan, setWeeklyPlan] = useState([]);
@@ -100,6 +107,11 @@ export default function App() {
     loadApp();
   }, []);
 
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+    window.localStorage.setItem("switch-os-theme", theme);
+  }, [theme]);
+
   const patterns = useMemo(() => {
     const unique = new Set(questions.map((question) => question.pattern).filter(Boolean));
     return ["All", ...Array.from(unique).sort()];
@@ -146,10 +158,22 @@ export default function App() {
             <p className="eyebrow">Frontend interview control center</p>
             <h2>{tabs.find((tab) => tab.id === activeTab)?.label}</h2>
           </div>
-          <button className="ghost-button" onClick={loadApp} type="button">
-            <RefreshCcw size={18} />
-            Refresh
-          </button>
+          <div className="topbar-actions">
+            <button
+              aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              aria-pressed={theme === "dark"}
+              className="icon-button"
+              onClick={() => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"))}
+              title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+              type="button"
+            >
+              {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+            </button>
+            <button className="ghost-button" onClick={loadApp} type="button">
+              <RefreshCcw size={18} />
+              Refresh
+            </button>
+          </div>
         </header>
 
         {error ? <div className="banner">API connection issue: {error}</div> : null}

@@ -42,6 +42,7 @@ Avoid adding heavy workflows that require too much manual entry. Prefer:
 - A visible accordion list of weekly Core 100 problems with direct Namaste and LeetCode links.
 - Optional weekly bonus cards for performance, accessibility, and security resources.
 - Dashboard metrics that answer "am I moving?" quickly.
+- Light/dark mode with browser preference detection and local persistence.
 
 ## Current State
 

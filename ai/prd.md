@@ -48,6 +48,7 @@ The user has access to strong preparation resources but loses track over time. D
 14. As a candidate, I can filter the DSA Bank by `Core 100`, `Supplemental`, or `Course-only`.
 15. As a candidate, I can follow a humane 5-day weekly cadence with a built-in revision/catch-up day.
 16. As a candidate, I can see optional weekly bonus topics for performance, accessibility, and security after the core plan is complete.
+17. As a candidate, I can switch between light and dark mode, with my preference remembered on the same browser.
 
 ## Success Metrics
 
@@ -74,6 +75,13 @@ The user has access to strong preparation resources but loses track over time. D
 - Weeks 14-16 are repair/mock/final-review weeks and may have no new DSA questions.
 - Questions should be staged to avoid jumping directly into hard problems.
 - The full DSA Bank remains available as a reference and search surface.
+
+### User Interface
+
+- The app supports light and dark themes.
+- The first visit respects the browser color-scheme preference.
+- Manual theme selection is persisted in browser local storage.
+- Theme changes must preserve readable contrast for cards, forms, chips, links, and action buttons.
 
 ### DSA Bank
 
