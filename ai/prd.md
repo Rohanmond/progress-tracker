@@ -22,6 +22,7 @@ The user has access to strong preparation resources but loses track over time. D
 - Highlight revision items so weak problems are not forgotten.
 - Support analytics through Superset for deeper progress review.
 - Make the app deployable using Vercel, Render, and PostgreSQL.
+- Protect the tracker with passwordless Gmail OTP login and logout.
 
 ## Non-Goals
 
@@ -29,6 +30,7 @@ The user has access to strong preparation resources but loses track over time. D
 - Replacing GreatFrontend, devtools.tech, or Namaste DSA.
 - Multi-user collaboration in the initial version.
 - Calendar scheduling or notification automation in the initial version.
+- Password-based authentication.
 
 ## Primary User Stories
 
@@ -49,6 +51,7 @@ The user has access to strong preparation resources but loses track over time. D
 15. As a candidate, I can follow a humane 5-day weekly cadence with a built-in revision/catch-up day.
 16. As a candidate, I can see optional weekly bonus topics for performance, accessibility, and security after the core plan is complete.
 17. As a candidate, I can switch between light and dark mode, with my preference remembered on the same browser.
+18. As a candidate, I can log in with a Gmail OTP and log out without managing a password.
 
 ## Success Metrics
 
@@ -59,6 +62,16 @@ The user has access to strong preparation resources but loses track over time. D
 - The user can identify weak DSA patterns from Superset or the dashboard.
 
 ## Functional Requirements
+
+### Authentication
+
+- The app requires authentication before showing tracker data.
+- Login accepts Gmail addresses only.
+- The backend generates a 6-digit OTP that expires after 10 minutes.
+- OTP verification creates an HTTP-only session cookie.
+- Logout clears the session cookie and deletes the server-side session.
+- Production OTP delivery uses `RESEND_API_KEY`; local development may print OTP codes in the API console when no email provider is configured.
+- Passwords are not collected or stored.
 
 ### Weekly Plan
 

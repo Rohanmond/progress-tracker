@@ -1,6 +1,7 @@
 require("dotenv").config({ path: require("node:path").resolve(__dirname, "..", ".env") });
 
 const cors = require("cors");
+const crypto = require("node:crypto");
 const express = require("express");
 const { query } = require("./db");
 const { verifySolved } = require("./leetcode");
@@ -8,10 +9,15 @@ const { verifySolved } = require("./leetcode");
 const app = express();
 const port = process.env.PORT || 8080;
 const allowedOrigins = (process.env.CLIENT_ORIGIN || "http://localhost:5173").split(",");
+const cookieName = process.env.AUTH_COOKIE_NAME || "switch_os_session";
+const authSecret = process.env.AUTH_SECRET || process.env.SESSION_SECRET || "dev-switch-os-auth-secret";
+const isProduction = process.env.NODE_ENV === "production";
 
 app.use(express.json());
+app.set("trust proxy", 1);
 app.use(
   cors({
+    credentials: true,
     origin(origin, callback) {
       if (!origin || allowedOrigins.includes(origin)) {
         callback(null, true);
@@ -816,6 +822,116 @@ function enrichQuestion(question) {
   };
 }
 
+function normalizeEmail(email) {
+  return String(email || "").trim().toLowerCase();
+}
+
+function isAllowedEmail(email) {
+  return /^[^\s@]+@gmail\.com$/.test(email);
+}
+
+function hashValue(value) {
+  return crypto.createHash("sha256").update(value).digest("hex");
+}
+
+function hashOtp(email, otp) {
+  return hashValue(`${email}:${otp}:${authSecret}`);
+}
+
+function parseCookies(cookieHeader = "") {
+  return Object.fromEntries(
+    cookieHeader
+      .split(";")
+      .map((cookie) => cookie.trim())
+      .filter(Boolean)
+      .map((cookie) => {
+        const index = cookie.indexOf("=");
+        if (index === -1) return [cookie, ""];
+        return [cookie.slice(0, index), decodeURIComponent(cookie.slice(index + 1))];
+      })
+  );
+}
+
+function sessionCookie(token, expiresAt) {
+  const parts = [
+    `${cookieName}=${encodeURIComponent(token)}`,
+    "HttpOnly",
+    "Path=/",
+    `SameSite=${isProduction ? "None" : "Lax"}`,
+    `Expires=${expiresAt.toUTCString()}`
+  ];
+  if (isProduction) parts.push("Secure");
+  return parts.join("; ");
+}
+
+function clearSessionCookie() {
+  const parts = [`${cookieName}=`, "HttpOnly", "Path=/", `SameSite=${isProduction ? "None" : "Lax"}`, "Expires=Thu, 01 Jan 1970 00:00:00 GMT"];
+  if (isProduction) parts.push("Secure");
+  return parts.join("; ");
+}
+
+async function sendOtpEmail(email, otp) {
+  if (!process.env.RESEND_API_KEY) {
+    console.log(`[auth] OTP for ${email}: ${otp}`);
+    return "console";
+  }
+
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      from: process.env.AUTH_EMAIL_FROM || "Frontend Switch OS <onboarding@resend.dev>",
+      to: email,
+      subject: "Your Frontend Switch OS login code",
+      text: `Your login code is ${otp}. It expires in 10 minutes.`,
+      html: `<p>Your login code is <strong>${otp}</strong>.</p><p>It expires in 10 minutes.</p>`
+    })
+  });
+
+  if (!response.ok) {
+    const body = await response.text();
+    throw new Error(`Email provider rejected OTP send: ${body}`);
+  }
+
+  return "email";
+}
+
+async function requireAuth(req, res, next) {
+  try {
+    const token = parseCookies(req.headers.cookie)[cookieName];
+    if (!token) {
+      res.status(401).json({ error: "Authentication required" });
+      return;
+    }
+
+    const sessionResult = await query(
+      `select s.id as session_id, s.expires_at, u.id as user_id, u.email
+       from auth_sessions s
+       join app_users u on u.id = s.user_id
+       where s.token_hash = $1 and s.expires_at > now()`,
+      [hashValue(token)]
+    );
+
+    if (!sessionResult.rowCount) {
+      res.setHeader("Set-Cookie", clearSessionCookie());
+      res.status(401).json({ error: "Session expired" });
+      return;
+    }
+
+    req.user = {
+      id: sessionResult.rows[0].user_id,
+      email: sessionResult.rows[0].email
+    };
+    await query("update auth_sessions set last_seen_at = now() where id = $1", [sessionResult.rows[0].session_id]);
+    next();
+  } catch (error) {
+    next(error);
+  }
+}
+
 app.get("/api/health", async (_req, res, next) => {
   try {
     const result = await query("select now() as now");
@@ -824,6 +940,145 @@ app.get("/api/health", async (_req, res, next) => {
     next(error);
   }
 });
+
+app.get("/api/auth/me", async (req, res, next) => {
+  try {
+    const token = parseCookies(req.headers.cookie)[cookieName];
+    if (!token) {
+      res.json({ user: null });
+      return;
+    }
+
+    const sessionResult = await query(
+      `select u.id, u.email
+       from auth_sessions s
+       join app_users u on u.id = s.user_id
+       where s.token_hash = $1 and s.expires_at > now()`,
+      [hashValue(token)]
+    );
+
+    if (!sessionResult.rowCount) {
+      res.setHeader("Set-Cookie", clearSessionCookie());
+      res.json({ user: null });
+      return;
+    }
+
+    res.json({ user: sessionResult.rows[0] });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post("/api/auth/request-otp", async (req, res, next) => {
+  try {
+    const email = normalizeEmail(req.body.email);
+    if (!isAllowedEmail(email)) {
+      res.status(400).json({ error: "Use a valid Gmail address to continue." });
+      return;
+    }
+
+    const recentResult = await query(
+      `select count(*)::int as recent_count
+       from email_otps
+       where email = $1 and created_at > now() - interval '2 minutes'`,
+      [email]
+    );
+    if (recentResult.rows[0].recent_count >= 3) {
+      res.status(429).json({ error: "Too many OTP requests. Please wait a couple of minutes." });
+      return;
+    }
+
+    const otp = crypto.randomInt(100000, 1000000).toString();
+    await query(
+      `insert into email_otps (email, otp_hash, expires_at)
+       values ($1, $2, now() + interval '10 minutes')`,
+      [email, hashOtp(email, otp)]
+    );
+
+    const delivery = await sendOtpEmail(email, otp);
+    res.json({
+      ok: true,
+      delivery,
+      message: delivery === "email" ? "OTP sent to your Gmail inbox." : "Development OTP printed in the API console."
+    });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post("/api/auth/verify-otp", async (req, res, next) => {
+  try {
+    const email = normalizeEmail(req.body.email);
+    const otp = String(req.body.otp || "").trim();
+    if (!isAllowedEmail(email) || !/^\d{6}$/.test(otp)) {
+      res.status(400).json({ error: "Enter the Gmail address and 6-digit OTP." });
+      return;
+    }
+
+    const otpResult = await query(
+      `select *
+       from email_otps
+       where email = $1 and consumed_at is null and expires_at > now()
+       order by created_at desc
+       limit 1`,
+      [email]
+    );
+
+    if (!otpResult.rowCount) {
+      res.status(400).json({ error: "OTP expired. Request a new code." });
+      return;
+    }
+
+    const otpRow = otpResult.rows[0];
+    if (otpRow.attempts >= 5) {
+      res.status(429).json({ error: "Too many attempts. Request a new code." });
+      return;
+    }
+
+    if (otpRow.otp_hash !== hashOtp(email, otp)) {
+      await query("update email_otps set attempts = attempts + 1 where id = $1", [otpRow.id]);
+      res.status(400).json({ error: "Invalid OTP. Check the code and try again." });
+      return;
+    }
+
+    const userResult = await query(
+      `insert into app_users (email, last_login_at)
+       values ($1, now())
+       on conflict (email) do update set last_login_at = now()
+       returning id, email`,
+      [email]
+    );
+    await query("update email_otps set consumed_at = now() where id = $1", [otpRow.id]);
+
+    const token = crypto.randomBytes(32).toString("base64url");
+    const expiresAt = new Date(Date.now() + 1000 * 60 * 60 * 24 * 30);
+    await query(
+      `insert into auth_sessions (user_id, token_hash, expires_at)
+       values ($1, $2, $3)`,
+      [userResult.rows[0].id, hashValue(token), expiresAt]
+    );
+
+    res.setHeader("Set-Cookie", sessionCookie(token, expiresAt));
+    res.json({ user: userResult.rows[0] });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.post("/api/auth/logout", async (req, res, next) => {
+  try {
+    const token = parseCookies(req.headers.cookie)[cookieName];
+    if (token) {
+      await query("delete from auth_sessions where token_hash = $1", [hashValue(token)]);
+    }
+    res.setHeader("Set-Cookie", clearSessionCookie());
+    res.json({ ok: true });
+  } catch (error) {
+    next(error);
+  }
+});
+
+app.use("/api", requireAuth);
 
 app.get("/api/roadmap", (_req, res) => {
   res.json({ roadmap });

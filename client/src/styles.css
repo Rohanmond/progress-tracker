@@ -100,6 +100,12 @@ button:hover {
   transform: translateY(-1px);
 }
 
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.62;
+  transform: none;
+}
+
 button:focus-visible,
 a:focus-visible,
 input:focus-visible,
@@ -232,6 +238,88 @@ a {
   padding: 0;
   place-items: center;
   width: 40px;
+}
+
+.user-chip {
+  background: var(--chip);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--chip-ink);
+  font-size: 12px;
+  font-weight: 850;
+  min-height: 34px;
+  padding: 8px 12px;
+}
+
+.auth-shell {
+  align-items: center;
+  background:
+    linear-gradient(145deg, color-mix(in srgb, var(--accent) 10%, transparent), transparent 38%),
+    var(--bg);
+  display: grid;
+  min-height: 100vh;
+  padding: 24px;
+}
+
+.auth-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+  display: grid;
+  gap: 22px;
+  margin: 0 auto;
+  max-width: 520px;
+  padding: 24px;
+  width: 100%;
+}
+
+.auth-topline {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+}
+
+.auth-brand span {
+  background: var(--panel-tint);
+  color: var(--accent-dark);
+}
+
+.auth-brand p {
+  color: var(--muted);
+}
+
+.auth-copy {
+  display: grid;
+  gap: 8px;
+}
+
+.auth-copy h2,
+.auth-copy p {
+  margin: 0;
+}
+
+.auth-copy h2 {
+  font-size: 32px;
+  line-height: 1.1;
+}
+
+.auth-copy p:not(.label) {
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+.auth-form {
+  display: grid;
+  gap: 14px;
+}
+
+.auth-actions {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .topbar h2 {
@@ -906,6 +994,7 @@ textarea {
 
   .topbar,
   .topbar-actions,
+  .auth-actions,
   .commitment-panel,
   .question-card {
     align-items: stretch;

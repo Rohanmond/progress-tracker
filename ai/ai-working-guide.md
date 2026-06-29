@@ -73,13 +73,15 @@ npm run dev:api
 
 ### Adding auth
 
-This is a major architecture change. Update:
+Auth exists as a passwordless Gmail OTP access gate. When changing it, update:
 
 - Database schema for users.
-- API routes to scope data by user.
+- API routes for OTP request, OTP verification, sessions, and logout.
 - Client auth flow.
 - Deployment environment variables.
 - All `ai/` context docs.
+
+Do not add password storage. Tracker progress is not yet partitioned by user.
 
 ## Current Known Limitations
 

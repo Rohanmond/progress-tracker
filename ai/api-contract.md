@@ -20,6 +20,83 @@ Response:
 }
 ```
 
+## Authentication
+
+All tracker APIs except `GET /api/health` and `/api/auth/*` require an authenticated session cookie.
+
+### `GET /api/auth/me`
+
+Returns the current session user, or `null`.
+
+```json
+{
+  "user": {
+    "id": 1,
+    "email": "user@gmail.com"
+  }
+}
+```
+
+### `POST /api/auth/request-otp`
+
+Request a 6-digit OTP for a Gmail address.
+
+Request:
+
+```json
+{
+  "email": "user@gmail.com"
+}
+```
+
+Response:
+
+```json
+{
+  "ok": true,
+  "delivery": "email",
+  "message": "OTP sent to your Gmail inbox."
+}
+```
+
+When no email provider is configured locally, `delivery` is `console` and the OTP is printed in the API console.
+
+### `POST /api/auth/verify-otp`
+
+Verify the OTP and create an HTTP-only session cookie.
+
+Request:
+
+```json
+{
+  "email": "user@gmail.com",
+  "otp": "123456"
+}
+```
+
+Response:
+
+```json
+{
+  "user": {
+    "id": 1,
+    "email": "user@gmail.com"
+  }
+}
+```
+
+### `POST /api/auth/logout`
+
+Deletes the server-side session and clears the cookie.
+
+Response:
+
+```json
+{
+  "ok": true
+}
+```
+
 ## Roadmap
 
 ### `GET /api/roadmap`

@@ -2,7 +2,7 @@
 
 Full-stack prep tracker for a senior frontend job switch plan.
 
-The primary workflow is the Weekly Plan: each week has five humane day-by-day commitments across a frontend-focused Core 100 DSA list, JavaScript coding, React LLD, frontend HLD, and revision. Each week also has an optional bonus lane for performance, accessibility, and security when the core work is complete. The DSA Bank keeps the full 243-item Namaste reference set.
+The primary workflow is the Weekly Plan: each week has five humane day-by-day commitments across a frontend-focused Core 100 DSA list, JavaScript coding, React LLD, frontend HLD, and revision. Each week also has an optional bonus lane for performance, accessibility, and security when the core work is complete. Access is protected by passwordless Gmail OTP login. The DSA Bank keeps the full 243-item Namaste reference set.
 
 ## Stack
 
@@ -41,6 +41,8 @@ npm run dev
 Set `VITE_API_URL=http://localhost:8080/api` for local frontend API calls.
 
 Set `LEETCODE_USERNAME` in `server/.env` to require LeetCode verification before a linked DSA item can be marked `Solved`.
+
+Set `AUTH_SECRET` for signed OTP/session hashing. Add `RESEND_API_KEY` and `AUTH_EMAIL_FROM` to send real OTP emails; without them, local development prints OTPs in the API console.
 
 ## Deploy
 

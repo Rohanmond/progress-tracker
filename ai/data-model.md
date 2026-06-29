@@ -2,6 +2,43 @@
 
 ## Tables
 
+### `app_users`
+
+Passwordless login identities.
+
+Columns:
+
+- `id`: generated primary key.
+- `email`: unique Gmail address.
+- `created_at`: first-seen timestamp.
+- `last_login_at`: latest successful OTP login.
+
+### `email_otps`
+
+Short-lived login codes.
+
+Columns:
+
+- `id`: generated primary key.
+- `email`: requested Gmail address.
+- `otp_hash`: hashed OTP value; raw OTPs are never stored.
+- `attempts`: failed verification attempts.
+- `expires_at`: OTP expiry timestamp.
+- `consumed_at`: set after successful verification.
+- `created_at`: request timestamp.
+
+### `auth_sessions`
+
+Server-side sessions for HTTP-only cookies.
+
+Columns:
+
+- `id`: generated primary key.
+- `user_id`: references `app_users(id)`.
+- `token_hash`: hashed session token; raw token lives only in the cookie.
+- `expires_at`: session expiry timestamp.
+- `created_at`, `last_seen_at`: timestamps.
+
 ### `questions`
 
 Seeded catalog of DSA items.

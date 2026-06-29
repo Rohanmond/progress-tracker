@@ -12,6 +12,7 @@ The product combines:
 - DSA problem tracking, seeded from Namaste DSA, with computed `Core 100`, `Supplemental`, and `Course-only` priority labels.
 - Separate NamasteDev lesson links and LeetCode problem links where a mapping exists.
 - LeetCode-backed solved verification for linked problems.
+- Passwordless Gmail OTP login and logout.
 - Daily study logging.
 - Progress metrics for Core 100 solved questions, revision queue, minutes studied, and mock interviews.
 - PostgreSQL-backed analytics that can be explored in Superset.
@@ -27,6 +28,7 @@ Known constraints:
 - The main behavioral problem is losing track, not lack of resources.
 - Existing resources include GreatFrontend, devtools.tech, and Namaste DSA.
 - GreatFrontend, devtools.tech, Patterns.dev, Namaste DSA, and LeetCode should appear as source-linked prep surfaces inside the plan.
+- The tracker is private by default and should require Gmail OTP login before showing progress data.
 
 ## Product Philosophy
 
@@ -43,6 +45,7 @@ Avoid adding heavy workflows that require too much manual entry. Prefer:
 - Optional weekly bonus cards for performance, accessibility, and security resources.
 - Dashboard metrics that answer "am I moving?" quickly.
 - Light/dark mode with browser preference detection and local persistence.
+- Passwordless access: Gmail OTP, no password storage, HTTP-only session cookie.
 
 ## Current State
 
@@ -52,6 +55,8 @@ The app is a full-stack monorepo:
 - `server/`: Express API.
 - `db/`: schema and analytics views.
 - `server/data/`: seed dataset.
+
+Authentication is an access gate over the current single-user tracker data. It stores Gmail identities, hashed OTPs, and hashed session tokens in Postgres. It does not yet partition question progress, milestone progress, or study logs by user.
 
 The first seed dataset contains 243 Namaste DSA course items extracted from the authenticated course outline, excluding intro/warm-up/time-complexity/bonus sections.
 

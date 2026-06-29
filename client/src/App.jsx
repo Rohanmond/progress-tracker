@@ -21,6 +21,8 @@ function getInitialTheme() {
 export default function App() {
   const [activeTab, setActiveTab] = useState("plan");
   const [theme, setTheme] = useState(getInitialTheme);
+  const [user, setUser] = useState(null);
+  const [authChecked, setAuthChecked] = useState(false);
   const [metrics, setMetrics] = useState(null);
   const [roadmap, setRoadmap] = useState([]);
   const [weeklyPlan, setWeeklyPlan] = useState([]);
@@ -29,6 +31,20 @@ export default function App() {
   const [filters, setFilters] = useState({ search: "", pattern: "All", status: "All", priority: "All", limit: "500" });
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  async function loadSession() {
+    try {
+      const result = await api.me();
+      setUser(result.user);
+      if (result.user) {
+        await loadApp();
+      }
+    } catch (requestError) {
+      setError(requestError.message);
+    } finally {
+      setAuthChecked(true);
+    }
+  }
 
   async function loadApp() {
     setIsLoading(true);
@@ -103,8 +119,28 @@ export default function App() {
     await Promise.all([api.logs().then((result) => setLogs(result.logs)), api.metrics().then(setMetrics)]);
   }
 
+  async function handleAuthenticated(nextUser) {
+    setUser(nextUser);
+    await loadApp();
+  }
+
+  async function logout() {
+    setError("");
+    try {
+      await api.logout();
+      setUser(null);
+      setMetrics(null);
+      setRoadmap([]);
+      setWeeklyPlan([]);
+      setLogs([]);
+      setQuestions([]);
+    } catch (requestError) {
+      setError(requestError.message);
+    }
+  }
+
   useEffect(() => {
-    loadApp();
+    loadSession();
   }, []);
 
   useEffect(() => {
@@ -117,7 +153,7 @@ export default function App() {
     return ["All", ...Array.from(unique).sort()];
   }, [questions]);
 
-  return (
+  const shell = (
     <main className="app-shell">
       <aside className="sidebar">
         <div className="brand">
@@ -159,6 +195,7 @@ export default function App() {
             <h2>{tabs.find((tab) => tab.id === activeTab)?.label}</h2>
           </div>
           <div className="topbar-actions">
+            {user ? <span className="user-chip">{user.email}</span> : null}
             <button
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               aria-pressed={theme === "dark"}
@@ -173,6 +210,11 @@ export default function App() {
               <RefreshCcw size={18} />
               Refresh
             </button>
+            {user ? (
+              <button className="muted" onClick={logout} type="button">
+                Logout
+              </button>
+            ) : null}
           </div>
         </header>
 
@@ -192,6 +234,145 @@ export default function App() {
         ) : null}
         {activeTab === "logs" ? <Logs logs={logs} onAdd={addLog} /> : null}
         {activeTab === "roadmap" ? <Roadmap roadmap={roadmap} /> : null}
+      </section>
+    </main>
+  );
+
+  if (!authChecked) {
+    return <div className="auth-shell"><div className="banner neutral">Checking session...</div></div>;
+  }
+
+  if (!user) {
+    return (
+      <AuthScreen
+        error={error}
+        onAuthenticated={handleAuthenticated}
+        theme={theme}
+        onThemeChange={() => setTheme((currentTheme) => (currentTheme === "dark" ? "light" : "dark"))}
+      />
+    );
+  }
+
+  return shell;
+}
+
+function AuthScreen({ error, onAuthenticated, theme, onThemeChange }) {
+  const [email, setEmail] = useState("");
+  const [otp, setOtp] = useState("");
+  const [step, setStep] = useState("email");
+  const [message, setMessage] = useState("");
+  const [authError, setAuthError] = useState("");
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  async function requestOtp(event) {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setAuthError("");
+    setMessage("");
+    try {
+      const result = await api.requestOtp({ email });
+      setMessage(result.message);
+      setStep("otp");
+    } catch (requestError) {
+      setAuthError(requestError.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  async function verifyOtp(event) {
+    event.preventDefault();
+    setIsSubmitting(true);
+    setAuthError("");
+    try {
+      const result = await api.verifyOtp({ email, otp });
+      await onAuthenticated(result.user);
+    } catch (requestError) {
+      setAuthError(requestError.message);
+    } finally {
+      setIsSubmitting(false);
+    }
+  }
+
+  return (
+    <main className="auth-shell">
+      <section className="auth-card">
+        <div className="auth-topline">
+          <div className="brand auth-brand">
+            <span>FS</span>
+            <div>
+              <h1>Switch OS</h1>
+              <p>Senior frontend prep tracker</p>
+            </div>
+          </div>
+          <button
+            aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            aria-pressed={theme === "dark"}
+            className="icon-button"
+            onClick={onThemeChange}
+            title={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
+            type="button"
+          >
+            {theme === "dark" ? <Sun size={18} /> : <Moon size={18} />}
+          </button>
+        </div>
+
+        <div className="auth-copy">
+          <p className="label">Passwordless login</p>
+          <h2>Continue with Gmail OTP</h2>
+          <p>Use your Gmail address and a 6-digit code. No password is stored.</p>
+        </div>
+
+        {error ? <div className="banner">API connection issue: {error}</div> : null}
+        {authError ? <div className="banner">{authError}</div> : null}
+        {message ? <div className="banner neutral">{message}</div> : null}
+
+        {step === "email" ? (
+          <form className="auth-form" onSubmit={requestOtp}>
+            <label>
+              Gmail address
+              <input
+                autoComplete="email"
+                inputMode="email"
+                onChange={(event) => setEmail(event.target.value)}
+                placeholder="you@gmail.com"
+                required
+                type="email"
+                value={email}
+              />
+            </label>
+            <button disabled={isSubmitting} type="submit">
+              {isSubmitting ? "Sending..." : "Send OTP"}
+            </button>
+          </form>
+        ) : (
+          <form className="auth-form" onSubmit={verifyOtp}>
+            <label>
+              Gmail address
+              <input autoComplete="email" readOnly type="email" value={email} />
+            </label>
+            <label>
+              6-digit OTP
+              <input
+                autoComplete="one-time-code"
+                inputMode="numeric"
+                maxLength="6"
+                onChange={(event) => setOtp(event.target.value.replace(/\D/g, "").slice(0, 6))}
+                placeholder="123456"
+                required
+                value={otp}
+              />
+            </label>
+            <div className="auth-actions">
+              <button disabled={isSubmitting || otp.length !== 6} type="submit">
+                {isSubmitting ? "Verifying..." : "Verify and enter"}
+              </button>
+              <button className="muted" disabled={isSubmitting} onClick={() => setStep("email")} type="button">
+                Change email
+              </button>
+            </div>
+          </form>
+        )}
       </section>
     </main>
   );
