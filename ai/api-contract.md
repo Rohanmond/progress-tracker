@@ -59,7 +59,7 @@ Response:
 }
 ```
 
-When no email provider is configured locally, `delivery` is `console` and the OTP is printed in the API console.
+When Gmail SMTP is configured, `delivery` is `gmail`. When Resend is configured, `delivery` is `email`. When no email provider is configured locally, `delivery` is `console` and the OTP is printed in the API console.
 
 ### `POST /api/auth/verify-otp`
 

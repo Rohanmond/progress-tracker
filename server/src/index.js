@@ -3,6 +3,7 @@ require("dotenv").config({ path: require("node:path").resolve(__dirname, "..", "
 const cors = require("cors");
 const crypto = require("node:crypto");
 const express = require("express");
+const nodemailer = require("nodemailer");
 const { query } = require("./db");
 const { verifySolved } = require("./leetcode");
 
@@ -871,6 +872,26 @@ function clearSessionCookie() {
 }
 
 async function sendOtpEmail(email, otp) {
+  if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_APP_PASSWORD
+      }
+    });
+
+    await transporter.sendMail({
+      from: process.env.AUTH_EMAIL_FROM || `Frontend Switch OS <${process.env.GMAIL_USER}>`,
+      to: email,
+      subject: "Your Frontend Switch OS login code",
+      text: `Your login code is ${otp}. It expires in 10 minutes.`,
+      html: `<p>Your login code is <strong>${otp}</strong>.</p><p>It expires in 10 minutes.</p>`
+    });
+
+    return "gmail";
+  }
+
   if (!process.env.RESEND_API_KEY) {
     console.log(`[auth] OTP for ${email}: ${otp}`);
     return "console";
@@ -999,7 +1020,7 @@ app.post("/api/auth/request-otp", async (req, res, next) => {
     res.json({
       ok: true,
       delivery,
-      message: delivery === "email" ? "OTP sent to your Gmail inbox." : "Development OTP printed in the API console."
+      message: delivery === "console" ? "Development OTP printed in the API console." : "OTP sent to your Gmail inbox."
     });
   } catch (error) {
     next(error);

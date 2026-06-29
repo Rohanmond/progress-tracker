@@ -70,7 +70,8 @@ The user has access to strong preparation resources but loses track over time. D
 - The backend generates a 6-digit OTP that expires after 10 minutes.
 - OTP verification creates an HTTP-only session cookie.
 - Logout clears the session cookie and deletes the server-side session.
-- Production OTP delivery uses `RESEND_API_KEY`; local development may print OTP codes in the API console when no email provider is configured.
+- Production OTP delivery can use Gmail SMTP through `GMAIL_USER` and `GMAIL_APP_PASSWORD`, or Resend through `RESEND_API_KEY`.
+- Local development may print OTP codes in the API console when no email provider is configured.
 - Passwords are not collected or stored.
 
 ### Weekly Plan

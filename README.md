@@ -42,7 +42,7 @@ Set `VITE_API_URL=http://localhost:8080/api` for local frontend API calls.
 
 Set `LEETCODE_USERNAME` in `server/.env` to require LeetCode verification before a linked DSA item can be marked `Solved`.
 
-Set `AUTH_SECRET` for signed OTP/session hashing. Add `RESEND_API_KEY` and `AUTH_EMAIL_FROM` to send real OTP emails; without them, local development prints OTPs in the API console.
+Set `AUTH_SECRET` for signed OTP/session hashing. Add `GMAIL_USER` and `GMAIL_APP_PASSWORD` to send OTP emails through Gmail SMTP. `RESEND_API_KEY` remains available as a fallback provider; without either provider, local development prints OTPs in the API console.
 
 ## Deploy
 
