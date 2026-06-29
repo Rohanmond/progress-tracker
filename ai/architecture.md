@@ -74,7 +74,7 @@ Important files:
 3. User requests and verifies a Gmail OTP; Express stores hashed OTPs and creates an HTTP-only session cookie.
 4. After first login, React requires a LeetCode username and saves it on `app_users`.
 5. React requests `/api/weekly-plan` for the default commitment-first experience.
-6. Express joins `questions` with `question_progress`, overlays seed-backed weekly milestones with `milestone_progress`, maps weekly DSA work to curated Core 100 question IDs, and attaches optional weekly bonus topics.
+6. Express joins `questions` with `question_progress`, overlays seed-backed weekly milestones with `milestone_progress`, maps weekly DSA work to curated Core 100 question IDs, attaches curated frontend resource links, and attaches optional weekly bonus topics.
 7. React requests `/api/questions` for full-bank reference mode, defaulting to the full seeded dataset with computed priority labels.
 8. User opens NamasteDev or LeetCode links from plan or bank cards.
 9. User marks a question `Revise` or `Todo`; Express upserts directly into `question_progress`.
@@ -95,6 +95,7 @@ Important files:
 - Passwordless auth stores only hashed OTPs and hashed session tokens.
 - Seed data is JSON in the backend to keep the client small and database-first.
 - Weekly interview milestones are seed-backed in the API while milestone status is persisted in Postgres.
+- Frontend resource links are curated in `frontendResourcePlan` so LearnersBucket, Namaste FSD, GreatFrontend, devtools.tech, and Patterns.dev links can evolve without changing the database schema.
 - The Core 100 is a backend-defined curation layer over the 243 seeded questions, not a destructive data reduction.
 - Superset is supported through SQL views rather than app-specific analytics code.
 - `Solved` is verification-gated for LeetCode-linked items instead of being a manual trust toggle.

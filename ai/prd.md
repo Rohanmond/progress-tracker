@@ -84,8 +84,9 @@ The user has access to strong preparation resources but loses track over time. D
 - Each week has a topic theme, DSA commitment, frontend commitment, and Easy/Medium/Hard progression.
 - Weekly DSA questions come from a curated frontend Core 100 inspired by GreatFrontend Blind 75, NeetCode 150, and the local Namaste/LeetCode mappings.
 - Each week has five study-day milestones for `DSA`, `JavaScript`, `React LLD`, `Frontend HLD`, and `Revision`.
-- Milestones are approximately 60-75 minute study blocks and include source labels plus concrete links for Namaste DSA, LeetCode, GreatFrontend, devtools.tech, and Patterns.dev.
-- Each week has an optional bonus section with one small performance topic, one accessibility topic, and one security topic, using stable resources from web.dev, MDN, OWASP, and Patterns.dev.
+- Milestones are approximately 60-75 minute study blocks and include source labels plus concrete links for Namaste DSA, LeetCode, GreatFrontend, devtools.tech, Patterns.dev, LearnersBucket, and Namaste Frontend System Design.
+- JavaScript, React LLD, and Frontend HLD milestones should use specific course/problem links when public or authenticated course outlines expose stable URLs.
+- Each week has an optional bonus section with one small performance topic, one accessibility topic, and one security topic, using stable resources from web.dev, MDN, OWASP, Patterns.dev, and Namaste Frontend System Design where relevant.
 - Bonus work is not counted in required weekly milestone totals; it is a stretch lane for lighter weeks and should stay skippable during release-heavy weeks.
 - Milestone progress uses `Todo`, `Done`, and `Revise`; this is separate from LeetCode-verified DSA question `Solved`.
 - Weekly Core 100 questions are shown as an accordion grouped by Easy/Medium/Hard, with direct Namaste and LeetCode links for each question.

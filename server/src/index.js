@@ -359,6 +359,36 @@ const sourceUrls = {
   devtoolsJs: "https://devtools.tech/questions/all?language=javascript",
   devtoolsReact: "https://devtools.tech/questions/all?language=react",
   devtoolsSystem: "https://devtools.tech/questions/all?type=3&view=basic",
+  learnersBucketFsd: "https://alpha.learnersbucket.com/course/frontend-system-design/start",
+  learnersBucketPubSub: "https://alpha.learnersbucket.com/course-item?item-id=67b19dbbaaf189d1467f7b26",
+  learnersBucketAnalyticsSdk: "https://alpha.learnersbucket.com/course-item?item-id=67b0d7d0d84a43d13e5bd61e",
+  learnersBucketAsyncEngine: "https://alpha.learnersbucket.com/course-item?item-id=67b7206d431954edcb57902f",
+  learnersBucketRetryPromises: "https://alpha.learnersbucket.com/course-item?item-id=67c19f40acd6fb93643bb09b",
+  learnersBucketMapLimit: "https://alpha.learnersbucket.com/course-item?item-id=67b42d9b21fe8a5349648b0c",
+  learnersBucketCssSelector: "https://alpha.learnersbucket.com/course-item?item-id=67ce7ccbe1e9e5c4e61673c9",
+  learnersBucketHtmlEncoding: "https://alpha.learnersbucket.com/course-item?item-id=67f64166f347795ec66add60",
+  learnersBucketJsonToHtml: "https://alpha.learnersbucket.com/course-item?item-id=67b84d1d928b62225bb90861",
+  learnersBucketPromiseAll: "https://alpha.learnersbucket.com/course-item?item-id=67bff8ef2a20600617651018",
+  learnersBucketPromiseRace: "https://alpha.learnersbucket.com/course-item?item-id=67c19bac1cffeb901f93218f",
+  learnersBucketPromiseAllSettled: "https://alpha.learnersbucket.com/course-item?item-id=67c19e900e86bb9363604890",
+  learnersBucketThrottleLeadingTrailing: "https://alpha.learnersbucket.com/course-item?item-id=67c1a0eb2689b59368ca7f6f",
+  learnersBucketLocalstorageExpiry: "https://alpha.learnersbucket.com/course-item?item-id=67dbc0935f67d554525839cb",
+  learnersBucketFetchTimeout: "https://alpha.learnersbucket.com/course-item?item-id=67f61735e0140841777215cc",
+  learnersBucketInMemoryDb: "https://alpha.learnersbucket.com/course-item?item-id=67f619b7b0269f41703e6a8f",
+  learnersBucketRouterMiddleware: "https://alpha.learnersbucket.com/course-item?item-id=679890085ff3bba8ce84850f",
+  learnersBucketReactRace: "https://alpha.learnersbucket.com/course-item?item-id=682c6f320e2b18f051155edb",
+  learnersBucketPerfAsyncSync: "https://alpha.learnersbucket.com/course-item?item-id=683d5836d78e75b4cada123f",
+  learnersBucketCachedApi: "https://alpha.learnersbucket.com/course-item?item-id=67dfbbe537469c00d339a7d3",
+  learnersBucketDebounce: "https://alpha.learnersbucket.com/course-item?item-id=68a8867f1a7c505666057041",
+  learnersBucketThrottle: "https://alpha.learnersbucket.com/course-item?item-id=68a88759a38ca15680cbc606",
+  learnersBucketScheduler: "https://alpha.learnersbucket.com/course-item?item-id=68af1e8b7d1ee3a30dcb8beb",
+  learnersBucketMemoize: "https://alpha.learnersbucket.com/course-item?item-id=68c2a99bfd9a9ff800fbe756",
+  learnersBucketCurry: "https://alpha.learnersbucket.com/course-item?item-id=681b2813991f432a17d9421b",
+  learnersBucketLruAdjacentCache: "https://alpha.learnersbucket.com/course-item?item-id=67dfbbe537469c00d339a7d3",
+  learnersBucketBuildGraph: "https://alpha.learnersbucket.com/course-item?item-id=69391100ec58eb2e51517f6d",
+  learnersBucketClassNamesReact: "https://alpha.learnersbucket.com/course-item?item-id=67babd57ae16d0728a868788",
+  namasteFsd: "https://namastedev.com/learn/namaste-frontend-system-design",
+  namasteFsdXss: "https://namastedev.com/learn/namaste-frontend-system-design/cross-site-scripting-xss",
   patterns: "https://www.patterns.dev/",
   patternsHooks: "https://www.patterns.dev/react/hooks-pattern/",
   patternsCompound: "https://www.patterns.dev/react/compound-pattern/",
@@ -550,6 +580,176 @@ const interviewTopics = [
   }
 ];
 
+const frontendResourcePlan = {
+  1: {
+    js: [{ label: "LearnersBucket: Memoize", url: sourceUrls.learnersBucketMemoize }],
+    react: [{ label: "LearnersBucket: React classNames utility", url: sourceUrls.learnersBucketClassNamesReact }],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "LearnersBucket FSD course", url: sourceUrls.learnersBucketFsd },
+      { label: "MDN: critical rendering path", url: "https://developer.mozilla.org/en-US/docs/Web/Performance/Critical_rendering_path" }
+    ]
+  },
+  2: {
+    js: [
+      { label: "LearnersBucket: debounce", url: sourceUrls.learnersBucketDebounce },
+      { label: "LearnersBucket: throttling", url: sourceUrls.learnersBucketThrottle }
+    ],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "LearnersBucket: cached API call", url: sourceUrls.learnersBucketCachedApi },
+      { label: "MDN: HTTP caching", url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching" }
+    ]
+  },
+  3: {
+    js: [{ label: "LearnersBucket: async engine", url: sourceUrls.learnersBucketAsyncEngine }],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "LearnersBucket: high-priority API call", url: "https://alpha.learnersbucket.com/course-item?item-id=681058b38ba516ea9e38e4ee" },
+      { label: "web.dev: optimize INP", url: sourceUrls.webDevOptimizeInp }
+    ]
+  },
+  4: {
+    js: [
+      { label: "LearnersBucket: clearAllTimeout", url: "https://alpha.learnersbucket.com/course-item?item-id=67b84799281b0f22614cb390" },
+      { label: "LearnersBucket: evented array", url: "https://alpha.learnersbucket.com/course-item?item-id=67dbc269d22f16c538f78d9b" }
+    ],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "WAI-ARIA dialog pattern", url: "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/" },
+      { label: "WAI-ARIA menu button pattern", url: "https://www.w3.org/WAI/ARIA/apg/patterns/menu-button/" }
+    ]
+  },
+  5: {
+    js: [{ label: "LearnersBucket: throttle leading/trailing", url: sourceUrls.learnersBucketThrottleLeadingTrailing }],
+    react: [{ label: "LearnersBucket: in-memory DB search", url: sourceUrls.learnersBucketInMemoryDb }],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "LearnersBucket: cached API call", url: sourceUrls.learnersBucketCachedApi },
+      { label: "web.dev: code splitting", url: sourceUrls.webDevCodeSplitting }
+    ]
+  },
+  6: {
+    js: [
+      { label: "LearnersBucket: Promise.all polyfill", url: sourceUrls.learnersBucketPromiseAll },
+      { label: "LearnersBucket: Promise.allSettled", url: sourceUrls.learnersBucketPromiseAllSettled },
+      { label: "LearnersBucket: mapLimit", url: sourceUrls.learnersBucketMapLimit }
+    ],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "Patterns.dev: virtual lists", url: sourceUrls.patternsVirtualLists },
+      { label: "WAI-ARIA tree view pattern", url: "https://www.w3.org/WAI/ARIA/apg/patterns/treeview/" }
+    ]
+  },
+  7: {
+    js: [
+      { label: "LearnersBucket: pub/sub", url: sourceUrls.learnersBucketPubSub },
+      { label: "LearnersBucket: scheduler", url: sourceUrls.learnersBucketScheduler }
+    ],
+    hld: [
+      { label: "LearnersBucket: analytics SDK", url: sourceUrls.learnersBucketAnalyticsSdk },
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "web.dev: performance", url: sourceUrls.webDevPerformance }
+    ]
+  },
+  8: {
+    js: [
+      { label: "LearnersBucket: memoize", url: sourceUrls.learnersBucketMemoize },
+      { label: "LearnersBucket: cached API call", url: sourceUrls.learnersBucketCachedApi }
+    ],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "MDN: service workers", url: "https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API" },
+      { label: "web.dev: SameSite cookies", url: sourceUrls.webDevSameSite }
+    ]
+  },
+  9: {
+    js: [
+      { label: "LearnersBucket: currying", url: sourceUrls.learnersBucketCurry },
+      { label: "LearnersBucket: CSS selector generator", url: sourceUrls.learnersBucketCssSelector },
+      { label: "LearnersBucket: JSON to HTML", url: sourceUrls.learnersBucketJsonToHtml }
+    ],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "Patterns.dev: virtual lists", url: sourceUrls.patternsVirtualLists },
+      { label: "WAI-ARIA grid pattern", url: "https://www.w3.org/WAI/ARIA/apg/patterns/grid/" }
+    ]
+  },
+  10: {
+    js: [
+      { label: "LearnersBucket: cached API call", url: sourceUrls.learnersBucketLruAdjacentCache },
+      { label: "LearnersBucket: build graph tasks", url: sourceUrls.learnersBucketBuildGraph }
+    ],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "MDN: WebSocket", url: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" },
+      { label: "MDN: BroadcastChannel", url: "https://developer.mozilla.org/en-US/docs/Web/API/Broadcast_Channel_API" }
+    ]
+  },
+  11: {
+    js: [
+      { label: "LearnersBucket: pub/sub", url: sourceUrls.learnersBucketPubSub },
+      { label: "LearnersBucket: router middleware", url: sourceUrls.learnersBucketRouterMiddleware }
+    ],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "web.dev: optimize LCP", url: sourceUrls.webDevOptimizeLcp },
+      { label: "Patterns.dev: bundle splitting", url: sourceUrls.patternsBundle }
+    ]
+  },
+  12: {
+    js: [
+      { label: "LearnersBucket: fetch timeout", url: sourceUrls.learnersBucketFetchTimeout },
+      { label: "LearnersBucket: retry promises", url: sourceUrls.learnersBucketRetryPromises }
+    ],
+    react: [{ label: "LearnersBucket: React race conditions", url: sourceUrls.learnersBucketReactRace }],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "MDN: WebSocket", url: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" },
+      { label: "web.dev: security headers", url: sourceUrls.webDevSecurityHeaders }
+    ]
+  },
+  13: {
+    js: [
+      { label: "LearnersBucket: scheduler", url: sourceUrls.learnersBucketScheduler },
+      { label: "LearnersBucket: promise priority", url: "https://alpha.learnersbucket.com/course-item?item-id=67c196ec739ed29024f4a341" }
+    ],
+    hld: [
+      { label: "LearnersBucket: performance check", url: sourceUrls.learnersBucketPerfAsyncSync },
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "web.dev: vitals", url: sourceUrls.webDevVitals }
+    ]
+  },
+  14: {
+    js: [{ label: "LearnersBucket JS problem bank", url: sourceUrls.learnersBucketFsd }],
+    hld: [
+      { label: "GreatFrontend System Design", url: sourceUrls.greatfrontendHld },
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "LearnersBucket FSD course", url: sourceUrls.learnersBucketFsd }
+    ]
+  },
+  15: {
+    js: [{ label: "LearnersBucket JS problem bank", url: sourceUrls.learnersBucketFsd }],
+    react: [
+      { label: "LearnersBucket: React race conditions", url: sourceUrls.learnersBucketReactRace },
+      { label: "LearnersBucket: React classNames utility", url: sourceUrls.learnersBucketClassNamesReact }
+    ],
+    hld: [
+      { label: "GreatFrontend System Design", url: sourceUrls.greatfrontendHld },
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "LearnersBucket FSD course", url: sourceUrls.learnersBucketFsd }
+    ]
+  },
+  16: {
+    js: [{ label: "LearnersBucket JS problem bank", url: sourceUrls.learnersBucketFsd }],
+    hld: [
+      { label: "Namaste FSD course", url: sourceUrls.namasteFsd },
+      { label: "LearnersBucket FSD course", url: sourceUrls.learnersBucketFsd },
+      { label: "GreatFrontend dashboard", url: sourceUrls.greatfrontendDashboard }
+    ]
+  }
+};
+
 function slugify(value) {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 }
@@ -574,6 +774,7 @@ function createMilestone(week, dayIndex, track, title, source, sourceUrl, estima
 
 const weeklyMilestones = interviewTopics.flatMap((topic) => {
   const dsaWeek = weeklyPlan.find((week) => week.week === topic.week);
+  const frontendLinks = frontendResourcePlan[topic.week] || {};
   return [
     createMilestone(
       topic.week,
@@ -604,7 +805,8 @@ const weeklyMilestones = interviewTopics.flatMap((topic) => {
       2,
       [
         { label: "GreatFrontend JS", url: sourceUrls.greatfrontendJs },
-        { label: "devtools JavaScript", url: sourceUrls.devtoolsJs }
+        { label: "devtools JavaScript", url: sourceUrls.devtoolsJs },
+        ...(frontendLinks.js || [])
       ]
     ),
     createMilestone(
@@ -619,7 +821,8 @@ const weeklyMilestones = interviewTopics.flatMap((topic) => {
       3,
       [
         { label: "devtools React", url: sourceUrls.devtoolsReact },
-        { label: "GreatFrontend UI", url: sourceUrls.greatfrontendUi }
+        { label: "GreatFrontend UI", url: sourceUrls.greatfrontendUi },
+        ...(frontendLinks.react || [])
       ]
     ),
     createMilestone(
@@ -634,7 +837,8 @@ const weeklyMilestones = interviewTopics.flatMap((topic) => {
       4,
       [
         { label: "GreatFrontend System Design", url: sourceUrls.greatfrontendHld },
-        { label: "devtools System Design", url: sourceUrls.devtoolsSystem }
+        { label: "devtools System Design", url: sourceUrls.devtoolsSystem },
+        ...(frontendLinks.hld || [])
       ]
     ),
     createMilestone(
@@ -651,7 +855,8 @@ const weeklyMilestones = interviewTopics.flatMap((topic) => {
         { label: "GreatFrontend Blind 75", url: sourceUrls.greatfrontendBlind75 },
         { label: "NeetCode 150 reference", url: sourceUrls.neetcode150 },
         { label: "LeetCode", url: sourceUrls.leetcode },
-        { label: "Patterns.dev", url: topic.patternsLinks[0] || sourceUrls.patterns }
+        { label: "Patterns.dev", url: topic.patternsLinks[0] || sourceUrls.patterns },
+        ...(frontendLinks.revision || [])
       ]
     )
   ];
@@ -664,7 +869,7 @@ const bonusTopics = [
     items: [
       { track: "Performance", title: "Core Web Vitals overview: LCP, INP, CLS and why frontend teams care", source: "web.dev", source_url: sourceUrls.webDevVitals },
       { track: "Accessibility", title: "Keyboard focus basics for the counter widget: visible focus and tab order", source: "web.dev", source_url: sourceUrls.webDevFocus },
-      { track: "Security", title: "XSS mental model: output encoding, dangerous sinks, and React escaping", source: "OWASP", source_url: sourceUrls.owaspXss }
+      { track: "Security", title: "XSS mental model: output encoding, dangerous sinks, and React escaping", source: "Namaste FSD + OWASP", source_url: sourceUrls.namasteFsdXss }
     ]
   },
   {

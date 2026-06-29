@@ -194,6 +194,10 @@ Response:
             {
               "label": "devtools JavaScript",
               "url": "https://devtools.tech/questions/all?language=javascript"
+            },
+            {
+              "label": "LearnersBucket: Memoize",
+              "url": "https://alpha.learnersbucket.com/course-item?item-id=68c2a99bfd9a9ff800fbe756"
             }
           ],
           "estimated_minutes": 60,
