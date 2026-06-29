@@ -25,18 +25,23 @@ Local URLs:
 - Client: `http://localhost:5173`
 - API: `http://localhost:8080/api`
 
-### Vercel
+### Supabase
 
-Deploy the frontend from `client/`.
+Use Supabase for the production PostgreSQL database.
 
-Important settings:
+Steps:
 
-- Framework: Vite
-- Build command: `npm run build`
-- Output directory: `dist`
-- Environment variable: `VITE_API_URL=https://<render-api-host>/api`
+1. Create a Supabase project.
+2. Go to Project Settings -> Database.
+3. Copy the Postgres connection string.
+4. Use the pooled connection string for Render if possible.
+5. Replace the password placeholder with the database password.
+6. Use that value as Render `DATABASE_URL`.
 
-The root `vercel.json` is configured for monorepo deployment with `client/dist`.
+Required Render database settings:
+
+- `DATABASE_URL`: Supabase Postgres connection string.
+- `DATABASE_SSL=true`.
 
 ### Render
 
@@ -45,11 +50,11 @@ Use `render.yaml`.
 Render services:
 
 - Web service: Express API.
-- Database: PostgreSQL.
+- Database: external Supabase PostgreSQL.
 
 Required environment variables:
 
-- `DATABASE_URL`: provided by Render database.
+- `DATABASE_URL`: Supabase PostgreSQL connection string.
 - `CLIENT_ORIGIN`: Vercel frontend origin.
 - `AUTH_SECRET`: long random secret used for OTP/session hashing.
 - `AUTH_COOKIE_NAME`: optional session cookie name; defaults to `switch_os_session`.
@@ -57,7 +62,7 @@ Required environment variables:
 - `GMAIL_APP_PASSWORD`: Google App Password for Gmail SMTP.
 - `RESEND_API_KEY`: optional fallback provider for production OTP email delivery.
 - `AUTH_EMAIL_FROM`: optional sender label/address for OTP email delivery.
-- `DATABASE_SSL=true` may be required depending on Render connection mode.
+- `DATABASE_SSL=true`.
 
 Current Render start command runs:
 
@@ -66,6 +71,23 @@ npm run seed --workspace server && npm start --workspace server
 ```
 
 This is convenient for early deployment because schema and seed are applied at startup. For production hardening, move migrations/seeding into a release phase or manual job.
+
+### Vercel
+
+Deploy the frontend from this GitHub repo.
+
+Important settings:
+
+- Framework: Vite
+- Build command: `cd client && npm install && npm run build`
+- Output directory: `client/dist`
+- Environment variable: `VITE_API_URL=https://<render-api-host>/api`
+
+After Vercel deploys, copy the Vercel app origin and set Render `CLIENT_ORIGIN` to that exact origin, for example:
+
+```txt
+https://frontend-switch-os.vercel.app
+```
 
 ### Superset
 
