@@ -75,7 +75,7 @@ Important files:
 5. User opens NamasteDev or LeetCode links from plan or bank cards.
 6. User marks a question `Revise` or `Todo`; Express upserts directly into `question_progress`.
 7. User marks a question `Solved`; Express first verifies accepted LeetCode submissions for `LEETCODE_USERNAME` and the question `leetcode_slug`.
-8. User marks weekly JavaScript, React LLD, HLD, Patterns, or DSA commitment milestones `Done`, `Revise`, or `Todo`.
+8. User marks weekly DSA, JavaScript, React LLD, HLD, or revision milestones `Done`, `Revise`, or `Todo`.
 9. Dashboard calls `/api/metrics` to show updated Core 100, full-bank, and milestone totals.
 10. Superset reads analytics views from the same Postgres database.
 

@@ -69,7 +69,7 @@ Current count: 243 items.
 
 The seed script is idempotent. Running `npm run seed` upserts questions, creates tables, and recreates analytics views.
 
-Run `npm run enrich:leetcode` after editing the Namaste seed if new titles need LeetCode mappings. The current curated mapping links 175 items.
+Run `npm run enrich:leetcode` after editing the Namaste seed if new titles need LeetCode mappings. The current curated mapping links 177 items.
 
 The frontend Core 100 is not a separate table. It is a backend curation layer in `server/src/index.js` that references stable `questions.id` values and adds computed API fields:
 
@@ -116,7 +116,7 @@ Each week maps to curated Core 100 question IDs and returns:
 - Weekly commitment.
 - Frontend focus.
 - Easy/Medium/Hard progression notes.
-- Day-by-day milestones for `DSA`, `JavaScript`, `React LLD`, `Frontend HLD`, and `Patterns`.
+- Five day-by-day milestones for `DSA`, `JavaScript`, `React LLD`, `Frontend HLD`, and `Revision`.
 - Source labels and concrete resource links for Namaste DSA, LeetCode, GreatFrontend, devtools.tech, and Patterns.dev.
 - Question rows from the mapped Core 100 IDs.
 - Progress counts from `question_progress`.

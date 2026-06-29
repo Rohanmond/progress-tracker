@@ -3296,8 +3296,8 @@
     "url": "https://namastedev.com/learn/namaste-dsa/trie-and-trienode-structure",
     "description": "Design the TrieNode class and the overall Trie structure.",
     "namaste_url": "https://namastedev.com/learn/namaste-dsa/trie-and-trienode-structure",
-    "leetcode_slug": null,
-    "leetcode_url": null
+    "leetcode_slug": "implement-trie-prefix-tree",
+    "leetcode_url": "https://leetcode.com/problems/implement-trie-prefix-tree/"
   },
   {
     "id": "namaste-insert-search-prefixfind-trie-code",
@@ -3311,8 +3311,8 @@
     "url": "https://namastedev.com/learn/namaste-dsa/insert-search-prefixfind-trie-code",
     "description": "Implement the core operations: Insert, Search, and StartsWith.",
     "namaste_url": "https://namastedev.com/learn/namaste-dsa/insert-search-prefixfind-trie-code",
-    "leetcode_slug": null,
-    "leetcode_url": null
+    "leetcode_slug": "implement-trie-prefix-tree",
+    "leetcode_url": "https://leetcode.com/problems/implement-trie-prefix-tree/"
   },
   {
     "id": "namaste-time-space-complexity-in-tries",

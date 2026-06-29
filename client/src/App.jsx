@@ -397,7 +397,7 @@ function WeeklyPlan({ weeks, onMilestoneUpdate, onUpdate }) {
             <div className="day-heading">
               <div>
                 <p className="label">{day.dayLabel}</p>
-                <h3>{day.dayIndex === 7 ? "Buffer and review" : "Focused commitment"}</h3>
+                <h3>{day.dayIndex === 5 ? "Revision and catch-up" : "Focused commitment"}</h3>
               </div>
               <span className="time-chip">
                 <Clock3 size={15} />
@@ -434,27 +434,56 @@ function WeeklyPlan({ weeks, onMilestoneUpdate, onUpdate }) {
         ))}
       </section>
 
-      <section className="level-grid">
+      <section className="panel core-list-panel">
+        <div className="panel-heading">
+          <div>
+            <p className="label">Core 100</p>
+            <h3>Week {currentWeek.week} Problems</h3>
+            <p className="quiet compact">Open each problem directly from here. Mark `Solved` only when LeetCode verification passes.</p>
+          </div>
+        </div>
         {currentWeek.levels.map((level) => (
-          <article className="panel" key={level.name}>
-            <p className="label">{level.name}</p>
-            <h3>{level.target}</h3>
-            <div className="mini-question-list">
+          <details className="question-accordion" key={level.name} open={level.name !== "Hard"}>
+            <summary>
+              <span>{level.name}</span>
+              <strong>{level.target}</strong>
+              <small>{(grouped[level.name] || []).length} items</small>
+            </summary>
+            {(grouped[level.name] || []).length ? (
+              <div className="mini-question-list">
               {(grouped[level.name] || []).map((question) => (
                 <div className="mini-question" key={question.id}>
                   <div>
                     <strong>{question.title}</strong>
                     <span>{question.pattern} · {question.difficulty} · {question.dsa_priority}</span>
+                    <div className="resource-links compact-links">
+                      <a href={question.namaste_url || question.url} rel="noreferrer" target="_blank">
+                        <ExternalLink size={14} />
+                        Namaste
+                      </a>
+                      {question.leetcode_url ? (
+                        <a href={question.leetcode_url} rel="noreferrer" target="_blank">
+                          <ExternalLink size={14} />
+                          LeetCode
+                        </a>
+                      ) : (
+                        <span>No LeetCode link</span>
+                      )}
+                    </div>
                   </div>
                   <div className="mini-actions">
                     <span className={`pill ${question.status.toLowerCase()}`}>{question.status}</span>
                     <button onClick={() => onUpdate(question.id, "Solved")} type="button">Solved</button>
                     <button className="warning" onClick={() => onUpdate(question.id, "Revise")} type="button">Revise</button>
+                    <button className="muted" onClick={() => onUpdate(question.id, "Todo")} type="button">Todo</button>
                   </div>
                 </div>
               ))}
-            </div>
-          </article>
+              </div>
+            ) : (
+              <p className="quiet compact">No new problems here. Use this slot for revision, missed items, or rest.</p>
+            )}
+          </details>
         ))}
       </section>
     </div>

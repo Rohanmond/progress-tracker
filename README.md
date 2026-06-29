@@ -2,7 +2,7 @@
 
 Full-stack prep tracker for a senior frontend job switch plan.
 
-The primary workflow is the Weekly Plan: each week has firm day-by-day commitments across a frontend-focused Core 100 DSA list, JavaScript coding, React LLD, frontend HLD, and Patterns.dev review. The DSA Bank keeps the full 243-item Namaste reference set.
+The primary workflow is the Weekly Plan: each week has five humane day-by-day commitments across a frontend-focused Core 100 DSA list, JavaScript coding, React LLD, frontend HLD, and revision. The DSA Bank keeps the full 243-item Namaste reference set.
 
 ## Stack
 

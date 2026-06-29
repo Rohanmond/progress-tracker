@@ -66,7 +66,7 @@ npm run dev:api
 ### Changing the weekly plan
 
 1. Update `weeklyPlan`, `interviewTopics`, and `roadmap` in `server/src/index.js`.
-2. Confirm `/api/weekly-plan` still maps real seeded Core 100 question IDs and returns 7 milestones per week.
+2. Confirm `/api/weekly-plan` still maps real seeded Core 100 question IDs and returns 5 milestones per week.
 3. Update `ai/prd.md`, `ai/api-contract.md`, and `ai/architecture.md`.
 4. Keep the weekly plan commitment-first; do not make the full 243-item question bank the primary flow.
 

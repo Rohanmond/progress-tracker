@@ -44,7 +44,7 @@ Response:
 
 ### `GET /api/weekly-plan`
 
-Returns the commitment-first 16-week plan. Each week contains topic metadata, commitment text, daily milestones, staged Easy/Medium/Hard DSA targets, progress counts, and linked Core 100 question rows for that week.
+Returns the commitment-first 16-week plan. Each week contains topic metadata, five humane daily milestones, staged Easy/Medium/Hard DSA targets, progress counts, and linked Core 100 question rows for that week.
 
 Response:
 
@@ -55,11 +55,11 @@ Response:
       "week": 1,
       "theme": "Arrays and hashing",
       "commitment": "8 Core 100 items...",
-      "frontend": "Revise JS execution model...",
-      "total": 9,
+      "frontend": "JavaScript execution model, closures, this, and first small React widgets.",
+      "total": 8,
       "solved": 0,
       "revise": 0,
-      "milestone_total": 7,
+      "milestone_total": 5,
       "milestone_done": 0,
       "milestone_revise": 0,
       "milestones": [
@@ -69,7 +69,7 @@ Response:
           "day_index": 2,
           "day_label": "Day 2",
           "track": "JavaScript",
-          "title": "Closures, this, and event loop",
+          "title": "Closures only: scope, lexical environment, and two small utilities",
           "source": "GreatFrontend + devtools.tech",
           "source_url": "https://www.greatfrontend.com/questions/formats/javascript-functions",
           "links": [
@@ -82,7 +82,7 @@ Response:
               "url": "https://devtools.tech/questions/all?language=javascript"
             }
           ],
-          "estimated_minutes": 120,
+          "estimated_minutes": 60,
           "difficulty": "Medium",
           "status": "Todo"
         }
@@ -255,7 +255,7 @@ Response:
   "minutes": 0,
   "sessions": 0,
   "mocks": 0,
-  "milestone_total": 112,
+  "milestone_total": 80,
   "milestone_done": 0,
   "milestone_revise": 0
 }

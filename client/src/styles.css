@@ -190,6 +190,7 @@ a {
   border: 1px solid var(--line);
   border-radius: 8px;
   box-shadow: var(--shadow);
+  min-width: 0;
 }
 
 .metric {
@@ -256,6 +257,7 @@ a {
   color: var(--muted);
   line-height: 1.55;
   margin: 8px 0 0;
+  overflow-wrap: anywhere;
 }
 
 .commitment-score {
@@ -342,6 +344,7 @@ a {
 
 .milestone-copy strong {
   line-height: 1.35;
+  overflow-wrap: anywhere;
 }
 
 .milestone-copy span:not(.track-chip) {
@@ -392,6 +395,66 @@ a {
 .track-chip.patterns {
   background: #fce7f3;
   color: #9d174d;
+}
+
+.track-chip.revision {
+  background: #f1f5f9;
+  color: #334155;
+}
+
+.core-list-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.question-accordion {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.question-accordion summary {
+  align-items: center;
+  cursor: pointer;
+  display: grid;
+  gap: 8px;
+  grid-template-columns: 90px minmax(0, 1fr) auto;
+  list-style: none;
+  padding: 14px;
+}
+
+.question-accordion summary::-webkit-details-marker {
+  display: none;
+}
+
+.question-accordion summary span {
+  color: var(--warning);
+  font-size: 12px;
+  font-weight: 950;
+  text-transform: uppercase;
+}
+
+.question-accordion summary strong {
+  font-size: 15px;
+  line-height: 1.35;
+  overflow-wrap: anywhere;
+}
+
+.question-accordion summary small {
+  background: #f1f5f9;
+  border-radius: 999px;
+  color: #334155;
+  font-size: 12px;
+  font-weight: 900;
+  padding: 6px 10px;
+}
+
+.question-accordion[open] summary {
+  border-bottom: 1px solid var(--line);
+}
+
+.question-accordion .mini-question-list {
+  padding: 12px;
 }
 
 .level-grid {
@@ -660,6 +723,7 @@ textarea {
   .log-form,
   .roadmap,
   .day-plan-grid,
+  .question-accordion summary,
   .level-grid,
   .commitment-panel {
     grid-template-columns: 1fr;

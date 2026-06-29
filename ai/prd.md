@@ -34,7 +34,7 @@ The user has access to strong preparation resources but loses track over time. D
 
 1. As a candidate, I can start from a weekly plan instead of a raw question bank.
 2. As a candidate, I can see each week's topic, commitment, frontend focus, daily milestones, and Easy/Medium/Hard progression.
-3. As a candidate, I can act on weekly Core 100 questions directly from the plan.
+3. As a candidate, I can open an accordion list of weekly Core 100 questions directly from the plan.
 4. As a candidate, I can view all Namaste DSA problems in one searchable list when I need reference mode.
 5. As a candidate, I can open both the NamasteDev lesson and the LeetCode problem when both links exist.
 6. As a candidate, I can mark a problem as `Solved` only when LeetCode verification confirms an accepted submission.
@@ -46,11 +46,12 @@ The user has access to strong preparation resources but loses track over time. D
 12. As a candidate, I can connect Superset to analyze progress by pattern and day.
 13. As a candidate, I can mark weekly JavaScript, React LLD, frontend HLD, and Patterns.dev milestones as `Done`, `Revise`, or `Todo`.
 14. As a candidate, I can filter the DSA Bank by `Core 100`, `Supplemental`, or `Course-only`.
+15. As a candidate, I can follow a humane 5-day weekly cadence with a built-in revision/catch-up day.
 
 ## Success Metrics
 
 - The user logs at least 4 study sessions per week.
-- The user solves or revises at least 8 DSA items per week.
+- The user solves or revises 4-6 DSA items per week, with stretch capacity for lighter weeks.
 - The revision queue is reviewed weekly.
 - Study minutes and solved questions trend upward over time.
 - The user can identify weak DSA patterns from Superset or the dashboard.
@@ -62,9 +63,11 @@ The user has access to strong preparation resources but loses track over time. D
 - The Weekly Plan is the default first screen.
 - Each week has a topic theme, DSA commitment, frontend commitment, and Easy/Medium/Hard progression.
 - Weekly DSA questions come from a curated frontend Core 100 inspired by GreatFrontend Blind 75, NeetCode 150, and the local Namaste/LeetCode mappings.
-- Each week has day-by-day milestones for `DSA`, `JavaScript`, `React LLD`, `Frontend HLD`, and `Patterns`.
-- Milestones are approximately two-hour study blocks and include source labels plus concrete links for Namaste DSA, LeetCode, GreatFrontend, devtools.tech, and Patterns.dev.
+- Each week has five study-day milestones for `DSA`, `JavaScript`, `React LLD`, `Frontend HLD`, and `Revision`.
+- Milestones are approximately 60-75 minute study blocks and include source labels plus concrete links for Namaste DSA, LeetCode, GreatFrontend, devtools.tech, and Patterns.dev.
 - Milestone progress uses `Todo`, `Done`, and `Revise`; this is separate from LeetCode-verified DSA question `Solved`.
+- Weekly Core 100 questions are shown as an accordion grouped by Easy/Medium/Hard, with direct Namaste and LeetCode links for each question.
+- Friday-style revision/catch-up work is built into every week to reduce burnout and protect retention.
 - Weeks 14-16 are repair/mock/final-review weeks and may have no new DSA questions.
 - Questions should be staged to avoid jumping directly into hard problems.
 - The full DSA Bank remains available as a reference and search surface.
