@@ -545,12 +545,14 @@ button.user-chip {
 }
 
 .milestone {
+  background: color-mix(in srgb, var(--panel) 92%, var(--panel-soft));
   border: 1px solid var(--line);
   border-radius: 8px;
   display: grid;
   gap: 12px;
+  grid-template-columns: minmax(0, 1fr) auto;
   padding: 12px;
-  transition: border-color 160ms ease, background 160ms ease;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 
 .milestone:hover,
@@ -750,12 +752,14 @@ button.user-chip {
 }
 
 .mini-question {
+  background: color-mix(in srgb, var(--panel) 92%, var(--panel-soft));
   border: 1px solid var(--line);
   border-radius: 8px;
   display: grid;
-  gap: 10px;
+  gap: 14px;
+  grid-template-columns: minmax(0, 1fr) auto;
   padding: 12px;
-  transition: border-color 160ms ease, background 160ms ease;
+  transition: border-color 160ms ease, background 160ms ease, box-shadow 160ms ease;
 }
 
 .mini-question strong,
@@ -767,18 +771,6 @@ button.user-chip {
   color: var(--muted);
   font-size: 13px;
   margin-top: 3px;
-}
-
-.mini-actions {
-  align-items: center;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.mini-actions button {
-  min-height: 32px;
-  padding: 0 10px;
 }
 
 .split {
@@ -859,8 +851,18 @@ textarea {
 
 .question-card {
   align-items: center;
+  background: color-mix(in srgb, var(--panel) 94%, var(--panel-soft));
   display: grid;
+  gap: 18px;
   grid-template-columns: minmax(0, 1fr) auto;
+  transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.question-card:hover,
+.mini-question:hover,
+.milestone:hover {
+  border-color: var(--line-strong);
+  box-shadow: 0 12px 30px rgba(28, 43, 38, 0.08);
 }
 
 .question-card p {
@@ -929,7 +931,7 @@ textarea {
   padding: 0 8px;
 }
 
-.status-actions {
+.status-control {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -937,9 +939,63 @@ textarea {
   justify-content: flex-end;
 }
 
-.status-actions button {
+.status-select {
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  display: inline-flex;
+  gap: 8px;
+  min-height: 36px;
+  padding: 0 10px 0 12px;
+  width: auto;
+}
+
+.status-select span {
+  color: currentColor;
+  font-size: 12px;
+  font-weight: 850;
+  opacity: 0.68;
+}
+
+.status-select select {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  color: currentColor;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 900;
   min-height: 34px;
-  padding: 0 11px;
+  padding: 0 18px 0 0;
+  width: auto;
+}
+
+.status-select::after {
+  content: "";
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 5px solid currentColor;
+  margin-left: -18px;
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.status-select.todo {
+  background: var(--chip);
+  color: var(--chip-ink);
+}
+
+.status-select.done,
+.status-select.solved {
+  background: color-mix(in srgb, #22c55e 20%, var(--panel));
+  border-color: color-mix(in srgb, #22c55e 28%, var(--line));
+  color: color-mix(in srgb, #22c55e 72%, var(--ink));
+}
+
+.status-select.revise {
+  background: var(--warning-soft);
+  border-color: color-mix(in srgb, var(--warning) 22%, var(--line));
+  color: var(--warning);
 }
 
 .pill {
@@ -968,9 +1024,13 @@ textarea {
 }
 
 .verified {
+  background: var(--panel-tint);
+  border-radius: 999px;
   color: var(--accent-dark);
   font-size: 12px;
   font-weight: 850;
+  padding: 6px 10px;
+  white-space: nowrap;
 }
 
 .wide {
@@ -1002,6 +1062,8 @@ textarea {
   .question-accordion summary,
   .bonus-grid,
   .level-grid,
+  .milestone,
+  .mini-question,
   .commitment-panel {
     grid-template-columns: 1fr;
   }
@@ -1024,10 +1086,16 @@ textarea {
   .auth-actions,
   .profile-inline-form,
   .commitment-panel,
-  .question-card {
+  .question-card,
+  .status-control {
     align-items: stretch;
     display: flex;
     flex-direction: column;
+  }
+
+  .status-select {
+    justify-content: space-between;
+    width: 100%;
   }
 
   .icon-button {

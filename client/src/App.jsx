@@ -591,6 +591,30 @@ function Metric({ label, value, helper }) {
   );
 }
 
+function StatusControl({ onChange, options, value, verified = false }) {
+  return (
+    <div className="status-control">
+      {verified ? <span className="verified">LeetCode verified</span> : null}
+      <label className={`status-select ${value.toLowerCase()}`}>
+        <span>Status</span>
+        <select
+          aria-label="Update status"
+          onChange={(event) => {
+            if (event.target.value !== value) {
+              onChange(event.target.value);
+            }
+          }}
+          value={value}
+        >
+          {options.map((option) => (
+            <option key={option}>{option}</option>
+          ))}
+        </select>
+      </label>
+    </div>
+  );
+}
+
 function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
   function updateFilter(changes) {
     onFilter({ ...filters, ...changes });
@@ -685,13 +709,12 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
                 )}
               </div>
             </div>
-            <div className="status-actions">
-              <span className={`pill ${question.status.toLowerCase()}`}>{question.status}</span>
-              {question.leetcode_verified_at ? <span className="verified">LeetCode verified</span> : null}
-              <button onClick={() => onUpdate(question.id, "Solved")} type="button">Solved</button>
-              <button className="warning" onClick={() => onUpdate(question.id, "Revise")} type="button">Revise</button>
-              <button className="muted" onClick={() => onUpdate(question.id, "Todo")} type="button">Todo</button>
-            </div>
+            <StatusControl
+              onChange={(status) => onUpdate(question.id, status)}
+              options={["Todo", "Solved", "Revise"]}
+              value={question.status}
+              verified={Boolean(question.leetcode_verified_at)}
+            />
           </article>
         ))}
       </section>
@@ -798,12 +821,11 @@ function WeeklyPlan({ weeks, onMilestoneUpdate, onUpdate }) {
                       ))}
                     </div>
                   </div>
-                  <div className="mini-actions">
-                    <span className={`pill ${milestone.status.toLowerCase()}`}>{milestone.status}</span>
-                    <button onClick={() => onMilestoneUpdate(milestone.id, "Done")} type="button">Done</button>
-                    <button className="warning" onClick={() => onMilestoneUpdate(milestone.id, "Revise")} type="button">Revise</button>
-                    <button className="muted" onClick={() => onMilestoneUpdate(milestone.id, "Todo")} type="button">Todo</button>
-                  </div>
+                  <StatusControl
+                    onChange={(status) => onMilestoneUpdate(milestone.id, status)}
+                    options={["Todo", "Done", "Revise"]}
+                    value={milestone.status}
+                  />
                 </div>
               ))}
             </div>
@@ -848,12 +870,12 @@ function WeeklyPlan({ weeks, onMilestoneUpdate, onUpdate }) {
                       )}
                     </div>
                   </div>
-                  <div className="mini-actions">
-                    <span className={`pill ${question.status.toLowerCase()}`}>{question.status}</span>
-                    <button onClick={() => onUpdate(question.id, "Solved")} type="button">Solved</button>
-                    <button className="warning" onClick={() => onUpdate(question.id, "Revise")} type="button">Revise</button>
-                    <button className="muted" onClick={() => onUpdate(question.id, "Todo")} type="button">Todo</button>
-                  </div>
+                  <StatusControl
+                    onChange={(status) => onUpdate(question.id, status)}
+                    options={["Todo", "Solved", "Revise"]}
+                    value={question.status}
+                    verified={Boolean(question.leetcode_verified_at)}
+                  />
                 </div>
               ))}
               </div>

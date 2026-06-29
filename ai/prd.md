@@ -100,6 +100,7 @@ The user has access to strong preparation resources but loses track over time. D
 - The first visit respects the browser color-scheme preference.
 - Manual theme selection is persisted in browser local storage.
 - Theme changes must preserve readable contrast for cards, forms, chips, links, and action buttons.
+- Milestone and question statuses should use compact status controls so weekly planning stays scannable on desktop and mobile.
 
 ### DSA Bank
 
