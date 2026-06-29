@@ -402,6 +402,21 @@ a {
   color: #334155;
 }
 
+.track-chip.performance {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.track-chip.accessibility {
+  background: #cffafe;
+  color: #155e75;
+}
+
+.track-chip.security {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
 .core-list-panel {
   display: grid;
   gap: 12px;
@@ -455,6 +470,33 @@ a {
 
 .question-accordion .mini-question-list {
   padding: 12px;
+}
+
+.bonus-panel {
+  display: grid;
+  gap: 12px;
+}
+
+.bonus-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.bonus-card {
+  background: #f8fafc;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: grid;
+  gap: 10px;
+  min-width: 0;
+  padding: 14px;
+}
+
+.bonus-card strong {
+  font-size: 15px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
 }
 
 .level-grid {
@@ -724,6 +766,7 @@ textarea {
   .roadmap,
   .day-plan-grid,
   .question-accordion summary,
+  .bonus-grid,
   .level-grid,
   .commitment-panel {
     grid-template-columns: 1fr;

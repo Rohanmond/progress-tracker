@@ -70,12 +70,12 @@ Important files:
 
 1. `npm run seed` creates tables and inserts Namaste DSA questions.
 2. React requests `/api/weekly-plan` for the default commitment-first experience.
-3. Express joins `questions` with `question_progress`, overlays seed-backed weekly milestones with `milestone_progress`, and maps weekly DSA work to curated Core 100 question IDs.
+3. Express joins `questions` with `question_progress`, overlays seed-backed weekly milestones with `milestone_progress`, maps weekly DSA work to curated Core 100 question IDs, and attaches optional weekly bonus topics.
 4. React requests `/api/questions` for full-bank reference mode, defaulting to the full seeded dataset with computed priority labels.
 5. User opens NamasteDev or LeetCode links from plan or bank cards.
 6. User marks a question `Revise` or `Todo`; Express upserts directly into `question_progress`.
 7. User marks a question `Solved`; Express first verifies accepted LeetCode submissions for `LEETCODE_USERNAME` and the question `leetcode_slug`.
-8. User marks weekly DSA, JavaScript, React LLD, HLD, or revision milestones `Done`, `Revise`, or `Todo`.
+8. User marks weekly DSA, JavaScript, React LLD, HLD, or revision milestones `Done`, `Revise`, or `Todo`; optional performance/accessibility/security bonus topics remain untracked stretch work.
 9. Dashboard calls `/api/metrics` to show updated Core 100, full-bank, and milestone totals.
 10. Superset reads analytics views from the same Postgres database.
 

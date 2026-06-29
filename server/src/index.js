@@ -367,7 +367,33 @@ const sourceUrls = {
   patternsVirtualLists: "https://www.patterns.dev/vanilla/virtual-lists/",
   patternsBundle: "https://www.patterns.dev/vanilla/bundle-splitting/",
   patternsTreeShaking: "https://www.patterns.dev/vanilla/tree-shaking/",
-  patternsPrpl: "https://www.patterns.dev/vanilla/prpl/"
+  patternsPrpl: "https://www.patterns.dev/vanilla/prpl/",
+  webDevPerformance: "https://web.dev/learn/performance/",
+  webDevVitals: "https://web.dev/articles/vitals",
+  webDevLcp: "https://web.dev/articles/lcp",
+  webDevInp: "https://web.dev/articles/inp",
+  webDevCls: "https://web.dev/articles/cls",
+  webDevOptimizeLcp: "https://web.dev/articles/optimize-lcp",
+  webDevOptimizeInp: "https://web.dev/articles/optimize-inp",
+  webDevLazyLoading: "https://web.dev/articles/browser-level-image-lazy-loading",
+  webDevCodeSplitting: "https://web.dev/articles/reduce-javascript-payloads-with-code-splitting",
+  webDevAccessibility: "https://web.dev/learn/accessibility/",
+  webDevFocus: "https://web.dev/learn/accessibility/focus/",
+  webDevAriaHtml: "https://web.dev/learn/accessibility/aria-html/",
+  webDevForms: "https://web.dev/learn/accessibility/forms/",
+  webDevImages: "https://web.dev/learn/accessibility/images/",
+  webDevLabels: "https://web.dev/learn/accessibility/labels-and-text-alternatives/",
+  mdnCsp: "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP",
+  mdnCors: "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS",
+  mdnSRI: "https://developer.mozilla.org/en-US/docs/Web/Security/Subresource_Integrity",
+  mdnCookieSecurity: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Cookies",
+  mdnSecureContexts: "https://developer.mozilla.org/en-US/docs/Web/Security/Secure_Contexts",
+  owaspXss: "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html",
+  owaspClickjacking: "https://cheatsheetseries.owasp.org/cheatsheets/Clickjacking_Defense_Cheat_Sheet.html",
+  owaspCsrf: "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html",
+  webDevSecurityHeaders: "https://web.dev/articles/security-headers",
+  webDevSameSite: "https://web.dev/articles/samesite-cookies-explained",
+  webDevFetchMetadata: "https://web.dev/articles/fetch-metadata"
 };
 
 const interviewTopics = [
@@ -624,6 +650,153 @@ const weeklyMilestones = interviewTopics.flatMap((topic) => {
   ];
 });
 
+const bonusTopics = [
+  {
+    week: 1,
+    summary: "If the core week is done, build interview language around rendering, focus, and XSS basics.",
+    items: [
+      { track: "Performance", title: "Core Web Vitals overview: LCP, INP, CLS and why frontend teams care", source: "web.dev", source_url: sourceUrls.webDevVitals },
+      { track: "Accessibility", title: "Keyboard focus basics for the counter widget: visible focus and tab order", source: "web.dev", source_url: sourceUrls.webDevFocus },
+      { track: "Security", title: "XSS mental model: output encoding, dangerous sinks, and React escaping", source: "OWASP", source_url: sourceUrls.owaspXss }
+    ]
+  },
+  {
+    week: 2,
+    summary: "Use the bonus slot to connect forms/search work with caching, labels, and browser trust boundaries.",
+    items: [
+      { track: "Performance", title: "HTTP cache and CDN review: what should be cached and what must revalidate", source: "web.dev", source_url: sourceUrls.webDevPerformance },
+      { track: "Accessibility", title: "Form labels, errors, and text alternatives for form/search UI", source: "web.dev", source_url: sourceUrls.webDevLabels },
+      { track: "Security", title: "CORS basics: origin checks, preflight, credentials, and common interview traps", source: "MDN", source_url: sourceUrls.mdnCors }
+    ]
+  },
+  {
+    week: 3,
+    summary: "Add polish around typeahead/autocomplete without expanding the required build.",
+    items: [
+      { track: "Performance", title: "INP basics: how event handlers, promises, and rendering affect responsiveness", source: "web.dev", source_url: sourceUrls.webDevInp },
+      { track: "Accessibility", title: "ARIA only when needed: native HTML first, then roles for disclosure/autocomplete", source: "web.dev", source_url: sourceUrls.webDevAriaHtml },
+      { track: "Security", title: "CSP intro: reduce XSS blast radius and explain nonce/hash tradeoffs", source: "MDN", source_url: sourceUrls.mdnCsp }
+    ]
+  },
+  {
+    week: 4,
+    summary: "Make modal/dropdown work interview-ready with motion, focus, and clickjacking awareness.",
+    items: [
+      { track: "Performance", title: "CLS basics: avoid layout shifts in toast, modal, and dropdown interactions", source: "web.dev", source_url: sourceUrls.webDevCls },
+      { track: "Accessibility", title: "Focus management for dialogs and menus: entry, escape, and restore focus", source: "web.dev", source_url: sourceUrls.webDevFocus },
+      { track: "Security", title: "Clickjacking defenses: frame-ancestors and X-Frame-Options", source: "OWASP", source_url: sourceUrls.owaspClickjacking }
+    ]
+  },
+  {
+    week: 5,
+    summary: "Round out list/search work with practical loading and auth/session safety.",
+    items: [
+      { track: "Performance", title: "LCP basics: images, server response, render-blocking CSS/JS", source: "web.dev", source_url: sourceUrls.webDevLcp },
+      { track: "Accessibility", title: "Search results semantics: headings, status text, and empty-state announcements", source: "web.dev", source_url: sourceUrls.webDevAccessibility },
+      { track: "Security", title: "Cookie attributes: HttpOnly, Secure, SameSite, and session risk in SPAs", source: "MDN", source_url: sourceUrls.mdnCookieSecurity }
+    ]
+  },
+  {
+    week: 6,
+    summary: "Use async table/file-tree practice to discuss heavy lists and safe dependency loading.",
+    items: [
+      { track: "Performance", title: "Lazy loading images and offscreen content without hurting UX", source: "web.dev", source_url: sourceUrls.webDevLazyLoading },
+      { track: "Accessibility", title: "Tree and nested navigation basics: keyboard paths and selected state", source: "web.dev", source_url: sourceUrls.webDevAccessibility },
+      { track: "Security", title: "Subresource Integrity: when third-party script/style integrity matters", source: "MDN", source_url: sourceUrls.mdnSRI }
+    ]
+  },
+  {
+    week: 7,
+    summary: "Make dashboard/kanban work stronger by discussing observation, live regions, and CSRF.",
+    items: [
+      { track: "Performance", title: "Measure before optimizing: field data, lab data, and simple profiling notes", source: "web.dev", source_url: sourceUrls.webDevPerformance },
+      { track: "Accessibility", title: "Live updates: when to announce changes and when to keep UI quiet", source: "web.dev", source_url: sourceUrls.webDevAccessibility },
+      { track: "Security", title: "CSRF overview: SameSite, tokens, and why APIs still need a policy", source: "OWASP", source_url: sourceUrls.owaspCsrf }
+    ]
+  },
+  {
+    week: 8,
+    summary: "Connect notification/calendar work to payload control, images, and request hardening.",
+    items: [
+      { track: "Performance", title: "Code splitting basics: route-level and component-level split decisions", source: "web.dev", source_url: sourceUrls.webDevCodeSplitting },
+      { track: "Accessibility", title: "Image alternatives and icon-only buttons in calendar/notification UI", source: "web.dev", source_url: sourceUrls.webDevImages },
+      { track: "Security", title: "Security headers overview: HSTS, CSP, X-Content-Type-Options, and Referrer-Policy", source: "web.dev", source_url: sourceUrls.webDevSecurityHeaders }
+    ]
+  },
+  {
+    week: 9,
+    summary: "Use grid/editor practice to sharpen virtualization, keyboard, and paste/input safety.",
+    items: [
+      { track: "Performance", title: "Virtual lists: when virtualization helps and what it can break", source: "Patterns.dev", source_url: sourceUrls.patternsVirtualLists },
+      { track: "Accessibility", title: "Grid keyboard behavior: roving focus, active cell, and edit mode", source: "web.dev", source_url: sourceUrls.webDevFocus },
+      { track: "Security", title: "Sanitization and dangerous HTML sinks: paste/import safety for editors", source: "OWASP", source_url: sourceUrls.owaspXss }
+    ]
+  },
+  {
+    week: 10,
+    summary: "Realtime systems need careful latency, announcements, and secure transport stories.",
+    items: [
+      { track: "Performance", title: "Optimize INP: break up long tasks and keep interactions responsive", source: "web.dev", source_url: sourceUrls.webDevOptimizeInp },
+      { track: "Accessibility", title: "Presence/realtime updates: avoid noisy announcements while preserving context", source: "web.dev", source_url: sourceUrls.webDevAccessibility },
+      { track: "Security", title: "Secure contexts: why powerful browser APIs require HTTPS", source: "MDN", source_url: sourceUrls.mdnSecureContexts }
+    ]
+  },
+  {
+    week: 11,
+    summary: "For feed systems, practice media performance, inclusive navigation, and embedded content safety.",
+    items: [
+      { track: "Performance", title: "Optimize LCP: priority images, preconnect, preload, and server timing", source: "web.dev", source_url: sourceUrls.webDevOptimizeLcp },
+      { track: "Accessibility", title: "Feed navigation: landmarks, headings, and meaningful link text", source: "web.dev", source_url: sourceUrls.webDevAccessibility },
+      { track: "Security", title: "Untrusted media and embeds: CSP plus sandboxed iframe tradeoffs", source: "MDN", source_url: sourceUrls.mdnCsp }
+    ]
+  },
+  {
+    week: 12,
+    summary: "Chat systems are a good place to review responsiveness, accessible status, and cookie policy.",
+    items: [
+      { track: "Performance", title: "Long task review: why chat typing and message rendering can feel slow", source: "web.dev", source_url: sourceUrls.webDevInp },
+      { track: "Accessibility", title: "Message status and errors: announce failures without interrupting typing", source: "web.dev", source_url: sourceUrls.webDevAccessibility },
+      { track: "Security", title: "SameSite cookies explained for logged-in web apps", source: "web.dev", source_url: sourceUrls.webDevSameSite }
+    ]
+  },
+  {
+    week: 13,
+    summary: "Observability week gets a focused bonus around vitals, audits, and request metadata.",
+    items: [
+      { track: "Performance", title: "Core Web Vitals reporting: what to log and how to segment", source: "web.dev", source_url: sourceUrls.webDevVitals },
+      { track: "Accessibility", title: "Accessibility audit pass: keyboard, labels, contrast, and screen-reader smoke test", source: "web.dev", source_url: sourceUrls.webDevAccessibility },
+      { track: "Security", title: "Fetch Metadata headers: simple server-side protection for cross-site requests", source: "web.dev", source_url: sourceUrls.webDevFetchMetadata }
+    ]
+  },
+  {
+    week: 14,
+    summary: "Repair week bonus: tighten weak points without adding new interview domains.",
+    items: [
+      { track: "Performance", title: "Pick one slow UI you built and write a 5-step optimization plan", source: "web.dev", source_url: sourceUrls.webDevPerformance },
+      { track: "Accessibility", title: "Redo one weak component with keyboard-first behavior", source: "web.dev", source_url: sourceUrls.webDevFocus },
+      { track: "Security", title: "Write a frontend security checklist: XSS, CSP, CORS, cookies, dependencies", source: "OWASP + MDN", source_url: sourceUrls.owaspXss }
+    ]
+  },
+  {
+    week: 15,
+    summary: "Mock week bonus: use these only as interview talking points after timed practice.",
+    items: [
+      { track: "Performance", title: "Mock debrief: name the bottleneck, measurement, and tradeoff", source: "web.dev", source_url: sourceUrls.webDevPerformance },
+      { track: "Accessibility", title: "Mock debrief: name the keyboard path and screen-reader state", source: "web.dev", source_url: sourceUrls.webDevAccessibility },
+      { track: "Security", title: "Mock debrief: name one abuse case and mitigation for each design", source: "web.dev + OWASP", source_url: sourceUrls.webDevSecurityHeaders }
+    ]
+  },
+  {
+    week: 16,
+    summary: "Final week bonus: light checklist only, no new heavy study.",
+    items: [
+      { track: "Performance", title: "Final Core Web Vitals flashcards: LCP, INP, CLS, examples, fixes", source: "web.dev", source_url: sourceUrls.webDevVitals },
+      { track: "Accessibility", title: "Final accessibility flashcards: semantic HTML, labels, focus, ARIA rules", source: "web.dev", source_url: sourceUrls.webDevAccessibility },
+      { track: "Security", title: "Final security flashcards: XSS, CSRF, CORS, CSP, cookies, SRI", source: "OWASP + MDN", source_url: sourceUrls.owaspXss }
+    ]
+  }
+];
+
 function stageForQuestion(question, index, total) {
   if (question.difficulty === "Hard") return "Hard";
   if (question.difficulty === "Easy") return "Easy";
@@ -697,9 +870,11 @@ app.get("/api/weekly-plan", async (_req, res, next) => {
         });
       const milestoneDone = milestones.filter((milestone) => milestone.status === "Done").length;
       const milestoneRevise = milestones.filter((milestone) => milestone.status === "Revise").length;
+      const bonus = bonusTopics.find((item) => item.week === week.week);
 
       return {
         ...week,
+        bonus: bonus || null,
         total: stagedQuestions.length,
         solved: stagedQuestions.filter((question) => question.status === "Solved").length,
         revise: stagedQuestions.filter((question) => question.status === "Revise").length,

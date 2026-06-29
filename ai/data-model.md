@@ -117,6 +117,7 @@ Each week maps to curated Core 100 question IDs and returns:
 - Frontend focus.
 - Easy/Medium/Hard progression notes.
 - Five day-by-day milestones for `DSA`, `JavaScript`, `React LLD`, `Frontend HLD`, and `Revision`.
+- Optional weekly bonus topics for `Performance`, `Accessibility`, and `Security`.
 - Source labels and concrete resource links for Namaste DSA, LeetCode, GreatFrontend, devtools.tech, and Patterns.dev.
 - Question rows from the mapped Core 100 IDs.
 - Progress counts from `question_progress`.

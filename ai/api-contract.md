@@ -44,7 +44,7 @@ Response:
 
 ### `GET /api/weekly-plan`
 
-Returns the commitment-first 16-week plan. Each week contains topic metadata, five humane daily milestones, staged Easy/Medium/Hard DSA targets, progress counts, and linked Core 100 question rows for that week.
+Returns the commitment-first 16-week plan. Each week contains topic metadata, five humane daily milestones, optional bonus topics, staged Easy/Medium/Hard DSA targets, progress counts, and linked Core 100 question rows for that week.
 
 Response:
 
@@ -62,6 +62,18 @@ Response:
       "milestone_total": 5,
       "milestone_done": 0,
       "milestone_revise": 0,
+      "bonus": {
+        "week": 1,
+        "summary": "If the core week is done, build interview language around rendering, focus, and XSS basics.",
+        "items": [
+          {
+            "track": "Performance",
+            "title": "Core Web Vitals overview: LCP, INP, CLS and why frontend teams care",
+            "source": "web.dev",
+            "source_url": "https://web.dev/articles/vitals"
+          }
+        ]
+      },
       "milestones": [
         {
           "id": "v2-w1-d2-javascript-2",

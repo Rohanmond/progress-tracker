@@ -486,6 +486,32 @@ function WeeklyPlan({ weeks, onMilestoneUpdate, onUpdate }) {
           </details>
         ))}
       </section>
+
+      {currentWeek.bonus ? (
+        <section className="panel bonus-panel">
+          <div className="panel-heading">
+            <div>
+              <p className="label">Optional bonus</p>
+              <h3>Performance, accessibility, and security</h3>
+              <p className="quiet compact">{currentWeek.bonus.summary}</p>
+            </div>
+          </div>
+          <div className="bonus-grid">
+            {currentWeek.bonus.items.map((item) => (
+              <article className="bonus-card" key={`${currentWeek.week}-${item.track}-${item.title}`}>
+                <span className={`track-chip ${item.track.toLowerCase()}`}>{item.track}</span>
+                <strong>{item.title}</strong>
+                <div className="resource-links compact-links">
+                  <a href={item.source_url} rel="noreferrer" target="_blank">
+                    <ExternalLink size={14} />
+                    {item.source}
+                  </a>
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
     </div>
   );
 }
