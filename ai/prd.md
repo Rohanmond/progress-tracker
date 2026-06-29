@@ -106,8 +106,9 @@ The user has access to strong preparation resources but loses track over time. D
 - Show seeded Namaste DSA items.
 - Load the full question set by default.
 - Show title, section, pattern, difficulty, duration, NamasteDev link, and LeetCode link where available.
-- Filter by search text, pattern, and status.
+- Filter by search text, topic/pattern, and status using stable topic options that do not disappear after filtering.
 - Filter by priority: `Core 100`, `Supplemental`, or `Course-only`.
+- Sort by course order, topic, difficulty, status, or title in ascending or descending order.
 - Update `Revise` and `Todo` through one-click actions.
 - Update `Solved` only after backend LeetCode verification passes.
 - LeetCode verification uses the logged-in user's saved LeetCode username.

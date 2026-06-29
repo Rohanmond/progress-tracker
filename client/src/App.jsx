@@ -28,7 +28,8 @@ export default function App() {
   const [weeklyPlan, setWeeklyPlan] = useState([]);
   const [logs, setLogs] = useState([]);
   const [questions, setQuestions] = useState([]);
-  const [filters, setFilters] = useState({ search: "", pattern: "All", status: "All", priority: "All", limit: "500" });
+  const [patterns, setPatterns] = useState(["All"]);
+  const [filters, setFilters] = useState({ search: "", pattern: "All", status: "All", priority: "All", sort: "source_order", direction: "asc" });
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isEditingLeetcode, setIsEditingLeetcode] = useState(false);
@@ -65,6 +66,7 @@ export default function App() {
       setWeeklyPlan(weeklyPlanResult.weeks);
       setLogs(logsResult.logs);
       setQuestions(questionsResult.questions);
+      setPatterns(questionsResult.patterns || ["All"]);
     } catch (requestError) {
       setError(requestError.message);
     } finally {
@@ -77,6 +79,7 @@ export default function App() {
     try {
       const result = await api.questions(nextFilters);
       setQuestions(result.questions);
+      setPatterns(result.patterns || ["All"]);
     } catch (requestError) {
       setError(requestError.message);
     }
@@ -173,11 +176,6 @@ export default function App() {
     document.documentElement.dataset.theme = theme;
     window.localStorage.setItem("switch-os-theme", theme);
   }, [theme]);
-
-  const patterns = useMemo(() => {
-    const unique = new Set(questions.map((question) => question.pattern).filter(Boolean));
-    return ["All", ...Array.from(unique).sort()];
-  }, [questions]);
 
   const shell = (
     <main className="app-shell">
@@ -594,13 +592,17 @@ function Metric({ label, value, helper }) {
 }
 
 function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
+  function updateFilter(changes) {
+    onFilter({ ...filters, ...changes });
+  }
+
   return (
     <div className="view-stack">
       <section className="panel">
         <div className="panel-heading">
           <div>
             <h3>Full Question Bank</h3>
-            <p className="quiet compact">Showing {questions.length} questions. Use this as reference; follow Weekly Plan for commitment.</p>
+            <p className="quiet compact">Showing {questions.length} questions. Use topic filters and sort controls for reference mode.</p>
           </div>
         </div>
         <div className="toolbar">
@@ -609,15 +611,15 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
             <div className="input-icon">
               <Search size={17} />
               <input
-                onChange={(event) => onFilter({ ...filters, search: event.target.value })}
+                onChange={(event) => updateFilter({ search: event.target.value })}
                 placeholder="Problem, section, pattern"
                 value={filters.search}
               />
             </div>
           </label>
           <label>
-            Pattern
-            <select onChange={(event) => onFilter({ ...filters, pattern: event.target.value })} value={filters.pattern}>
+            Topic
+            <select onChange={(event) => updateFilter({ pattern: event.target.value })} value={filters.pattern}>
               {patterns.map((pattern) => (
                 <option key={pattern}>{pattern}</option>
               ))}
@@ -625,7 +627,7 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
           </label>
           <label>
             Status
-            <select onChange={(event) => onFilter({ ...filters, status: event.target.value })} value={filters.status}>
+            <select onChange={(event) => updateFilter({ status: event.target.value })} value={filters.status}>
               <option>All</option>
               <option>Todo</option>
               <option>Solved</option>
@@ -634,11 +636,28 @@ function QuestionBank({ filters, onFilter, onUpdate, patterns, questions }) {
           </label>
           <label>
             Priority
-            <select onChange={(event) => onFilter({ ...filters, priority: event.target.value })} value={filters.priority}>
+            <select onChange={(event) => updateFilter({ priority: event.target.value })} value={filters.priority}>
               <option>All</option>
               <option>Core 100</option>
               <option>Supplemental</option>
               <option>Course-only</option>
+            </select>
+          </label>
+          <label>
+            Sort by
+            <select onChange={(event) => updateFilter({ sort: event.target.value })} value={filters.sort}>
+              <option value="source_order">Course order</option>
+              <option value="pattern">Topic</option>
+              <option value="difficulty">Difficulty</option>
+              <option value="status">Status</option>
+              <option value="title">Title</option>
+            </select>
+          </label>
+          <label>
+            Direction
+            <select onChange={(event) => updateFilter({ direction: event.target.value })} value={filters.direction}>
+              <option value="asc">Ascending</option>
+              <option value="desc">Descending</option>
             </select>
           </label>
         </div>

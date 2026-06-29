@@ -1225,7 +1225,7 @@ app.patch("/api/milestones/:id/status", async (req, res, next) => {
 
 app.get("/api/questions", async (req, res, next) => {
   try {
-    const { search = "", pattern = "All", status = "All", priority = "All", limit = "500" } = req.query;
+    const { search = "", pattern = "All", status = "All", priority = "All", sort = "source_order", direction = "asc" } = req.query;
     const values = [];
     const clauses = [];
 
@@ -1243,6 +1243,15 @@ app.get("/api/questions", async (req, res, next) => {
     }
 
     const where = clauses.length ? `where ${clauses.join(" and ")}` : "";
+    const sortColumns = {
+      source_order: "q.source_order",
+      title: "q.title",
+      pattern: "q.pattern",
+      difficulty: `case q.difficulty when 'Easy' then 1 when 'Medium' then 2 when 'Hard' then 3 else 4 end`,
+      status: "coalesce(qp.status, 'Todo')"
+    };
+    const sortColumn = sortColumns[sort] || sortColumns.source_order;
+    const sortDirection = String(direction).toLowerCase() === "desc" ? "desc" : "asc";
     const result = await query(
       `select
         q.*,
@@ -1254,15 +1263,15 @@ app.get("/api/questions", async (req, res, next) => {
        from questions q
        left join question_progress qp on qp.question_id = q.id
        ${where}
-       order by q.source_order asc`,
+       order by ${sortColumn} ${sortDirection}, q.source_order asc`,
       values
     );
+    const patternResult = await query("select distinct pattern from questions where pattern is not null order by pattern asc");
     const questions = result.rows
       .map(enrichQuestion)
-      .filter((question) => priority === "All" || question.dsa_priority === priority)
-      .slice(0, Math.min(Number(limit) || 500, 500));
+      .filter((question) => priority === "All" || question.dsa_priority === priority);
 
-    res.json({ questions });
+    res.json({ questions, patterns: ["All", ...patternResult.rows.map((row) => row.pattern)] });
   } catch (error) {
     next(error);
   }

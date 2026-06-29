@@ -809,7 +809,7 @@ button.user-chip {
 .log-form {
   display: grid;
   gap: 14px;
-  grid-template-columns: minmax(240px, 1fr) repeat(3, minmax(150px, 0.25fr));
+  grid-template-columns: minmax(240px, 1.4fr) repeat(5, minmax(135px, 0.7fr));
   align-items: end;
 }
 

@@ -259,12 +259,14 @@ Query parameters:
 - `pattern`: default `All`.
 - `status`: default `All`; accepted values are `All`, `Todo`, `Solved`, `Revise`.
 - `priority`: default `All`; accepted values are `All`, `Core 100`, `Supplemental`, `Course-only`.
-- `limit`: default `500`, max `500`.
+- `sort`: default `source_order`; accepted values are `source_order`, `title`, `pattern`, `difficulty`, `status`.
+- `direction`: default `asc`; accepted values are `asc`, `desc`.
 
 Response:
 
 ```json
 {
+  "patterns": ["All", "Arrays", "Backtracking"],
   "questions": [
     {
       "id": "namaste-remove-duplicates",
