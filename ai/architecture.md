@@ -20,7 +20,7 @@ Location: `client/`
 
 Responsibilities:
 
-- Render dashboard, DSA bank, daily log, and roadmap.
+- Render dashboard, DSA bank, company targets, daily log, and roadmap.
 - Render the day-by-day interview weekly plan as the primary workflow.
 - Call backend API through `client/src/lib/api.js`.
 - Keep UI state local and short-lived.

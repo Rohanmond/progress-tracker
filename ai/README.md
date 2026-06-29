@@ -11,6 +11,7 @@ Read in this order:
 5. [api-contract.md](./api-contract.md) - backend endpoints consumed by the React app.
 6. [deployment.md](./deployment.md) - Vercel, Render, Postgres, and Superset setup.
 7. [ai-working-guide.md](./ai-working-guide.md) - conventions for future AI edits.
+8. [content-validation.md](./content-validation.md) - validated prep sources and curation rules.
 
 ## Current Stack
 

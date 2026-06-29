@@ -54,6 +54,8 @@ The user has access to strong preparation resources but loses track over time. D
 18. As a candidate, I can log in with a Gmail OTP and log out without managing a password.
 19. As a candidate, I can add my LeetCode username after first login so solved verification uses my own account.
 20. As a candidate, I can update my LeetCode username later if I entered it incorrectly or changed accounts.
+21. As a candidate, I can open a company-specific target tab for MAANG/FAANG, global product companies, and Indian top tech/startups.
+22. As a candidate, I can jump from company targets to LeetCode company tags, devtools company lists, GreatFrontend question banks, LearnersBucket, and Namaste FSD resources.
 
 ## Success Metrics
 
@@ -150,7 +152,6 @@ The user has access to strong preparation resources but loses track over time. D
 - Multiple preparation tracks.
 - Weekly goals and streak tracking.
 - Import/export progress.
-- Company-specific interview loops.
 - GreatFrontend and devtools.tech practice banks.
 - Automated weekly review summaries.
 - Calendar reminders.

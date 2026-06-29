@@ -1,13 +1,243 @@
 import { useEffect, useMemo, useState } from "react";
-import { BarChart3, BookOpen, CalendarDays, CheckCircle2, ClipboardList, Clock3, Database, ExternalLink, Moon, RefreshCcw, Search, Sun } from "lucide-react";
+import { BarChart3, BookOpen, Building2, CalendarDays, CheckCircle2, ClipboardList, Clock3, Database, ExternalLink, Moon, RefreshCcw, Search, Sun } from "lucide-react";
 import { api } from "./lib/api.js";
 
 const tabs = [
   { id: "plan", label: "Weekly Plan", icon: ClipboardList },
   { id: "dashboard", label: "Dashboard", icon: BarChart3 },
   { id: "questions", label: "DSA Bank", icon: Database },
+  { id: "companies", label: "Company Targets", icon: Building2 },
   { id: "logs", label: "Daily Log", icon: CalendarDays },
   { id: "roadmap", label: "Roadmap", icon: BookOpen }
+];
+
+const companyPrepSources = [
+  {
+    title: "Validated Frontend Banks",
+    description: "Use these for frontend-specific coding, React LLD, system design, and company-tagged prep.",
+    links: [
+      { label: "GreatFrontend questions", url: "https://www.greatfrontend.com/questions" },
+      { label: "GreatFrontend GFE 75", url: "https://www.greatfrontend.com/interviews/gfe75" },
+      { label: "devtools all questions", url: "https://devtools.tech/questions/all" },
+      { label: "devtools company questions", url: "https://devtools.tech/dashboard/time-savers/company-questions" },
+      { label: "devtools company guides", url: "https://devtools.tech/dashboard/guides/company" },
+      { label: "LearnersBucket FSD", url: "https://alpha.learnersbucket.com/course/frontend-system-design/start" },
+      { label: "Namaste FSD", url: "https://namastedev.com/learn/namaste-frontend-system-design" }
+    ]
+  },
+  {
+    title: "High-Signal Public Resources",
+    description: "Use these when company pages do not expose exact frontend questions or when you need fundamentals.",
+    links: [
+      { label: "Patterns.dev", url: "https://www.patterns.dev/" },
+      { label: "web.dev performance", url: "https://web.dev/learn/performance/" },
+      { label: "web.dev accessibility", url: "https://web.dev/learn/accessibility/" },
+      { label: "OWASP XSS cheat sheet", url: "https://cheatsheetseries.owasp.org/cheatsheets/Cross_Site_Scripting_Prevention_Cheat_Sheet.html" },
+      { label: "MDN HTTP caching", url: "https://developer.mozilla.org/en-US/docs/Web/HTTP/Caching" },
+      { label: "MDN WebSocket API", url: "https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API" }
+    ]
+  }
+];
+
+const companyTargets = [
+  {
+    group: "MAANG / FAANG",
+    helper: "Start here for broad big-tech loops: DSA fundamentals, JS utilities, React LLD, frontend system design, performance, accessibility, and security.",
+    companies: [
+      {
+        name: "Google",
+        focus: "DSA depth, web performance, search/autocomplete, calendar/collaboration HLD.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/google/" },
+          { label: "Google Calendar FSD", url: "https://devtools.tech/frontend-system-design/calendar" },
+          { label: "GreatFrontend company filter", url: "https://www.greatfrontend.com/questions" }
+        ]
+      },
+      {
+        name: "Meta",
+        focus: "React internals, feed/chat surfaces, virtual DOM, accessibility, product tradeoffs.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/facebook/" },
+          { label: "Meta virtual DOM video", url: "https://www.youtube.com/watch?v=eaPv4yCSkBE" },
+          { label: "GreatFrontend UI coding", url: "https://www.greatfrontend.com/questions/formats/ui-coding" }
+        ]
+      },
+      {
+        name: "Amazon",
+        focus: "DSA consistency, scalable UI components, retail/search flows, operational edge cases.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/amazon/" },
+          { label: "devtools company questions", url: "https://devtools.tech/dashboard/time-savers/company-questions" },
+          { label: "Frontend system design", url: "https://devtools.tech/dashboard/fsd/guide" }
+        ]
+      },
+      {
+        name: "Microsoft",
+        focus: "DSA, UI state machines, accessibility, enterprise product design, testing clarity.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/microsoft/" },
+          { label: "Country capital game", url: "https://www.youtube.com/results?search_query=devtools.tech+Microsoft+frontend+country+capital+game" },
+          { label: "GreatFrontend JS functions", url: "https://www.greatfrontend.com/questions/formats/javascript-functions" }
+        ]
+      },
+      {
+        name: "Apple",
+        focus: "Polished UI, browser APIs, performance, correctness, and clean interaction design.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/apple/" },
+          { label: "GreatFrontend questions", url: "https://www.greatfrontend.com/questions" },
+          { label: "Namaste performance module", url: "https://namastedev.com/learn/namaste-frontend-system-design/performance-overview" }
+        ]
+      },
+      {
+        name: "Netflix",
+        focus: "Performance, video/feed UX, caching, observability, and resilient frontend architecture.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/netflix/" },
+          { label: "web.dev performance", url: "https://web.dev/learn/performance/" },
+          { label: "Namaste caching module", url: "https://namastedev.com/learn/namaste-frontend-system-design/database-caching-overview" }
+        ]
+      }
+    ]
+  },
+  {
+    group: "Global Product Companies",
+    helper: "Good target set for senior frontend interviews with real-world machine-coding and frontend architecture rounds.",
+    companies: [
+      {
+        name: "Uber",
+        focus: "Maps, realtime state, batching, rate limits, overlapping shapes, async task control.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/uber/" },
+          { label: "Paytm/Uber mapLimit", url: "https://www.youtube.com/watch?v=6IH79tU0l1g" },
+          { label: "Uber shape question", url: "https://www.youtube.com/watch?v=DCoIeGt4g7M" }
+        ]
+      },
+      {
+        name: "Atlassian",
+        focus: "Feature flags, dashboards, product workflows, nested data, collaboration surfaces.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/atlassian/" },
+          { label: "Feature flag video", url: "https://www.youtube.com/watch?v=pxPVsZyMcb4" },
+          { label: "JIRA velocity chart video", url: "https://www.youtube.com/results?search_query=devtools.tech+Atlassian+JIRA+Velocity+Chart" }
+        ]
+      },
+      {
+        name: "LinkedIn",
+        focus: "Feed, search, messaging, graph-ish data, accessibility, and JS array utilities.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/linkedin/" },
+          { label: "LinkedIn tuple arrays search", url: "https://www.youtube.com/results?search_query=devtools.tech+LinkedIn+Tuple+Arrays+JavaScript" },
+          { label: "GreatFrontend system design", url: "https://www.greatfrontend.com/questions/system-design" }
+        ]
+      },
+      {
+        name: "Airbnb",
+        focus: "Search/filter UI, forms, maps, design systems, and high-quality component behavior.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/airbnb/" },
+          { label: "GreatFrontend UI coding", url: "https://www.greatfrontend.com/questions/formats/ui-coding" },
+          { label: "Patterns.dev React", url: "https://www.patterns.dev/react/" }
+        ]
+      },
+      {
+        name: "Intuit",
+        focus: "Forms, dashboards, charts, validation-heavy UI, and frontend coding questions.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/intuit/" },
+          { label: "devtools Intuit list", url: "https://devtools.tech/lists/s/intuit-frontend-interview-questions---lid---lhSfvCsE96RgGJeb3xY6?ref=item-card" },
+          { label: "GreatFrontend forms/UI", url: "https://www.greatfrontend.com/questions/formats/ui-coding" }
+        ]
+      },
+      {
+        name: "Stripe",
+        focus: "API mental models, correctness, security, checkout/payment UI, and system tradeoffs.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/stripe/" },
+          { label: "OWASP CSRF", url: "https://cheatsheetseries.owasp.org/cheatsheets/Cross-Site_Request_Forgery_Prevention_Cheat_Sheet.html" },
+          { label: "Namaste security module", url: "https://namastedev.com/learn/namaste-frontend-system-design/security-overview" }
+        ]
+      }
+    ]
+  },
+  {
+    group: "India Top Tech / Startups",
+    helper: "Prioritize company-tagged DSA plus frontend machine-coding rounds from devtools, GreatFrontend, LearnersBucket, and Namaste FSD.",
+    companies: [
+      {
+        name: "Flipkart",
+        focus: "E-commerce search, cart/listing UI, DSA, caching, pagination, and performance.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/flipkart/" },
+          { label: "GreatFrontend questions", url: "https://www.greatfrontend.com/questions" },
+          { label: "Namaste caching module", url: "https://namastedev.com/learn/namaste-frontend-system-design/api-caching" }
+        ]
+      },
+      {
+        name: "Blinkit",
+        focus: "Fast commerce UI, search, inventory-ish state, timers, forms, and React LLD.",
+        links: [
+          { label: "devtools Blinkit list", url: "https://devtools.tech/lists/s/blinkit-frontend-interview-questions---lid---zEZeVs8U7ehEmzdXYWB7?ref=item-card" },
+          { label: "LeetCode company search", url: "https://leetcode.com/problemset/?search=Blinkit" },
+          { label: "LearnersBucket JS bank", url: "https://alpha.learnersbucket.com/course/frontend-system-design/start" }
+        ]
+      },
+      {
+        name: "MakeMyTrip",
+        focus: "Booking/search flows, filters, forms, calendar/date picker, caching, and UX states.",
+        links: [
+          { label: "devtools MakeMyTrip list", url: "https://devtools.tech/lists/s/makemytrip-frontend-interview-questions---lid---7CkHb2WmMx8FWyzSVbRT?ref=item-card" },
+          { label: "LeetCode company search", url: "https://leetcode.com/problemset/?search=MakeMyTrip" },
+          { label: "Calendar system design", url: "https://devtools.tech/frontend-system-design/calendar" }
+        ]
+      },
+      {
+        name: "Zeta",
+        focus: "Fintech UI, data grids, forms, validation, security, and JS utilities.",
+        links: [
+          { label: "devtools Zeta list", url: "https://devtools.tech/lists/s/zeta-frontend-interview-questions---lid---kh6swDyCEcXbNpSth2VO?ref=item-card" },
+          { label: "LeetCode company search", url: "https://leetcode.com/problemset/?search=Zeta" },
+          { label: "Namaste security module", url: "https://namastedev.com/learn/namaste-frontend-system-design/security-overview" }
+        ]
+      },
+      {
+        name: "Paytm",
+        focus: "Payments UI, mapLimit-style async control, security, forms, and DSA basics.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/paytm/" },
+          { label: "Paytm/Uber mapLimit", url: "https://www.youtube.com/watch?v=6IH79tU0l1g" },
+          { label: "Namaste security headers", url: "https://namastedev.com/learn/namaste-frontend-system-design/security-headers" }
+        ]
+      },
+      {
+        name: "Razorpay",
+        focus: "Checkout flows, reliability, security, validation, SDK thinking, and observability.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/razorpay/" },
+          { label: "LearnersBucket analytics SDK", url: "https://alpha.learnersbucket.com/course-item?item-id=67b0d7d0d84a43d13e5bd61e" },
+          { label: "Namaste client security", url: "https://namastedev.com/learn/namaste-frontend-system-design/client-side-security" }
+        ]
+      },
+      {
+        name: "PhonePe",
+        focus: "Payment/product UI, state consistency, retries, idempotency discussions, and DSA.",
+        links: [
+          { label: "LeetCode company tag", url: "https://leetcode.com/company/phonepe/" },
+          { label: "LearnersBucket retry promises", url: "https://alpha.learnersbucket.com/course-item?item-id=67c19f40acd6fb93643bb09b" },
+          { label: "devtools company questions", url: "https://devtools.tech/dashboard/time-savers/company-questions" }
+        ]
+      },
+      {
+        name: "CRED / Groww / Zerodha",
+        focus: "Fintech frontend: charts, tables, security, performance, state, and product polish.",
+        links: [
+          { label: "LeetCode company search", url: "https://leetcode.com/problemset/?search=Cred" },
+          { label: "devtools spreadsheet grid search", url: "https://devtools.tech/questions/all?search=Spreadsheet%20Grid" },
+          { label: "Namaste monitoring module", url: "https://namastedev.com/learn/namaste-frontend-system-design/logging-and-monitoring-overview" }
+        ]
+      }
+    ]
+  }
 ];
 
 const today = () => new Date().toISOString().slice(0, 10);
@@ -294,6 +524,7 @@ export default function App() {
             questions={questions}
           />
         ) : null}
+        {activeTab === "companies" ? <CompanyTargets /> : null}
         {activeTab === "logs" ? <Logs logs={logs} onAdd={addLog} /> : null}
         {activeTab === "roadmap" ? <Roadmap roadmap={roadmap} /> : null}
       </section>
@@ -956,6 +1187,74 @@ function Logs({ logs, onAdd }) {
           ))}
         </div>
       </section>
+    </div>
+  );
+}
+
+function CompanyTargets() {
+  return (
+    <div className="view-stack">
+      <section className="panel company-hero">
+        <div>
+          <p className="label">Company-specific prep</p>
+          <h3>Target company loops without losing the weekly plan</h3>
+          <p>
+            Use this tab as a shortcut layer after finishing weekly commitments. Company tags are strongest for DSA;
+            frontend rounds should be practiced through GreatFrontend, devtools, LearnersBucket, Namaste FSD, and focused mock topics.
+          </p>
+        </div>
+        <div className="company-score">
+          <strong>{companyTargets.reduce((count, group) => count + group.companies.length, 0)}</strong>
+          <span>companies mapped</span>
+        </div>
+      </section>
+
+      <section className="source-grid">
+        {companyPrepSources.map((source) => (
+          <article className="panel source-card" key={source.title}>
+            <h3>{source.title}</h3>
+            <p className="quiet compact">{source.description}</p>
+            <div className="resource-links">
+              {source.links.map((link) => (
+                <a href={link.url} key={link.label} rel="noreferrer" target="_blank">
+                  <ExternalLink size={14} />
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </article>
+        ))}
+      </section>
+
+      {companyTargets.map((group) => (
+        <section className="panel company-section" key={group.group}>
+          <div className="panel-heading">
+            <div>
+              <p className="label">Target group</p>
+              <h3>{group.group}</h3>
+              <p className="quiet compact">{group.helper}</p>
+            </div>
+          </div>
+          <div className="company-grid">
+            {group.companies.map((company) => (
+              <article className="company-card" key={company.name}>
+                <div>
+                  <strong>{company.name}</strong>
+                  <p>{company.focus}</p>
+                </div>
+                <div className="resource-links compact-links">
+                  {company.links.map((link) => (
+                    <a href={link.url} key={`${company.name}-${link.label}`} rel="noreferrer" target="_blank">
+                      <ExternalLink size={14} />
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </section>
+      ))}
     </div>
   );
 }
