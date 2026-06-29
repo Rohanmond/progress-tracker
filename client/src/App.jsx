@@ -31,6 +31,9 @@ export default function App() {
   const [filters, setFilters] = useState({ search: "", pattern: "All", status: "All", priority: "All", limit: "500" });
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isEditingLeetcode, setIsEditingLeetcode] = useState(false);
+  const [leetcodeDraft, setLeetcodeDraft] = useState("");
+  const [isSavingLeetcode, setIsSavingLeetcode] = useState(false);
 
   async function loadSession() {
     try {
@@ -131,6 +134,22 @@ export default function App() {
     await loadApp();
   }
 
+  async function saveLeetcodeUsername(event) {
+    event.preventDefault();
+    setError("");
+    setIsSavingLeetcode(true);
+    try {
+      const result = await api.updateProfile({ leetcodeUsername: leetcodeDraft });
+      setUser(result.user);
+      setIsEditingLeetcode(false);
+      await loadApp();
+    } catch (requestError) {
+      setError(requestError.message);
+    } finally {
+      setIsSavingLeetcode(false);
+    }
+  }
+
   async function logout() {
     setError("");
     try {
@@ -202,7 +221,45 @@ export default function App() {
             <h2>{tabs.find((tab) => tab.id === activeTab)?.label}</h2>
           </div>
           <div className="topbar-actions">
-            {user ? <span className="user-chip">{user.email}</span> : null}
+            {user ? (
+              isEditingLeetcode ? (
+                <form className="profile-inline-form" onSubmit={saveLeetcodeUsername}>
+                  <label>
+                    LeetCode
+                    <input
+                      autoComplete="username"
+                      onChange={(event) => setLeetcodeDraft(event.target.value)}
+                      placeholder="LeetCode username"
+                      required
+                      value={leetcodeDraft}
+                    />
+                  </label>
+                  <button disabled={isSavingLeetcode} type="submit">
+                    {isSavingLeetcode ? "Saving..." : "Save"}
+                  </button>
+                  <button
+                    className="muted"
+                    disabled={isSavingLeetcode}
+                    onClick={() => setIsEditingLeetcode(false)}
+                    type="button"
+                  >
+                    Cancel
+                  </button>
+                </form>
+              ) : (
+                <button
+                  className="user-chip"
+                  onClick={() => {
+                    setLeetcodeDraft(user.leetcode_username || "");
+                    setIsEditingLeetcode(true);
+                  }}
+                  title="Edit LeetCode username"
+                  type="button"
+                >
+                  {user.email} · LC: {user.leetcode_username}
+                </button>
+              )
+            ) : null}
             <button
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
               aria-pressed={theme === "dark"}

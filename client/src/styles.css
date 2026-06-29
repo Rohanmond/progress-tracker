@@ -251,6 +251,33 @@ a {
   padding: 8px 12px;
 }
 
+button.user-chip {
+  color: var(--chip-ink);
+  max-width: 320px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.profile-inline-form {
+  align-items: end;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.profile-inline-form label {
+  min-width: 190px;
+}
+
+.profile-inline-form input {
+  min-height: 38px;
+}
+
+.profile-inline-form button {
+  min-height: 38px;
+}
+
 .auth-shell {
   align-items: center;
   background:
@@ -995,6 +1022,7 @@ textarea {
   .topbar,
   .topbar-actions,
   .auth-actions,
+  .profile-inline-form,
   .commitment-panel,
   .question-card {
     align-items: stretch;
@@ -1003,6 +1031,12 @@ textarea {
   }
 
   .icon-button {
+    width: 100%;
+  }
+
+  button.user-chip,
+  .profile-inline-form label {
+    max-width: none;
     width: 100%;
   }
 }

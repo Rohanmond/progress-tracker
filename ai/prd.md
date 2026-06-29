@@ -53,6 +53,7 @@ The user has access to strong preparation resources but loses track over time. D
 17. As a candidate, I can switch between light and dark mode, with my preference remembered on the same browser.
 18. As a candidate, I can log in with a Gmail OTP and log out without managing a password.
 19. As a candidate, I can add my LeetCode username after first login so solved verification uses my own account.
+20. As a candidate, I can update my LeetCode username later if I entered it incorrectly or changed accounts.
 
 ## Success Metrics
 
@@ -75,6 +76,7 @@ The user has access to strong preparation resources but loses track over time. D
 - Local development may print OTP codes in the API console when no email provider is configured.
 - Passwords are not collected or stored.
 - After first login, the user must add a LeetCode username before entering the tracker.
+- Logged-in users can edit their saved LeetCode username from the app chrome.
 
 ### Weekly Plan
 
