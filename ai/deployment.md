@@ -33,10 +33,18 @@ Steps:
 
 1. Create a Supabase project.
 2. Go to Project Settings -> Database.
-3. Copy the Postgres connection string.
-4. Use the pooled connection string for Render if possible.
+3. Open the connection string panel.
+4. Use the Supabase pooler connection string for Render, not the direct database connection string.
 5. Replace the password placeholder with the database password.
 6. Use that value as Render `DATABASE_URL`.
+
+Render may fail with `ENETUNREACH` when using Supabase's direct database hostname because it can resolve to an IPv6 address that the Render instance cannot reach. The Supabase pooler host is the safer choice for Render. Prefer a connection string whose host contains `pooler.supabase.com`, for example:
+
+```txt
+postgresql://postgres.<project-ref>:<password>@aws-0-<region>.pooler.supabase.com:6543/postgres?sslmode=require
+```
+
+If your database password contains special characters such as `@`, `#`, `/`, `?`, or `:`, URL-encode the password before putting it in `DATABASE_URL`.
 
 Required Render database settings:
 
