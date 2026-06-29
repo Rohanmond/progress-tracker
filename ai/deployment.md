@@ -87,8 +87,10 @@ Deploy the frontend from this GitHub repo.
 Important settings:
 
 - Framework: Vite
-- Build command: `cd client && npm install && npm run build`
-- Output directory: `client/dist`
+- Root directory: `client`
+- Build command: `npm run build`
+- Output directory: `dist`
+- Install command: `npm install`
 - Environment variable: `VITE_API_URL=https://<render-api-host>/api`
 
 After Vercel deploys, copy the Vercel app origin and set Render `CLIENT_ORIGIN` to that exact origin, for example:
