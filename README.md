@@ -46,6 +46,6 @@ Set `AUTH_SECRET` for signed OTP/session hashing. Add `GMAIL_USER` and `GMAIL_AP
 
 ## Deploy
 
-- Vercel: deploy `client/`; set `VITE_API_URL` to your Render API URL plus `/api`
-- Render: create Postgres, deploy `server/`, set `DATABASE_URL`
-- Superset: connect to the same Postgres database and use the views in `db/views.sql`
+- Vercel: deploy `client/`; set `VITE_API_URL` to the Railway API URL plus `/api`
+- Railway: deploy the repository root using `railway.json`; keep Supabase as `DATABASE_URL`
+- Superset: connect to the same Supabase Postgres database and use the views in `db/views.sql`

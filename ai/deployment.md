@@ -34,11 +34,11 @@ Steps:
 1. Create a Supabase project.
 2. Go to Project Settings -> Database.
 3. Open the connection string panel.
-4. Use the Supabase pooler connection string for Render, not the direct database connection string.
+4. Use the Supabase pooler connection string for Railway, not the direct database connection string.
 5. Replace the password placeholder with the database password.
-6. Use that value as Render `DATABASE_URL`.
+6. Use that value as Railway `DATABASE_URL`.
 
-Render may fail with `ENETUNREACH` when using Supabase's direct database hostname because it can resolve to an IPv6 address that the Render instance cannot reach. The Supabase pooler host is the safer choice for Render. Prefer a connection string whose host contains `pooler.supabase.com`, for example:
+The Supabase pooler is the safer choice for hosted runtimes and avoids relying on direct IPv6 database connectivity. Prefer a connection string whose host contains `pooler.supabase.com`, for example:
 
 ```txt
 postgresql://postgres.<project-ref>:<password>@aws-0-<region>.pooler.supabase.com:6543/postgres?sslmode=require
@@ -46,18 +46,21 @@ postgresql://postgres.<project-ref>:<password>@aws-0-<region>.pooler.supabase.co
 
 If your database password contains special characters such as `@`, `#`, `/`, `?`, or `:`, URL-encode the password before putting it in `DATABASE_URL`.
 
-Required Render database settings:
+Required Railway database settings:
 
 - `DATABASE_URL`: Supabase Postgres connection string.
 - `DATABASE_SSL=true`.
 
-### Render
+### Railway
 
-Use `render.yaml`.
+Use the root-level `railway.json` configuration.
 
-Render services:
+Create one Railway service for the Express API:
 
-- Web service: Express API.
+- GitHub repository: `Rohanmond/progress-tracker`.
+- Root directory: leave blank (repository root).
+- Config file path: `/railway.json` when Railway does not detect it automatically.
+- Builder: Railpack.
 - Database: external Supabase PostgreSQL.
 
 Required environment variables:
@@ -71,14 +74,32 @@ Required environment variables:
 - `RESEND_API_KEY`: optional fallback provider for production OTP email delivery.
 - `AUTH_EMAIL_FROM`: optional sender label/address for OTP email delivery.
 - `DATABASE_SSL=true`.
+- `NODE_ENV=production`.
 
-Current Render start command runs:
+The checked-in Railway commands are:
 
 ```sh
-npm run seed --workspace server && npm start --workspace server
+# Build
+npm ci
+
+# Pre-deploy
+npm run seed --workspace server
+
+# Start
+npm start --workspace server
 ```
 
-This is convenient for early deployment because schema and seed are applied at startup. For production hardening, move migrations/seeding into a release phase or manual job.
+The seed is idempotent and runs before traffic is switched to the new deployment. The service health check is `/api/health`, and Railway supplies `PORT` automatically.
+
+After the first successful deployment:
+
+1. Open Railway service Settings -> Networking.
+2. Generate a public domain.
+3. Confirm `https://<railway-domain>/api/health` returns `{"ok":true,...}`.
+4. Update Vercel `VITE_API_URL` to `https://<railway-domain>/api` and redeploy the frontend.
+5. Set Railway `CLIENT_ORIGIN` to the exact Vercel origin.
+6. Test OTP login, logout, LeetCode profile loading, and one progress update.
+7. Only after those checks pass, disable the Render service to avoid two active backends and duplicate cost.
 
 ### Vercel
 
@@ -91,9 +112,9 @@ Important settings:
 - Build command: `npm run build`
 - Output directory: `dist`
 - Install command: `npm install`
-- Environment variable: `VITE_API_URL=https://<render-api-host>/api`
+- Environment variable: `VITE_API_URL=https://<railway-api-host>/api`
 
-After Vercel deploys, copy the Vercel app origin and set Render `CLIENT_ORIGIN` to that exact origin, for example:
+After Vercel deploys, copy the Vercel app origin and set Railway `CLIENT_ORIGIN` to that exact origin, for example:
 
 ```txt
 https://frontend-switch-os.vercel.app
@@ -115,9 +136,9 @@ See [../docs/superset.md](../docs/superset.md).
 
 - API CORS must include the exact Vercel origin.
 - `VITE_API_URL` must include `/api`.
-- Production auth cookies require HTTPS and are sent cross-site from Vercel to Render with `SameSite=None; Secure`.
+- Production auth cookies require HTTPS and are sent cross-site from Vercel to Railway with `SameSite=None; Secure`.
 - Without `GMAIL_USER`/`GMAIL_APP_PASSWORD` or `RESEND_API_KEY`, OTPs are printed in API logs, which is acceptable only for local development.
-- Render Postgres may require SSL; set `DATABASE_SSL=true` if connection fails in production.
+- Supabase Postgres requires SSL from Railway; keep `DATABASE_SSL=true`.
 - The app is still single-progress-track; auth gates access but does not yet split tracker data per user.
 - LeetCode solved verification uses the username collected after first login; it does not store LeetCode credentials.
 

@@ -24,7 +24,7 @@ const rules = [
   },
   {
     name: "Deployment changed",
-    files: [/^render\.yaml$/, /^vercel\.json$/, /^server\/\.env\.example$/, /^package\.json$/, /^client\/package\.json$/, /^server\/package\.json$/],
+    files: [/^railway\.json$/, /^vercel\.json$/, /^server\/\.env\.example$/, /^package\.json$/, /^client\/package\.json$/, /^server\/package\.json$/],
     docs: [/^ai\/deployment\.md$/, /^README\.md$/, /^ai\/ai-working-guide\.md$/]
   }
 ];

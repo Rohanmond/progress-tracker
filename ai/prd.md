@@ -21,7 +21,7 @@ The user has access to strong preparation resources but loses track over time. D
 - Capture daily study effort with minimal friction.
 - Highlight revision items so weak problems are not forgotten.
 - Support analytics through Superset for deeper progress review.
-- Make the app deployable using Vercel, Render, and PostgreSQL.
+- Make the app deployable using Vercel, Railway, and Supabase PostgreSQL.
 - Protect the tracker with passwordless Gmail OTP login and logout.
 
 ## Non-Goals

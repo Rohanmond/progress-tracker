@@ -5,8 +5,8 @@
 ```mermaid
 flowchart LR
   User["User"] --> Client["React app on Vercel"]
-  Client --> API["Express API on Render"]
-  API --> DB["PostgreSQL on Render"]
+  Client --> API["Express API on Railway"]
+  API --> DB["PostgreSQL on Supabase"]
   DB --> Superset["Apache Superset dashboards"]
   Seed["Namaste DSA seed JSON"] --> API
   API --> DB
@@ -86,8 +86,8 @@ Important files:
 ## Deployment Shape
 
 - Vercel deploys only `client/`.
-- Render deploys the Node API and provisions PostgreSQL.
-- Superset connects to the Render Postgres connection string.
+- Railway deploys the Node API from the repository root and runs the schema/seed step before each deployment.
+- Supabase hosts PostgreSQL; Superset connects to the same Supabase pooler connection string.
 
 ## Important Architectural Decisions
 

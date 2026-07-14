@@ -87,10 +87,9 @@ Do not add password storage. Tracker progress is not yet partitioned by user.
 ## Current Known Limitations
 
 - Single-user data model.
-- No authentication.
 - No migrations framework.
 - No automated tests beyond syntax/build checks.
-- Seed runs at Render startup in current config.
+- Railway runs the idempotent schema/seed command in its pre-deploy phase.
 
 ## Commit And Documentation Guardrails
 

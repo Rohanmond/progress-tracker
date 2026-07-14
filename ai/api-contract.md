@@ -3,7 +3,7 @@
 Base URL:
 
 - Local: `http://localhost:8080/api`
-- Production: Render API URL plus `/api`
+- Production: Railway API URL plus `/api`
 
 ## Health
 

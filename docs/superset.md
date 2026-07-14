@@ -1,6 +1,6 @@
 # Superset Setup
 
-Connect Apache Superset to the same Render PostgreSQL database used by the API.
+Connect Apache Superset to the same Supabase PostgreSQL database used by the Railway API.
 
 Useful datasets:
 

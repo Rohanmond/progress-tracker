@@ -9,7 +9,7 @@ Read in this order:
 3. [prd.md](./prd.md) - product requirements and roadmap.
 4. [data-model.md](./data-model.md) - PostgreSQL tables, seed data, analytics views.
 5. [api-contract.md](./api-contract.md) - backend endpoints consumed by the React app.
-6. [deployment.md](./deployment.md) - Vercel, Render, Postgres, and Superset setup.
+6. [deployment.md](./deployment.md) - Vercel, Railway, Supabase Postgres, and Superset setup.
 7. [ai-working-guide.md](./ai-working-guide.md) - conventions for future AI edits.
 8. [content-validation.md](./content-validation.md) - validated prep sources and curation rules.
 
@@ -19,7 +19,7 @@ Read in this order:
 - Backend: Node.js, Express, pg.
 - Database: PostgreSQL.
 - Analytics: Superset over PostgreSQL views.
-- Deploy target: Vercel for `client/`, Render for `server/` and Postgres.
+- Deploy target: Vercel for `client/`, Railway for `server/`, and Supabase for Postgres.
 
 ## Critical Paths
 
