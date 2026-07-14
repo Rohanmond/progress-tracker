@@ -79,9 +79,6 @@ Required environment variables:
 The checked-in Railway commands are:
 
 ```sh
-# Build
-npm ci
-
 # Pre-deploy
 npm run seed --workspace server
 
@@ -89,7 +86,7 @@ npm run seed --workspace server
 npm start --workspace server
 ```
 
-The seed is idempotent and runs before traffic is switched to the new deployment. The service health check is `/api/health`, and Railway supplies `PORT` automatically.
+Railpack handles npm workspace dependency installation during its build phase. Do not add a second `npm ci` build command because it can conflict with Railpack's cached dependency layer. The seed is idempotent and runs before traffic is switched to the new deployment. The service health check is `/api/health`, and Railway supplies `PORT` automatically.
 
 After the first successful deployment:
 
