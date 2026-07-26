@@ -69,9 +69,9 @@ Required environment variables:
 - `CLIENT_ORIGIN`: Vercel frontend origin.
 - `AUTH_SECRET`: long random secret used for OTP/session hashing.
 - `AUTH_COOKIE_NAME`: optional session cookie name; defaults to `switch_os_session`.
-- `GMAIL_USER`: Gmail account used to send OTP emails.
-- `GMAIL_APP_PASSWORD`: Google App Password for Gmail SMTP.
-- `RESEND_API_KEY`: optional fallback provider for production OTP email delivery.
+- `RESEND_API_KEY`: required production OTP provider on Railway Free, Trial, and Hobby plans; delivery uses the Resend HTTPS API.
+- `GMAIL_USER`: optional Gmail account for SMTP-capable hosts or local development.
+- `GMAIL_APP_PASSWORD`: optional Google App Password paired with `GMAIL_USER`.
 - `AUTH_EMAIL_FROM`: optional sender label/address for OTP email delivery.
 - `DATABASE_SSL=true`.
 - `NODE_ENV=production`.
@@ -87,6 +87,8 @@ npm start --workspace server
 ```
 
 Railpack handles npm workspace dependency installation during its build phase. Do not add a second `npm ci` build command because it can conflict with Railpack's cached dependency layer. The seed is idempotent and runs before traffic is switched to the new deployment. The service health check is `/api/health`, and Railway supplies `PORT` automatically.
+
+Railway blocks outbound SMTP on Free, Trial, and Hobby plans. Configure `RESEND_API_KEY` instead of relying on Gmail SMTP. Resend is selected before Gmail when both are present, and its HTTPS API works on those Railway plans. The default `onboarding@resend.dev` sender is suitable only for Resend's allowed test recipient; verify a sending domain and set `AUTH_EMAIL_FROM` before inviting other users.
 
 After the first successful deployment:
 
@@ -134,7 +136,7 @@ See [../docs/superset.md](../docs/superset.md).
 - API CORS must include the exact Vercel origin.
 - `VITE_API_URL` must include `/api`.
 - Production auth cookies require HTTPS and are sent cross-site from Vercel to Railway with `SameSite=None; Secure`.
-- Without `GMAIL_USER`/`GMAIL_APP_PASSWORD` or `RESEND_API_KEY`, OTPs are printed in API logs, which is acceptable only for local development.
+- Without `GMAIL_USER`/`GMAIL_APP_PASSWORD` or `RESEND_API_KEY`, OTPs are printed in API logs only in local development. Production returns a delivery configuration error.
 - Supabase Postgres requires SSL from Railway; keep `DATABASE_SSL=true`.
 - The app is still single-progress-track; auth gates access but does not yet split tracker data per user.
 - LeetCode solved verification uses the username collected after first login; it does not store LeetCode credentials.

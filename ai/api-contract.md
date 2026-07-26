@@ -60,7 +60,9 @@ Response:
 }
 ```
 
-When Gmail SMTP is configured, `delivery` is `gmail`. When Resend is configured, `delivery` is `email`. When no email provider is configured locally, `delivery` is `console` and the OTP is printed in the API console.
+Resend is preferred when `RESEND_API_KEY` is configured and returns `delivery: "email"`. Gmail SMTP is used only when Resend is unavailable and returns `delivery: "gmail"`. When no provider is configured locally, `delivery` is `console` and the OTP is printed in the API console. Production never prints OTPs and returns `500` with a delivery-unavailable message when no usable provider exists.
+
+Provider failures are capped by short connection/request timeouts. The newly inserted OTP row is deleted when delivery fails, so failed provider attempts do not consume the user's OTP request allowance.
 
 ### `POST /api/auth/verify-otp`
 

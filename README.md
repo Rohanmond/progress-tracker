@@ -42,7 +42,7 @@ Set `VITE_API_URL=http://localhost:8080/api` for local frontend API calls.
 
 After first login, the app asks for your LeetCode username and uses it to verify linked DSA items before they can be marked `Solved`.
 
-Set `AUTH_SECRET` for signed OTP/session hashing. Add `GMAIL_USER` and `GMAIL_APP_PASSWORD` to send OTP emails through Gmail SMTP. `RESEND_API_KEY` remains available as a fallback provider; without either provider, local development prints OTPs in the API console.
+Set `AUTH_SECRET` for signed OTP/session hashing. Use `RESEND_API_KEY` for production OTP delivery over HTTPS; this is required on Railway Free, Trial, and Hobby plans because outbound SMTP is blocked. Gmail SMTP through `GMAIL_USER` and `GMAIL_APP_PASSWORD` remains available for local development or hosts that permit SMTP. When neither provider is configured, local development prints OTPs in the API console while production returns a configuration error.
 
 ## Deploy
 

@@ -1077,9 +1077,37 @@ function clearSessionCookie() {
 }
 
 async function sendOtpEmail(email, otp) {
+  if (process.env.RESEND_API_KEY) {
+    const response = await fetch("https://api.resend.com/emails", {
+      method: "POST",
+      headers: {
+        Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        from: process.env.AUTH_EMAIL_FROM || "Frontend Switch OS <onboarding@resend.dev>",
+        to: email,
+        subject: "Your Frontend Switch OS login code",
+        text: `Your login code is ${otp}. It expires in 10 minutes.`,
+        html: `<p>Your login code is <strong>${otp}</strong>.</p><p>It expires in 10 minutes.</p>`
+      }),
+      signal: AbortSignal.timeout(10000)
+    });
+
+    if (!response.ok) {
+      const body = await response.text();
+      throw new Error(`Email provider rejected OTP send: ${body}`);
+    }
+
+    return "email";
+  }
+
   if (process.env.GMAIL_USER && process.env.GMAIL_APP_PASSWORD) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
+      connectionTimeout: 10000,
+      greetingTimeout: 10000,
+      socketTimeout: 15000,
       auth: {
         user: process.env.GMAIL_USER,
         pass: process.env.GMAIL_APP_PASSWORD
@@ -1097,32 +1125,12 @@ async function sendOtpEmail(email, otp) {
     return "gmail";
   }
 
-  if (!process.env.RESEND_API_KEY) {
+  if (!isProduction) {
     console.log(`[auth] OTP for ${email}: ${otp}`);
     return "console";
   }
 
-  const response = await fetch("https://api.resend.com/emails", {
-    method: "POST",
-    headers: {
-      Authorization: `Bearer ${process.env.RESEND_API_KEY}`,
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      from: process.env.AUTH_EMAIL_FROM || "Frontend Switch OS <onboarding@resend.dev>",
-      to: email,
-      subject: "Your Frontend Switch OS login code",
-      text: `Your login code is ${otp}. It expires in 10 minutes.`,
-      html: `<p>Your login code is <strong>${otp}</strong>.</p><p>It expires in 10 minutes.</p>`
-    })
-  });
-
-  if (!response.ok) {
-    const body = await response.text();
-    throw new Error(`Email provider rejected OTP send: ${body}`);
-  }
-
-  return "email";
+  throw new Error("No production OTP email provider is configured.");
 }
 
 async function requireAuth(req, res, next) {
@@ -1216,13 +1224,22 @@ app.post("/api/auth/request-otp", async (req, res, next) => {
     }
 
     const otp = crypto.randomInt(100000, 1000000).toString();
-    await query(
+    const otpResult = await query(
       `insert into email_otps (email, otp_hash, expires_at)
-       values ($1, $2, now() + interval '10 minutes')`,
+       values ($1, $2, now() + interval '10 minutes')
+       returning id`,
       [email, hashOtp(email, otp)]
     );
 
-    const delivery = await sendOtpEmail(email, otp);
+    let delivery;
+    try {
+      delivery = await sendOtpEmail(email, otp);
+    } catch (error) {
+      await query("delete from email_otps where id = $1", [otpResult.rows[0].id]);
+      error.publicMessage = "OTP email delivery is temporarily unavailable. Please try again shortly.";
+      throw error;
+    }
+
     res.json({
       ok: true,
       delivery,
@@ -1594,7 +1611,7 @@ app.get("/api/metrics", async (_req, res, next) => {
 
 app.use((error, _req, res, _next) => {
   console.error(error);
-  res.status(500).json({ error: "Something went wrong" });
+  res.status(500).json({ error: error.publicMessage || "Something went wrong" });
 });
 
 app.listen(port, () => {
