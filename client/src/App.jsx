@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { BarChart3, BookOpen, Building2, CalendarDays, CheckCircle2, ClipboardList, Clock3, Database, ExternalLink, Moon, RefreshCcw, Search, Sun } from "lucide-react";
+import { BarChart3, BookOpen, Building2, CalendarDays, CheckCircle2, ClipboardList, Clock3, Database, ExternalLink, Flame, Moon, RefreshCcw, Search, Sparkles, Sun } from "lucide-react";
 import { api } from "./lib/api.js";
 
 const tabs = [
@@ -411,10 +411,10 @@ export default function App() {
     <main className="app-shell">
       <aside className="sidebar">
         <div className="brand">
-          <span>FS</span>
+          <span>S/</span>
           <div>
             <h1>Switch OS</h1>
-            <p>React + Node + Postgres</p>
+            <p>your interview era</p>
           </div>
         </div>
 
@@ -436,16 +436,18 @@ export default function App() {
         </nav>
 
         <section className="sidebar-panel">
-          <p className="label">Target</p>
+          <div className="sidebar-panel-badge"><Flame size={14} /> Momentum mode</div>
           <h2>Senior Frontend</h2>
-          <p>Four-month switch plan with DSA tracking, mocks, and study analytics.</p>
+          <p>16 weeks to turn consistent reps into your next offer.</p>
+          <div className="sidebar-progress" aria-hidden="true"><span /></div>
+          <small>Keep showing up. That’s the cheat code.</small>
         </section>
       </aside>
 
       <section className="workspace">
         <header className="topbar">
           <div>
-            <p className="eyebrow">Frontend interview control center</p>
+            <p className="eyebrow"><Sparkles size={13} /> Frontend interview control center</p>
             <h2>{tabs.find((tab) => tab.id === activeTab)?.label}</h2>
           </div>
           <div className="topbar-actions">
